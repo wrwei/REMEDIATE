@@ -1,0 +1,80 @@
+{
+    "requirements": [
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR1",
+            "id": "AR1",
+            "description": "The system manages a Project named \"ACME\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR2",
+            "id": "AR2",
+            "description": "The Project \"ACME\" contains two People named \"Alice\" and \"Bob\". ",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR3",
+            "id": "AR3",
+            "description": "Project \"ACME\" contains a Task named \"Analysis\", its Start month is \"1\", with Duration \"3\". ",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR4",
+            "id": "AR4",
+            "description": "Task \"Analysis\" requires one Effort with 100% Percentage, and designated Person to be \"Alice\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR5",
+            "id": "AR5",
+            "description": "Project \"ACME\" contains a Task named \"Design\", its Start month is \"7\", with Duration \"3\". ",
+            "priority": "6",
+            "types": []
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR7",
+            "id": "AR7",
+            "description": "Project \"ACME\" contains a Task named \"Implementation\", its Start month is \"7\", with Duration \"3\". ",
+            "priority": "6",
+            "types": []
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR6",
+            "id": "AR6",
+            "description": "Task \"Design\" requires  one Effort with 100% Percentage, and designated Person to be \"Bob\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "AR8",
+            "id": "AR8",
+            "description": "Task \"Implementation\" requires one Effort from \"Bob\", with 50% Percentage in the Effort, and another Effort from \"Alice\", with 50% Percentrage in the Effort.",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        }
+    ]
+}

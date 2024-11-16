@@ -1,0 +1,634 @@
+{
+    "model_trace": [
+        {
+            "requirement_gid": "SD1",
+            "Model_Element": "Module",
+            "Model_Element_id": "auv_module",
+            "Model_attribute": "name",
+            "Attribute_value": "AUV_Module",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "SD2",
+            "Model_Element": "RoboticPlatform",
+            "Model_Element_id": "auv_platform",
+            "Model_attribute": "name",
+            "Attribute_value": "AUV_Platform",
+            "Model_references": "robotic_platforms",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "sensors",
+            "Model_attribute": "name",
+            "Attribute_value": "Sensors",
+            "Model_references": "interfaces",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "actuators",
+            "Model_attribute": "name",
+            "Attribute_value": "Actuators",
+            "Model_references": "interfaces",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD3",
+            "Model_Element": "Controller",
+            "Model_Element_id": "auv_operator",
+            "Model_attribute": "name",
+            "Attribute_value": "AUV_Operator",
+            "Model_references": "controllers",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD3",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs",
+            "Model_attribute": "name",
+            "Attribute_value": "Inputs",
+            "Model_references": "interfaces",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD3",
+            "Model_Element": "Controller",
+            "Model_Element_id": "auv_operator",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "inputs"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Controller",
+            "Model_Element_id": "lre_ctrl",
+            "Model_attribute": "name",
+            "Attribute_value": "LRE_Ctrl",
+            "Model_references": "controllers",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Controller",
+            "Model_Element_id": "lre_ctrl",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "inputs"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Interface",
+            "Model_Element_id": "outputs",
+            "Model_attribute": "name",
+            "Attribute_value": "Outputs",
+            "Model_references": "interfaces",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Controller",
+            "Model_Element_id": "lre_ctrl",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "outputs"
+        },
+        {
+            "requirement_gid": "SD5",
+            "Model_Element": "Controller",
+            "Model_Element_id": "auv_autopilot",
+            "Model_attribute": "name",
+            "Attribute_value": "AUV_Autopilot",
+            "Model_references": "controllers",
+            "Reference_value": "auv_module"
+        },
+        {
+            "requirement_gid": "SD5",
+            "Model_Element": "Controller",
+            "Model_Element_id": "auv_autopilot",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "outputs"
+        },
+        {
+            "requirement_gid": "PT1",
+            "Model_Element": "PrimitiveType",
+            "Model_Element_id": "nat",
+            "Model_attribute": "name",
+            "Attribute_value": "nat",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Model_Element": "PrimitiveType",
+            "Model_Element_id": "int",
+            "Model_attribute": "name",
+            "Attribute_value": "int",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Model_Element": "PrimitiveType",
+            "Model_Element_id": "string",
+            "Model_attribute": "name",
+            "Attribute_value": "string",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Model_Element": "PrimitiveType",
+            "Model_Element_id": "boolean",
+            "Model_attribute": "name",
+            "Attribute_value": "boolean",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Model_Element": "PrimitiveType",
+            "Model_Element_id": "real",
+            "Model_attribute": "name",
+            "Attribute_value": "real",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "svec",
+            "Model_attribute": "name",
+            "Attribute_value": "SVec",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "Value",
+            "Model_Element_id": "radial",
+            "Model_attribute": "name",
+            "Attribute_value": "radial",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "Value",
+            "Model_Element_id": "polar",
+            "Model_attribute": "name",
+            "Attribute_value": "polar",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "Value",
+            "Model_Element_id": "azimuth",
+            "Model_attribute": "name",
+            "Attribute_value": "azimuth",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "svec",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "radial"
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "svec",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "polar"
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "svec",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "azimuth"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "obstacle",
+            "Model_attribute": "name",
+            "Attribute_value": "Obstacle",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_Element_id": "ns_rel_dist",
+            "Model_attribute": "name",
+            "Attribute_value": "ns_rel_dist",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_Element_id": "ew_rel_dist",
+            "Model_attribute": "name",
+            "Attribute_value": "ew_rel_dist",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_Element_id": "depth",
+            "Model_attribute": "name",
+            "Attribute_value": "depth",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_Element_id": "id",
+            "Model_attribute": "name",
+            "Attribute_value": "id",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_Element_id": "obs_hdng",
+            "Model_attribute": "name",
+            "Attribute_value": "obs_hdng",
+            "Model_references": "compositeType",
+            "Reference_value": "svec"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "obstacle",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "ns_rel_dist"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "obstacle",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "ew_rel_dist"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "obstacle",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "depth"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "obstacle",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "id"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_Element_id": "obstacle",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "obs_hdng"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Interface",
+            "Model_Element_id": "sensors_interface",
+            "Model_attribute": "name",
+            "Attribute_value": "Sensors",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Value",
+            "Model_Element_id": "depth_value",
+            "Model_attribute": "name",
+            "Attribute_value": "depth",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Value",
+            "Model_Element_id": "hdng_value",
+            "Model_attribute": "name",
+            "Attribute_value": "hdng",
+            "Model_references": "compositeType",
+            "Reference_value": "svec"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Value",
+            "Model_Element_id": "obs_value",
+            "Model_attribute": "name",
+            "Attribute_value": "obs",
+            "Model_references": "compositeType",
+            "Reference_value": "obstacle"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Interface",
+            "Model_Element_id": "sensors_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "depth_value"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Interface",
+            "Model_Element_id": "sensors_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "hdng_value"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Interface",
+            "Model_Element_id": "sensors_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "values",
+            "Reference_value": "obs_value"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Module",
+            "Model_Element_id": "auv_module",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "sensors_interface"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": "name",
+            "Attribute_value": "Intpus",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_Element_id": "endTask_event",
+            "Model_attribute": "name",
+            "Attribute_value": "endTask",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_Element_id": "reqOCM_event",
+            "Model_attribute": "name",
+            "Attribute_value": "reqOCM",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_Element_id": "reqMOM_event",
+            "Model_attribute": "name",
+            "Attribute_value": "reqMOM",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_Element_id": "reqHCM_event",
+            "Model_attribute": "name",
+            "Attribute_value": "reqHCM",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_Element_id": "reqVel_event",
+            "Model_attribute": "name",
+            "Attribute_value": "reqVel",
+            "Model_references": "returnType",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_Element_id": "reqHdng_event",
+            "Model_attribute": "name",
+            "Attribute_value": "reqHdng",
+            "Model_references": "returnType",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "endTask_event"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "reqOCM_event"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "reqMOM_event"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "reqHCM_event"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "reqVel_event"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Interface",
+            "Model_Element_id": "inputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "reqHdng_event"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Module",
+            "Model_Element_id": "auv_module",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "inputs_interface"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Interface",
+            "Model_Element_id": "outputs_interface",
+            "Model_attribute": "name",
+            "Attribute_value": "Outputs",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Event",
+            "Model_Element_id": "advVel_event",
+            "Model_attribute": "name",
+            "Attribute_value": "advVel",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Parameter",
+            "Model_Element_id": "advVel_param",
+            "Model_attribute": "name",
+            "Attribute_value": "param",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Event",
+            "Model_Element_id": "advHdng_event",
+            "Model_attribute": "name",
+            "Attribute_value": "advHdng",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Parameter",
+            "Model_Element_id": "advHdng_param",
+            "Model_attribute": "name",
+            "Attribute_value": "param",
+            "Model_references": "type",
+            "Reference_value": "real"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Event",
+            "Model_Element_id": "advVel_event",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "parameters",
+            "Reference_value": "advVel_param"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Event",
+            "Model_Element_id": "advHdng_event",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "parameters",
+            "Reference_value": "advHdng_param"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Interface",
+            "Model_Element_id": "outputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "advVel_event"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Interface",
+            "Model_Element_id": "outputs_interface",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "events",
+            "Reference_value": "advHdng_event"
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Model_Element": "Module",
+            "Model_Element_id": "auv_module",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "outputs_interface"
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Model_Element": "Interface",
+            "Model_Element_id": "actuators_interface",
+            "Model_attribute": "name",
+            "Attribute_value": "Actuators",
+            "Model_references": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Model_Element": "Module",
+            "Model_Element_id": "auv_module",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_references": "interfaces",
+            "Reference_value": "actuators_interface"
+        }
+    ]
+}

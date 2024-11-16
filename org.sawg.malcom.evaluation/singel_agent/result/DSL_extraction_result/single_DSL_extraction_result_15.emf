@@ -1,0 +1,78 @@
+abstract class NamedElement {
+    attr String name;
+}
+
+class Module extends NamedElement {
+    val RoboticPlatform[*] robotic_platforms;
+    val Controller[*] controllers;
+    val PrimitiveType[*] primitive_types;
+    val CompositeType[*] composite_types;
+    val Interface[*] interfaces;
+}
+
+class RoboticPlatform extends NamedElement {
+    ref Interface[*] interfaces;
+}
+
+class Controller extends NamedElement {
+    ref Interface[*] interfaces;
+}
+
+class PrimitiveType extends NamedElement {
+}
+
+class CompositeType extends NamedElement {
+    val Value[*] values;
+}
+
+class Value extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class Interface extends NamedElement {
+    val Value[*] values;
+    val Event[*] events;
+}
+
+class Event extends NamedElement {
+    attr PrimitiveType returnType;
+    val Parameter[*] parameters;
+}
+
+class Parameter extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class SVec extends CompositeType {
+    attr PrimitiveType radial;
+    attr PrimitiveType polar;
+    attr PrimitiveType azimuth;
+}
+
+class Obstacle extends CompositeType {
+    attr PrimitiveType ns_rel_dist;
+    attr PrimitiveType ew_rel_dist;
+    attr PrimitiveType depth;
+    attr PrimitiveType id;
+    val SVec obs_hdng;
+}
+
+class Close extends CompositeType {
+    attr PrimitiveType horiz_cda;
+    attr PrimitiveType vert_cda;
+    attr PrimitiveType id;
+}
+
+class Function extends NamedElement {
+    attr CompositeType input;
+    attr PrimitiveType returnType;
+}
+
+class odist extends Function {
+}
+
+class hdist extends Function {
+}
+
+class vdist extends Function {
+}

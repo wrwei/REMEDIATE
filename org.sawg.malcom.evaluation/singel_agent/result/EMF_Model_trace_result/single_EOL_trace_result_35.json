@@ -1,0 +1,182 @@
+[
+    {
+        "requirement_gid": "SD1",
+        "Model_Element": "Module",
+        "Model_Element_id": "AUV_Module",
+        "Model_attribute": "name",
+        "Attribute_value": "AUV_Module",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "SD2",
+        "Model_Element": "RoboticPlatform",
+        "Model_Element_id": "AUV_Platform",
+        "Model_attribute": "name",
+        "Attribute_value": "AUV_Platform",
+        "Model_references": "interfaces",
+        "Reference_value": ["Sensors", "Actuators"]
+    },
+    {
+        "requirement_gid": "SD3",
+        "Model_Element": "Controller",
+        "Model_Element_id": "AUV_Operator",
+        "Model_attribute": "name",
+        "Attribute_value": "AUV_Operator",
+        "Model_references": "interfaces",
+        "Reference_value": ["Inputs"]
+    },
+    {
+        "requirement_gid": "SD4",
+        "Model_Element": "Controller",
+        "Model_Element_id": "LRE_Ctrl",
+        "Model_attribute": "name",
+        "Attribute_value": "LRE_Ctrl",
+        "Model_references": "interfaces",
+        "Reference_value": ["Inputs", "Outputs"]
+    },
+    {
+        "requirement_gid": "SD5",
+        "Model_Element": "Controller",
+        "Model_Element_id": "AUV_Autopilot",
+        "Model_attribute": "name",
+        "Attribute_value": "AUV_Autopilot",
+        "Model_references": "interfaces",
+        "Reference_value": ["Outputs"]
+    },
+    {
+        "requirement_gid": "PT1",
+        "Model_Element": "PrimitiveType",
+        "Model_Element_id": "nat",
+        "Model_attribute": "name",
+        "Attribute_value": "nat",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "PT2",
+        "Model_Element": "PrimitiveType",
+        "Model_Element_id": "int",
+        "Model_attribute": "name",
+        "Attribute_value": "int",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "PT3",
+        "Model_Element": "PrimitiveType",
+        "Model_Element_id": "string",
+        "Model_attribute": "name",
+        "Attribute_value": "string",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "PT4",
+        "Model_Element": "PrimitiveType",
+        "Model_Element_id": "boolean",
+        "Model_attribute": "name",
+        "Attribute_value": "boolean",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "PT5",
+        "Model_Element": "PrimitiveType",
+        "Model_Element_id": "real",
+        "Model_attribute": "name",
+        "Attribute_value": "real",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "CT1",
+        "Model_Element": "SVec",
+        "Model_Element_id": "SVec",
+        "Model_attribute": "name",
+        "Attribute_value": "SVec",
+        "Model_references": "values",
+        "Reference_value": ["radial", "polar", "azimuth"]
+    },
+    {
+        "requirement_gid": "CT2",
+        "Model_Element": "Obstacle",
+        "Model_Element_id": "Obstacle",
+        "Model_attribute": "name",
+        "Attribute_value": "Obstacle",
+        "Model_references": "values",
+        "Reference_value": ["ns_rel_dist", "ew_rel_dist", "depth", "id", "obs_hdng"]
+    },
+    {
+        "requirement_gid": "Interface1",
+        "Model_Element": "Interface",
+        "Model_Element_id": "Sensors",
+        "Model_attribute": "name",
+        "Attribute_value": "Sensors",
+        "Model_references": "values",
+        "Reference_value": ["depth", "hdng", "obs"]
+    },
+    {
+        "requirement_gid": "Interface2",
+        "Model_Element": "Interface",
+        "Model_Element_id": "Inputs",
+        "Model_attribute": "name",
+        "Attribute_value": "Inputs",
+        "Model_references": "events",
+        "Reference_value": ["endTask", "reqOCM", "reqMOM", "reqHCM", "reqVel", "reqHdng"]
+    },
+    {
+        "requirement_gid": "Interface3",
+        "Model_Element": "Interface",
+        "Model_Element_id": "Outputs",
+        "Model_attribute": "name",
+        "Attribute_value": "Outputs",
+        "Model_references": "events",
+        "Reference_value": ["advVel", "advHdng"]
+    },
+    {
+        "requirement_gid": "Interface4",
+        "Model_Element": "Interface",
+        "Model_Element_id": "Actuators",
+        "Model_attribute": "name",
+        "Attribute_value": "Actuators",
+        "Model_references": null,
+        "Reference_value": null
+    },
+    {
+        "requirement_gid": "CF3",
+        "Model_Element": "Close",
+        "Model_Element_id": "Close",
+        "Model_attribute": "name",
+        "Attribute_value": "Close",
+        "Model_references": "values",
+        "Reference_value": ["horiz_cda", "vert_cda", "id"]
+    },
+    {
+        "requirement_gid": "Platform-F1",
+        "Model_Element": "odist",
+        "Model_Element_id": "odist",
+        "Model_attribute": "name",
+        "Attribute_value": "odist",
+        "Model_references": "input",
+        "Reference_value": "Obstacle"
+    },
+    {
+        "requirement_gid": "Platform-F2",
+        "Model_Element": "hdist",
+        "Model_Element_id": "hdist",
+        "Model_attribute": "name",
+        "Attribute_value": "hdist",
+        "Model_references": "input",
+        "Reference_value": "Obstacle"
+    },
+    {
+        "requirement_gid": "Platform-F3",
+        "Model_Element": "vdist",
+        "Model_Element_id": "vdist",
+        "Model_attribute": "name",
+        "Attribute_value": "vdist",
+        "Model_references": "input",
+        "Reference_value": "Obstacle"
+    }
+]

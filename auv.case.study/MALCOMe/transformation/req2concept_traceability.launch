@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.epsilon.eol.eclipse.dt.launching.EolLaunchConfigurationDelegate">
+    <booleanAttribute key="fine_grained_profiling" value="false"/>
+    <stringAttribute key="implementation_name" value="Parallel"/>
+    <listAttribute key="models">
+        <listEntry value="#Sun Nov 10 11:24:15 GMT 2024&#13;&#10;aliases=&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;modelFile=/llm.mde.case.study/model/AUV.requirement&#13;&#10;metamodelUri=http\://www.sawg.org/base,http\://www.sawg.org/requirement&#13;&#10;concurrent=false&#13;&#10;type=EMF&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;expand=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelFile=&#13;&#10;cached=true&#13;&#10;name=S&#13;&#10;modelUri=platform\:/resource/llm.mde.case.study/model/AUV.requirement&#13;&#10;isMetamodelFileBased=false&#13;&#10;validate=false"/>
+        <listEntry value="#Thu Nov 07 21:24:55 GMT 2024&#13;&#10;aliases=&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;modelFile=/llm.mde.case.study/model/example.terminology&#13;&#10;metamodelUri=http\://www.sawg.org/terminology,http\://www.sawg.org/base&#13;&#10;concurrent=false&#13;&#10;type=EMF&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;expand=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelFile=&#13;&#10;cached=true&#13;&#10;name=T&#13;&#10;modelUri=platform\:/resource/llm.mde.case.study/model/example.terminology&#13;&#10;isMetamodelFileBased=false&#13;&#10;validate=false"/>
+        <listEntry value="#Thu Nov 07 21:25:23 GMT 2024&#13;&#10;aliases=&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;modelFile=/llm.mde.case.study/model/req2concept.bifrost&#13;&#10;metamodelUri=http\://www.sawg.org/bridge&#13;&#10;concurrent=false&#13;&#10;type=EMF&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;expand=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelFile=&#13;&#10;cached=true&#13;&#10;name=B&#13;&#10;modelUri=platform\:/resource/llm.mde.case.study/model/req2concept.bifrost&#13;&#10;isMetamodelFileBased=false&#13;&#10;validate=false"/>
+        <listEntry value="#Thu Nov 07 21:22:45 GMT 2024&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;file=/llm.mde.case.study/llm_framework/assets/result_term_extraction.json&#13;&#10;cached=true&#13;&#10;name=J&#13;&#10;concurrent=false&#13;&#10;type=JSON&#13;&#10;readOnLoad=true&#13;&#10;uri="/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
+    <intAttribute key="parallelism" value="31"/>
+    <listAttribute key="parameters"/>
+    <booleanAttribute key="profile_model_loading" value="false"/>
+    <booleanAttribute key="profiling_enabled" value="false"/>
+    <booleanAttribute key="reset_profiler" value="false"/>
+    <stringAttribute key="source" value="/llm.mde.case.study/transformation/req2concept_traceability.eol"/>
+</launchConfiguration>

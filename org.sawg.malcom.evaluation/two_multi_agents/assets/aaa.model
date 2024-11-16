@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="auv">
+  <Module name="AUV_Module" interfaces="/1 /2 /3 /4">
+    <robotic_platforms name="AUV_Platform"/>
+    <controllers name="AUV_Operator" interfaces="/3"/>
+    <controllers name="LRE_Ctrl" interfaces="/3 /4"/>
+    <controllers name="AUV_Autopilot" interfaces="/4"/>
+  </Module>
+  <Interface name="Sensors">
+    <values name="depth" type="/9"/>
+    <values name="hdng" compositeType="/10"/>
+    <values name="obs" compositeType="/11"/>
+  </Interface>
+  <Interface name="Actuators"/>
+  <Interface name="Inputs">
+    <events name="endTask"/>
+    <events name="reqOCM"/>
+    <events name="reqMOM"/>
+    <events name="reqHCM"/>
+    <events name="reqVel" returnType="/9"/>
+    <events name="reqHdng" returnType="/9"/>
+  </Interface>
+  <Interface name="Outputs">
+    <events name="advVel">
+      <parameters xsi:type="Value" name="parameter" type="/9"/>
+    </events>
+    <events name="advHdng">
+      <parameters xsi:type="Value" name="parameter" type="/9"/>
+    </events>
+  </Interface>
+  <PrimitiveType name="nat"/>
+  <PrimitiveType name="int"/>
+  <PrimitiveType name="string"/>
+  <PrimitiveType name="boolean"/>
+  <PrimitiveType name="real"/>
+  <CompositeType name="SVec">
+    <values name="radial" type="/9"/>
+    <values name="polar" type="/9"/>
+    <values name="azimuth" type="/9"/>
+  </CompositeType>
+  <CompositeType name="Obstacle">
+    <values name="ns_rel_dist" type="/9"/>
+    <values name="ew_rel_dist" type="/9"/>
+    <values name="depth" type="/9"/>
+    <values name="id" type="/9"/>
+    <values name="obs_hdng" compositeType="/10"/>
+  </CompositeType>
+  <CompositeType name="Close">
+    <values name="horiz_cda" type="/9"/>
+    <values name="vert_cda" type="/9"/>
+    <values name="id" type="/5"/>
+  </CompositeType>
+  <Function name="odist" returnType="/9">
+    <parameters xsi:type="Value" name="parameter" compositeType="/11"/>
+  </Function>
+  <Function name="hdist" returnType="/9">
+    <parameters xsi:type="Value" name="parameter" compositeType="/11"/>
+  </Function>
+  <Function name="vdist" returnType="/9">
+    <parameters xsi:type="Value" name="parameter" compositeType="/11"/>
+  </Function>
+</xmi:XMI>

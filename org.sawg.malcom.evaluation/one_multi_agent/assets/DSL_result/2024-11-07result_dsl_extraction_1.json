@@ -1,0 +1,918 @@
+{
+    "dsl_trace": [
+        {
+            "requirement_gid": "SD1",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD1",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD2",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD2",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD2",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD2",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD3",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD3",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD3",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD3",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD3",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD4",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD4",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD4",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD4",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD4",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD5",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD5",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD5",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD5",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "SD5",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT1",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT1",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT1",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT1",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT1",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT1",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT2",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT3",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT4",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "PT5",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types",
+                "composite_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "CompositeType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT1",
+            "Emfatic_class": "Value",
+            "Emfatic_attributes": [
+                "type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types",
+                "composite_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "CompositeType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "Value",
+            "Emfatic_attributes": [
+                "type",
+                "compositeType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types",
+                "composite_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "CompositeType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "Value",
+            "Emfatic_attributes": [
+                "type",
+                "compositeType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types",
+                "composite_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values",
+                "events"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "CompositeType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "Value",
+            "Emfatic_attributes": [
+                "type",
+                "compositeType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "Event",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "returnType"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types",
+                "composite_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values",
+                "events"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "CompositeType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Value",
+            "Emfatic_attributes": [
+                "type",
+                "compositeType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Event",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "returnType",
+                "parameters"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Parameter",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "type"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "NamedElement",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Module",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "robotic_platforms",
+                "interfaces",
+                "controllers",
+                "primitive_types",
+                "composite_types"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "RoboticPlatform",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Controller",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "interfaces"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Interface",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values",
+                "events"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "PrimitiveType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "CompositeType",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "values"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Value",
+            "Emfatic_attributes": [
+                "type",
+                "compositeType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Event",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "returnType",
+                "parameters"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Parameter",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "type"
+            ],
+            "Emfatic_operations": null
+        }
+    ]
+}

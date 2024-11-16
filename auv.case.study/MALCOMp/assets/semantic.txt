@@ -1,0 +1,12 @@
+In state, an Action can be entered with the format (entry|exit|during) Action, For example, On entrying MOM, the Event (from the Interface "Output") "advVel" should be tiggered to advice the velocity of AUV to 1. This sentence,The generated code is
+state MOM {ntry advVel !  one}
+
+for transition,for example,The LRE shall transition from OCM to OCM if the Event "reqVel" (from the Interface "Input") is triggered, the returned value of the Event shall be stored in variable "x". Then the event "advVel" (from the Interface "Output") shall be triggered, to pass the value of "x".The generated code is
+transition t11 {
+		from OCM
+		to OCM
+		trigger
+		reqVel ? x
+		action advVel ! x}
+
+

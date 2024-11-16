@@ -1,0 +1,56 @@
+package auv;
+class Module {
+    attr String name;
+    contains RoboticPlatform platform;
+    contains Controller[*] controllers;
+    ref Interface[*] interfaces;
+    contains PrimitiveType[*] primitiveTypes;
+    contains CompositeType[*] compositeTypes;
+    contains Function[*] functions;
+}
+
+class RoboticPlatform {
+    attr String name;
+}
+
+class Controller {
+    attr String name;
+    ref Interface[*] interfaces;
+}
+
+class Interface {
+    attr String name;
+    contains Value[*] values;
+    contains Event[*] events;
+}
+
+class PrimitiveType {
+    attr String name;
+}
+
+class CompositeType {
+    attr String name;
+    contains Value[*] values;
+}
+
+class Value {
+    attr String name;
+    ref PrimitiveType type;
+}
+
+class Event {
+    attr String name;
+    ref PrimitiveType returnType;
+    contains Parameter[*] parameters;
+}
+
+class Parameter {
+    attr String name;
+    ref PrimitiveType type;
+}
+
+class Function {
+    attr String name;
+    contains Parameter[*] parameters;
+    ref PrimitiveType returnType;
+}

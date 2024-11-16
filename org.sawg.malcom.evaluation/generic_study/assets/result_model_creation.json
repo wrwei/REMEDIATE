@@ -1,0 +1,184 @@
+{
+    "model_trace": [
+        {
+            "requirement_gid": "AR1",
+            "Model_Element": "Project",
+            "Model_Element_id": "acmeProject",
+            "Model_attribute": "name",
+            "Attribute_value": "ACME",
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR2",
+            "Model_Element": "Person",
+            "Model_Element_id": "alice",
+            "Model_attribute": "name",
+            "Attribute_value": "Alice",
+            "Model_reference": "people",
+            "Reference_value": "alice"
+        },
+        {
+            "requirement_gid": "AR2",
+            "Model_Element": "Person",
+            "Model_Element_id": "bob",
+            "Model_attribute": "name",
+            "Attribute_value": "Bob",
+            "Model_reference": "people",
+            "Reference_value": "bob"
+        },
+        {
+            "requirement_gid": "AR3",
+            "Model_Element": "Task",
+            "Model_Element_id": "analysisTask",
+            "Model_attribute": "name",
+            "Attribute_value": "Analysis",
+            "Model_reference": "tasks",
+            "Reference_value": "analysisTask"
+        },
+        {
+            "requirement_gid": "AR3",
+            "Model_Element": "Task",
+            "Model_Element_id": "analysisTask",
+            "Model_attribute": "startMonth",
+            "Attribute_value": 1,
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR3",
+            "Model_Element": "Task",
+            "Model_Element_id": "analysisTask",
+            "Model_attribute": "duration",
+            "Attribute_value": 3,
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR4",
+            "Model_Element": "Effort",
+            "Model_Element_id": "analysisEffort",
+            "Model_attribute": "percentage",
+            "Attribute_value": 100,
+            "Model_reference": "person",
+            "Reference_value": "alice"
+        },
+        {
+            "requirement_gid": "AR4",
+            "Model_Element": "Effort",
+            "Model_Element_id": "analysisEffort",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_reference": "efforts",
+            "Reference_value": "analysisEffort"
+        },
+        {
+            "requirement_gid": "AR5",
+            "Model_Element": "Task",
+            "Model_Element_id": "designTask",
+            "Model_attribute": "name",
+            "Attribute_value": "Design",
+            "Model_reference": "tasks",
+            "Reference_value": "designTask"
+        },
+        {
+            "requirement_gid": "AR5",
+            "Model_Element": "Task",
+            "Model_Element_id": "designTask",
+            "Model_attribute": "startMonth",
+            "Attribute_value": 7,
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR5",
+            "Model_Element": "Task",
+            "Model_Element_id": "designTask",
+            "Model_attribute": "duration",
+            "Attribute_value": 3,
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR7",
+            "Model_Element": "Task",
+            "Model_Element_id": "implementationTask",
+            "Model_attribute": "name",
+            "Attribute_value": "Implementation",
+            "Model_reference": "tasks",
+            "Reference_value": "implementationTask"
+        },
+        {
+            "requirement_gid": "AR7",
+            "Model_Element": "Task",
+            "Model_Element_id": "implementationTask",
+            "Model_attribute": "startMonth",
+            "Attribute_value": 7,
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR7",
+            "Model_Element": "Task",
+            "Model_Element_id": "implementationTask",
+            "Model_attribute": "duration",
+            "Attribute_value": 3,
+            "Model_reference": null,
+            "Reference_value": null
+        },
+        {
+            "requirement_gid": "AR6",
+            "Model_Element": "Effort",
+            "Model_Element_id": "designEffort",
+            "Model_attribute": "percentage",
+            "Attribute_value": 100,
+            "Model_reference": "person",
+            "Reference_value": "bob"
+        },
+        {
+            "requirement_gid": "AR6",
+            "Model_Element": "Effort",
+            "Model_Element_id": "designEffort",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_reference": "efforts",
+            "Reference_value": "designEffort"
+        },
+        {
+            "requirement_gid": "AR8",
+            "Model_Element": "Effort",
+            "Model_Element_id": "implementationEffortBob",
+            "Model_attribute": "percentage",
+            "Attribute_value": 50,
+            "Model_reference": "person",
+            "Reference_value": "bob"
+        },
+        {
+            "requirement_gid": "AR8",
+            "Model_Element": "Effort",
+            "Model_Element_id": "implementationEffortBob",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_reference": "efforts",
+            "Reference_value": "implementationEffortBob"
+        },
+        {
+            "requirement_gid": "AR8",
+            "Model_Element": "Effort",
+            "Model_Element_id": "implementationEffortAlice",
+            "Model_attribute": "percentage",
+            "Attribute_value": 50,
+            "Model_reference": "person",
+            "Reference_value": "alice"
+        },
+        {
+            "requirement_gid": "AR8",
+            "Model_Element": "Effort",
+            "Model_Element_id": "implementationEffortAlice",
+            "Model_attribute": null,
+            "Attribute_value": null,
+            "Model_reference": "efforts",
+            "Reference_value": "implementationEffortAlice"
+        }
+    ]
+}

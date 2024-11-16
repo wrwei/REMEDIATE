@@ -1,0 +1,51 @@
+[
+    {
+        "kind": "Functional Requirement",
+        "name": "FR1",
+        "id": "FR1",
+        "description": "A Project should have a Title and a Description.",
+        "priority": "5"
+    },
+    {
+        "kind": "Functional Requirement",
+        "name": "FR2",
+        "id": "FR2",
+        "description": "Each Project should contain a number of Tasks.",
+        "priority": "5"
+    },
+    {
+        "kind": "Functional Requirement",
+        "name": "FR3",
+        "id": "FR3",
+        "description": "Each Project should involve a number of People.",
+        "priority": "5"
+    },
+    {
+        "kind": "Functional Requirement",
+        "name": "FR4",
+        "id": "FR4",
+        "description": "Each Task should have a Title, a Start month, and a Duration (as in number of months).",
+        "priority": "5"
+    },
+    {
+        "kind": "Functional Requirement",
+        "name": "FR5",
+        "id": "FR5",
+        "description": "Each Task shall contain a number of Efforts.",
+        "priority": "5"
+    },
+    {
+        "kind": "Functional Requirement",
+        "name": "FR6",
+        "id": "FR6",
+        "description": "Each Person should have a Name.",
+        "priority": "5"
+    },
+    {
+        "kind": "Functional Requirement",
+        "name": "FR7",
+        "id": "FR7",
+        "description": "Each Effort should have a Person responsible for this, and should have a Percentage (in integer).",
+        "priority": "5"
+    }
+]

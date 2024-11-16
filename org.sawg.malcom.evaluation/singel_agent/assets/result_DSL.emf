@@ -1,0 +1,47 @@
+@namespace(uri="auv", prefix="")
+package auv;
+
+abstract class NamedElement {
+	attr null name;
+}
+
+class Module {
+	ref null[*] robotic_platforms;
+	ref null[*] interfaces;
+	ref null[*] controllers;
+}
+
+class RoboticPlatform {
+}
+
+class Interface {
+	ref null[*] values;
+	ref null[*] events;
+}
+
+class Controller {
+	ref null[*] interfaces;
+}
+
+class PrimitiveType {
+}
+
+class CompositeType {
+	ref null[*] values;
+}
+
+class Value {
+	attr null type;
+	ref null compositeType;
+}
+
+class Event {
+	attr null returnType;
+	ref null[*] parameters;
+}
+
+class Function {
+	ref null[*] parameters;
+	attr null returnType;
+}
+

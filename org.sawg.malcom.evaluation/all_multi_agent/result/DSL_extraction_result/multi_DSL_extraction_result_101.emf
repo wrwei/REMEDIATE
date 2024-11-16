@@ -1,0 +1,166 @@
+package AUV_Module;
+
+abstract class NamedElement {
+    attr String name;
+}
+
+class Module extends NamedElement {
+    val CompositeType[*] composite_types;
+    val Interface[*] interfaces;
+    val Function[*] functions;
+}
+
+class CompositeType extends NamedElement {
+    val Value[*] values;
+}
+
+class Interface extends NamedElement {
+    val Value[*] values;
+    val Event[*] events;
+}
+
+class PrimitiveType extends NamedElement {
+}
+
+class Event extends NamedElement {
+    attr PrimitiveType returnType;
+    val Parameter[*] parameters;
+}
+
+class Function extends NamedElement {
+    val Parameter[*] parameters;
+    attr PrimitiveType returnType;
+}
+
+class Parameter extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class Obstacle extends CompositeType {
+    val ns_rel_dist;
+    val ew_rel_dist;
+    val depth;
+    val id;
+    val obs_hdng;
+}
+
+class SVec extends CompositeType {
+}
+
+class Real extends PrimitiveType {
+}
+
+class Nat extends PrimitiveType {
+}
+
+class ns_rel_dist extends Value {
+    attr Real type;
+}
+
+class ew_rel_dist extends Value {
+    attr Real type;
+}
+
+class depth extends Value {
+    attr Real type;
+}
+
+class id extends Value {
+    attr Real type;
+}
+
+class obs_hdng extends Value {
+    attr SVec type;
+}
+
+class Sensors extends Interface {
+    val depth;
+    val hdng;
+    val obs;
+}
+
+class hdng extends Value {
+    attr SVec type;
+}
+
+class obs extends Value {
+    attr Obstacle type;
+}
+
+class Intpus extends Interface {
+    val endTask;
+    val reqOCM;
+    val reqMOM;
+    val reqHCM;
+    val reqVel;
+    val reqHdng;
+}
+
+class endTask extends Event {
+}
+
+class reqOCM extends Event {
+}
+
+class reqMOM extends Event {
+}
+
+class reqHCM extends Event {
+}
+
+class reqVel extends Event {
+    attr Real returnType;
+}
+
+class reqHdng extends Event {
+    attr Real returnType;
+}
+
+class Outputs extends Interface {
+    val advVel;
+    val advHdng;
+}
+
+class advVel extends Event {
+    val Parameter parameter;
+}
+
+class advHdng extends Event {
+    val Parameter parameter;
+}
+
+class Actuators extends Interface {
+}
+
+class Close extends CompositeType {
+    val horiz_cda;
+    val vert_cda;
+    val id;
+}
+
+class horiz_cda extends Value {
+    attr Real type;
+}
+
+class vert_cda extends Value {
+    attr Real type;
+}
+
+class id extends Value {
+    attr Nat type;
+}
+
+class odist extends Function {
+    val Parameter obstacle;
+    attr Real returnType;
+}
+
+class hdist extends Function {
+    val Parameter obstacle;
+    attr Real returnType;
+}
+
+class vdist extends Function {
+    val Parameter obstacle;
+    attr Real returnType;
+}

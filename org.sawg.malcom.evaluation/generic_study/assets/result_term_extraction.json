@@ -1,0 +1,213 @@
+{
+    "term_trace": [
+        {
+            "Requirement": "The system manages a Project named \"ACME\".",
+            "GID": "AR1",
+            "Concept": "Project",
+            "Concept_description": "A Project is an undertaking by the system, which involves managing tasks and resources.",
+            "Instance": "ACME",
+            "Instance_of": "Project",
+            "Instance_description": "ACME is a specific project managed by the system.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "The Project \"ACME\" contains two People named \"Alice\" and \"Bob\".",
+            "GID": "AR2",
+            "Concept": "Person",
+            "Concept_description": "A Person is an individual involved in the project, potentially contributing to tasks and objectives.",
+            "Instance": "Alice",
+            "Instance_of": "Person",
+            "Instance_description": "Alice is a specific person involved in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "The Project \"ACME\" contains two People named \"Alice\" and \"Bob\".",
+            "GID": "AR2",
+            "Concept": "Person",
+            "Concept_description": "A Person is an individual involved in the project, potentially contributing to tasks and objectives.",
+            "Instance": "Bob",
+            "Instance_of": "Person",
+            "Instance_description": "Bob is a specific person involved in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Analysis\", its Start month is \"1\", with Duration \"3\".",
+            "GID": "AR3",
+            "Concept": "Task",
+            "Concept_description": "A Task is a unit of work or activity that needs to be accomplished within a project.",
+            "Instance": "Analysis",
+            "Instance_of": "Task",
+            "Instance_description": "Analysis is a specific task within the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Analysis\", its Start month is \"1\", with Duration \"3\".",
+            "GID": "AR3",
+            "Concept": "Month",
+            "Concept_description": "A Month represents a unit of time used to define the start of a task within a project.",
+            "Instance": "1",
+            "Instance_of": "Month",
+            "Instance_description": "1 is the start month for the Analysis task in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Analysis\", its Start month is \"1\", with Duration \"3\".",
+            "GID": "AR3",
+            "Concept": "Duration",
+            "Concept_description": "Duration is the amount of time allocated to complete a task within a project.",
+            "Instance": "3",
+            "Instance_of": "Duration",
+            "Instance_description": "3 is the duration for the Analysis task in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Task \"Analysis\" requires one Effort with 100% Percentage, and designated Person to be \"Alice\".",
+            "GID": "AR4",
+            "Concept": "Effort",
+            "Concept_description": "Effort is the amount of work needed to complete a task.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Task \"Analysis\" requires one Effort with 100% Percentage, and designated Person to be \"Alice\".",
+            "GID": "AR4",
+            "Concept": "Person",
+            "Concept_description": "A Person is an individual involved in the project, potentially contributing to tasks and objectives.",
+            "Instance": "Alice",
+            "Instance_of": "Person",
+            "Instance_description": "Alice is the designated person for the Analysis task.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Design\", its Start month is \"7\", with Duration \"3\".",
+            "GID": "AR5",
+            "Concept": "Task",
+            "Concept_description": "A Task is a unit of work or activity that needs to be accomplished within a project.",
+            "Instance": "Design",
+            "Instance_of": "Task",
+            "Instance_description": "Design is a specific task within the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Design\", its Start month is \"7\", with Duration \"3\".",
+            "GID": "AR5",
+            "Concept": "Month",
+            "Concept_description": "A Month represents a unit of time used to define the start of a task within a project.",
+            "Instance": "7",
+            "Instance_of": "Month",
+            "Instance_description": "7 is the start month for the Design task in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Design\", its Start month is \"7\", with Duration \"3\".",
+            "GID": "AR5",
+            "Concept": "Duration",
+            "Concept_description": "Duration is the amount of time allocated to complete a task within a project.",
+            "Instance": "3",
+            "Instance_of": "Duration",
+            "Instance_description": "3 is the duration for the Design task in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Implementation\", its Start month is \"7\", with Duration \"3\".",
+            "GID": "AR7",
+            "Concept": "Task",
+            "Concept_description": "A Task is a unit of work or activity that needs to be accomplished within a project.",
+            "Instance": "Implementation",
+            "Instance_of": "Task",
+            "Instance_description": "Implementation is a specific task within the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Implementation\", its Start month is \"7\", with Duration \"3\".",
+            "GID": "AR7",
+            "Concept": "Month",
+            "Concept_description": "A Month represents a unit of time used to define the start of a task within a project.",
+            "Instance": "7",
+            "Instance_of": "Month",
+            "Instance_description": "7 is the start month for the Implementation task in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Project \"ACME\" contains a Task named \"Implementation\", its Start month is \"7\", with Duration \"3\".",
+            "GID": "AR7",
+            "Concept": "Duration",
+            "Concept_description": "Duration is the amount of time allocated to complete a task within a project.",
+            "Instance": "3",
+            "Instance_of": "Duration",
+            "Instance_description": "3 is the duration for the Implementation task in the ACME project.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Task \"Design\" requires one Effort with 100% Percentage, and designated Person to be \"Bob\".",
+            "GID": "AR6",
+            "Concept": "Effort",
+            "Concept_description": "Effort is the amount of work needed to complete a task.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Task \"Design\" requires one Effort with 100% Percentage, and designated Person to be \"Bob\".",
+            "GID": "AR6",
+            "Concept": "Person",
+            "Concept_description": "A Person is an individual involved in the project, potentially contributing to tasks and objectives.",
+            "Instance": "Bob",
+            "Instance_of": "Person",
+            "Instance_description": "Bob is the designated person for the Design task.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Task \"Implementation\" requires one Effort from \"Bob\", with 50% Percentage in the Effort, and another Effort from \"Alice\", with 50% Percentage in the Effort.",
+            "GID": "AR8",
+            "Concept": "Effort",
+            "Concept_description": "Effort is the amount of work needed to complete a task.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Task \"Implementation\" requires one Effort from \"Bob\", with 50% Percentage in the Effort, and another Effort from \"Alice\", with 50% Percentage in the Effort.",
+            "GID": "AR8",
+            "Concept": "Person",
+            "Concept_description": "A Person is an individual involved in the project, potentially contributing to tasks and objectives.",
+            "Instance": "Bob",
+            "Instance_of": "Person",
+            "Instance_description": "Bob is one of the people providing effort for the Implementation task.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "Task \"Implementation\" requires one Effort from \"Bob\", with 50% Percentage in the Effort, and another Effort from \"Alice\", with 50% Percentage in the Effort.",
+            "GID": "AR8",
+            "Concept": "Person",
+            "Concept_description": "A Person is an individual involved in the project, potentially contributing to tasks and objectives.",
+            "Instance": "Alice",
+            "Instance_of": "Person",
+            "Instance_description": "Alice is one of the people providing effort for the Implementation task.",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        }
+    ]
+}

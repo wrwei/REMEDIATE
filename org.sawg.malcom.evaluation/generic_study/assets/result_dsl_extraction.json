@@ -1,0 +1,178 @@
+{
+    "dsl_trace": [
+        {
+            "requirement_gid": "AR1",
+            "Emfatic_class": "Project",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR2",
+            "Emfatic_class": "Person",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR2",
+            "Emfatic_class": "Project",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": [
+                "people"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR3",
+            "Emfatic_class": "Task",
+            "Emfatic_attributes": [
+                "name",
+                "startMonth",
+                "duration"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR3",
+            "Emfatic_class": "Project",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": [
+                "people",
+                "tasks"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR4",
+            "Emfatic_class": "Effort",
+            "Emfatic_attributes": [
+                "percentage"
+            ],
+            "Emfatic_references": [
+                "person"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR4",
+            "Emfatic_class": "Task",
+            "Emfatic_attributes": [
+                "name",
+                "startMonth",
+                "duration"
+            ],
+            "Emfatic_references": [
+                "efforts"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR5",
+            "Emfatic_class": "Task",
+            "Emfatic_attributes": [
+                "name",
+                "startMonth",
+                "duration"
+            ],
+            "Emfatic_references": [
+                "efforts"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR5",
+            "Emfatic_class": "Project",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": [
+                "people",
+                "tasks"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR7",
+            "Emfatic_class": "Task",
+            "Emfatic_attributes": [
+                "name",
+                "startMonth",
+                "duration"
+            ],
+            "Emfatic_references": [
+                "efforts"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR7",
+            "Emfatic_class": "Project",
+            "Emfatic_attributes": [
+                "name"
+            ],
+            "Emfatic_references": [
+                "people",
+                "tasks"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR6",
+            "Emfatic_class": "Effort",
+            "Emfatic_attributes": [
+                "percentage"
+            ],
+            "Emfatic_references": [
+                "person"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR6",
+            "Emfatic_class": "Task",
+            "Emfatic_attributes": [
+                "name",
+                "startMonth",
+                "duration"
+            ],
+            "Emfatic_references": [
+                "efforts"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR8",
+            "Emfatic_class": "Effort",
+            "Emfatic_attributes": [
+                "percentage"
+            ],
+            "Emfatic_references": [
+                "person"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "AR8",
+            "Emfatic_class": "Task",
+            "Emfatic_attributes": [
+                "name",
+                "startMonth",
+                "duration"
+            ],
+            "Emfatic_references": [
+                "efforts"
+            ],
+            "Emfatic_operations": null
+        }
+    ]
+}

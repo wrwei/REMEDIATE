@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<requirement_:RequirementPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:requirement_="http://www.sawg.org/requirement">
+  <name content="Project Requirement Package"/>
+  <description>
+    <content>
+      <value content="A software system to model research projects, with its involved people and efforts."/>
+    </content>
+  </description>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR1" priority="6">
+    <name content="AR1"/>
+    <description>
+      <content>
+        <value content="The system manages a Project named &quot;ACME&quot;."/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type architecture="true"/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR2" priority="6">
+    <name content="AR2"/>
+    <description>
+      <content>
+        <value content="The Project &quot;ACME&quot; contains two People named &quot;Alice&quot; and &quot;Bob&quot;. "/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type architecture="true"/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR3" priority="6">
+    <name content="AR3"/>
+    <description>
+      <content>
+        <value content="Project &quot;ACME&quot; contains a Task named &quot;Analysis&quot;, its Start month is &quot;1&quot;, with Duration &quot;3&quot;. "/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type architecture="true"/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR4" priority="6">
+    <name content="AR4"/>
+    <description>
+      <content>
+        <value content="Task &quot;Analysis&quot; requires one Effort with 100% Percentage, and designated Person to be &quot;Alice&quot;."/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type architecture="true"/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR5" priority="6">
+    <name content="AR5"/>
+    <description>
+      <content>
+        <value content="Project &quot;ACME&quot; contains a Task named &quot;Design&quot;, its Start month is &quot;7&quot;, with Duration &quot;3&quot;. "/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR7" priority="6">
+    <name content="AR7"/>
+    <description>
+      <content>
+        <value content="Project &quot;ACME&quot; contains a Task named &quot;Implementation&quot;, its Start month is &quot;7&quot;, with Duration &quot;3&quot;. "/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR6" priority="6">
+    <name content="AR6"/>
+    <description>
+      <content>
+        <value content="Task &quot;Design&quot; requires  one Effort with 100% Percentage, and designated Person to be &quot;Bob&quot;."/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type architecture="true"/>
+  </requirementAsset>
+  <requirementAsset xsi:type="requirement_:NonFunctionalRequirement" gid="AR8" priority="6">
+    <name content="AR8"/>
+    <description>
+      <content>
+        <value content="Task &quot;Implementation&quot; requires one Effort from &quot;Bob&quot;, with 50% Percentage in the Effort, and another Effort from &quot;Alice&quot;, with 50% Percentrage in the Effort."/>
+      </content>
+    </description>
+    <externalReference>
+      <location content="location"/>
+      <type content="type"/>
+      <metadata content="metadata"/>
+      <version content="version"/>
+      <implementationConstraint>
+        <content>
+          <value content="Constraint"/>
+        </content>
+      </implementationConstraint>
+    </externalReference>
+    <type architecture="true"/>
+  </requirementAsset>
+</requirement_:RequirementPackage>

@@ -1,0 +1,80 @@
+abstract class NamedElement {
+    attr String name;
+}
+
+class Module extends NamedElement {
+    val RoboticPlatform[*] robotic_platforms;
+    val Controller[*] controllers;
+    val PrimitiveType[*] primitive_types;
+    val CompositeType[*] composite_types;
+    val Interface[*] interfaces;
+}
+
+class RoboticPlatform extends NamedElement {
+    ref Interface[*] interfaces;
+}
+
+class Controller extends NamedElement {
+    ref Interface[*] interfaces;
+}
+
+class PrimitiveType extends NamedElement {
+}
+
+class CompositeType extends NamedElement {
+    val Value[*] values;
+}
+
+class Value extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class Interface extends NamedElement {
+    val Value[*] values;
+    val Event[*] events;
+}
+
+class Event extends NamedElement {
+    attr PrimitiveType returnType;
+    val Parameter[*] parameters;
+}
+
+class Parameter extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class SVec extends CompositeType {
+}
+
+class Obstacle extends CompositeType {
+}
+
+class Close extends CompositeType {
+}
+
+class Sensors extends Interface {
+}
+
+class Inputs extends Interface {
+}
+
+class Outputs extends Interface {
+}
+
+class Actuators extends Interface {
+}
+
+class nat extends PrimitiveType {
+}
+
+class int extends PrimitiveType {
+}
+
+class string extends PrimitiveType {
+}
+
+class boolean extends PrimitiveType {
+}
+
+class real extends PrimitiveType {
+}

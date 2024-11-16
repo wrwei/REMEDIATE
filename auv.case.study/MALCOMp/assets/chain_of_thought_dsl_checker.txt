@@ -1,0 +1,8 @@
+Here are some steps to help you check the extracted metamodel by Modeller.
+1. Ensure that the metamodel extracted by DSL_Extractor written in Emfatic is syntactically correct.
+2. Make sure that the class hierarchy of the metamodel is a tree structure, and there should only be one root of the metamodel.
+3. Make sure that only relevant concepts (including class, attributes and reference instances) are extracted, anything that is not part of the system must not be included in the metamodel.
+4. Make sure each class instance has a unique name, if you identify a class that has been identified before, it should be merged into the previously identified class.
+5. For classes with inheritance relationships, you need to summarise common attributes, references and containement references and include them only once appropriately in the inheritance classes.
+6. There should be no space in the name of class instances.
+8. There should be no space in the name of attributes, references and operations.

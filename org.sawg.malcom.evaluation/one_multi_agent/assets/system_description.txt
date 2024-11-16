@@ -1,0 +1,2 @@
+The AUV (Autonomous Underwater Vehicle) is a portable untethered remotely operated vehicle, equipped with a visual mapping system and verified on-board autonomy.
+The AUV is capable of conducting light intervention tasks, such as cathodic protection surveys (oil and gas) and simple coring (offshore), with potential to move to more complex interventions in a later phase, such as valve turning.

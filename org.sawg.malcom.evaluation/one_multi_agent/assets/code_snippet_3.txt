@@ -1,0 +1,164 @@
+import Chemical::*
+import Location::*
+interface MicroControllerOPS {
+	changeDirection( l : Loc)
+}
+stm Movement {
+	requires Operations
+	const lv : real , evadeTime : nat , stuckPeriod : nat , stuckDist : real ,
+	outPeriod : nat
+	var a : Angle , d0 : real , d1 : real, l : Loc
+	event obstacle : Loc
+	event odometer : real
+	event resume
+
+	event turn : Angle
+	event stop
+	event flag
+	initial i1
+	state Waiting {
+		during randomWalk()
+	}
+	state Going {
+		entry move( lv , a)
+	}
+	state Found {
+		entry move( 0 , Angle::Front) ; send flag
+	}
+	final j1
+	state Avoiding {
+
+
+	entry odometer ? d0 ; changeDirection( l) ; wait ( evadeTime )
+	}
+	transition t1 {
+		from i1
+		to Waiting
+	}
+	transition t2 {
+		from Waiting
+		to Going
+		trigger turn ? a
+	}
+	transition t3 {
+		from Going
+		to Going
+		trigger turn ? a
+	}
+	transition t4 {
+		from Going
+		to Found
+		trigger stop
+	}
+
+	transition t6 {
+		from Going
+		to Avoiding
+		trigger obstacle ? l # T
+	}
+	transition t7 {
+		from Avoiding
+		to TryingAgain
+		trigger turn ? a
+	}
+	transition t8 {
+		from TryingAgain
+		to TryingAgain
+		trigger turn ? a
+	}
+	transition t9 {
+		from TryingAgain
+		to Found
+		trigger stop
+	}
+	transition t10 {
+		from TryingAgain
+		to Waiting
+		trigger resume
+	}
+	transition t11 {
+		from TryingAgain
+		to AvoidingAgain
+		trigger obstacle ? l
+		action
+	send odometer ? d1
+	}
+	transition t12 {
+		from AvoidingAgain
+		to Avoiding
+		trigger # T
+		condition since ( T ) < stuckPeriod \/ d1 - d0 > stuckDist
+	}
+
+	transition t14 {
+		from GettingOut
+		to Going
+		trigger turn ? a
+	}
+	clock T
+transition t0 {
+		from Waiting
+		to Waiting
+		trigger resume
+	}
+transition t15 {
+		from Waiting
+		to Found
+		trigger stop
+	}
+	transition t16 {
+		from GettingOut
+		to Found
+		trigger stop
+	}
+	transition t17 {
+		from AvoidingAgain
+		to Found
+		trigger stop
+	}
+	transition t18 {
+		from Avoiding
+		to Found
+		trigger stop
+	}
+	transition t19 {
+		from Avoiding
+		to Waiting
+		trigger resume
+	}
+	transition t20 {
+		from GettingOut
+		to Waiting
+		trigger resume
+	}
+transition t21 {
+		from Avoiding
+		to Going
+		trigger resume
+	}
+	transition t22 {
+		from AvoidingAgain
+		to Waiting
+		trigger resume
+	}
+requires MicroControllerOPS
+	state TryingAgain {
+		entry move( lv , a)
+	}
+	state AvoidingAgain {
+	}
+	state GettingOut {
+
+	entry shortRandomWalk() ; wait ( outPeriod )
+	}
+	transition t13 {
+		from AvoidingAgain
+		to GettingOut
+		trigger
+		condition since ( T ) >= stuckPeriod /\ d1 - d0 <= stuckDist
+	}
+	transition t5 {
+		from Found
+		to j1
+	}
+}

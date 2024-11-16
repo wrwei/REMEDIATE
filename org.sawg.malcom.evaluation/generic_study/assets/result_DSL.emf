@@ -1,0 +1,22 @@
+package main;
+class Effort {
+    attr int percentage;
+    ref Person person;
+}
+
+class Task {
+    attr String name;
+    attr int startMonth;
+    attr int duration;
+    val Effort[*] efforts;
+}
+
+class Person {
+    attr String name;
+}
+
+class Project {
+    attr String name;
+    val Person[*] people;
+    val Task[*] tasks;
+}

@@ -1,0 +1,76 @@
+
+stm RobotSTM {
+	requires stateInf
+initial i0
+	state MoveAlongRow {
+		entry srobot = SRobot :: alongRow
+	}
+	state TransitionBetweenRows {
+		entry srobot = SRobot :: transitionRow
+	}
+	state Paused {
+		entry srobot = SRobot :: paused
+	}
+	transition t0 {
+		from i0
+		to MoveAlongRow
+	}
+	transition t1 {
+		from MoveAlongRow
+		to p0
+		trigger
+		tick
+		condition sods == SODS :: noHumanDetected
+	}
+	transition t2 {
+		from TransitionBetweenRows
+		to p1
+		trigger
+		tick
+		condition sods == SODS :: noHumanDetected
+	}
+	transition t3 {
+		from TransitionBetweenRows
+		to Paused
+		trigger tick
+		condition sods != SODS :: noHumanDetected
+	}
+	transition t4 {
+		from Paused
+		to MoveAlongRow
+		trigger tick
+		condition sods == SODS :: noHumanDetected
+	}
+	transition t5 {
+		from MoveAlongRow
+		to Paused
+		trigger tick
+		condition sods != SODS :: noHumanDetected
+	}
+	event tick
+
+	transition t8 {
+		from p0
+		to TransitionBetweenRows
+		probability p_transition_ratio
+	}
+	transition t9 {
+		from p0
+		to MoveAlongRow
+		probability 1 - p_transition_ratio
+	}
+	const p_transition_ratio : real
+	probabilistic p0
+	probabilistic p1
+	transition t10 {
+		from p1
+		to MoveAlongRow
+		probability 1 - p_transition_ratio
+	}
+	transition t7 {
+		from p1
+		to TransitionBetweenRows
+		probability p_transition_ratio
+	}
+}
+

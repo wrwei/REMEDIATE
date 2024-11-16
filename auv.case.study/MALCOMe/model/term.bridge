@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bridge_:BridgePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bridge_="http://www.sawg.org/bridge" gid="RBP1" name="requirement_bridge_Package">
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD1_TO_Module">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1102323439">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Module&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD1_TO_AUV_Module">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1102323439">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;AUV_Module&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD2_TO_RoboticPlatform">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1313600945">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;RoboticPlatform&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD2_TO_AUV_Platform">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1313600945">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;AUV_Platform&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD2_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1313600945">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD2_TO_Sensors">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1313600945">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Sensors&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD2_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1313600945">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD2_TO_Actuators">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1313600945">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Actuators&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD3_TO_Controller">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="565441967">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Controller&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD3_TO_AUV_Operator">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="565441967">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;AUV_Operator&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD3_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="565441967">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD3_TO_Inputs">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="565441967">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Inputs&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD4_TO_Controller">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1850482417">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Controller&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD4_TO_LRE_Ctrl">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1850482417">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;LRE_Ctrl&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD4_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1850482417">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD4_TO_Inputs">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1850482417">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Inputs&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD4_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1850482417">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD4_TO_Outputs">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1850482417">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Outputs&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD5_TO_Controller">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="28560495">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD5&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Controller&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD5_TO_AUV_Autopilot">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="28560495">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD5&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;AUV_Autopilot&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD5_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="28560495">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD5&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="SD5_TO_Outputs">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="28560495">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;SD5&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Outputs&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT1_TO_PrimitiveType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-227250481">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;PrimitiveType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT1_TO_nat">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-227250481">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;nat&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT2_TO_PrimitiveType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1651792431">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;PrimitiveType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT2_TO_int">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1651792431">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;int&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT3_TO_PrimitiveType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-764131953">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;PrimitiveType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT3_TO_string">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-764131953">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;string&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT4_TO_PrimitiveType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1114910959">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;PrimitiveType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT4_TO_boolean">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1114910959">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;boolean&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT5_TO_PrimitiveType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1301013425">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT5&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;PrimitiveType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="PT5_TO_real">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1301013425">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;PT5&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;real&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="CT1_TO_CompositeType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1180889839">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;CT1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;CompositeType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="CT1_TO_SVec">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1180889839">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;CT1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;SVec&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="CT2_TO_CompositeType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1235034545">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;CT2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;CompositeType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="CT2_TO_Obstacle">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1235034545">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;CT2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Obstacle&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface1_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1772164513">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface1_TO_Sensors">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1772164513">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Sensors&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Intpus">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Intpus&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_endTask">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;endTask&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_reqOCM">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;reqOCM&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_reqMOM">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;reqMOM&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_reqHCM">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;reqHCM&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_reqVel">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;reqVel&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface2_TO_reqHdng">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1158566685">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;reqHdng&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface3_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-205669413">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface3_TO_Outputs">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-205669413">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Outputs&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface3_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-205669413">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface3_TO_advVel">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-205669413">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;advVel&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface3_TO_Event">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-205669413">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Event&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface3_TO_advHdng">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-205669413">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;advHdng&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface4_TO_Interface">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1569905511">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Interface&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Interface4_TO_Actuators">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-1569905511">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Interface4&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Actuators&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="CF3_TO_CompositeType">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-729182687">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;CF3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;CompositeType&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="CF3_TO_Close">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-729182687">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;CF3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Close&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F1_TO_Function">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1522919331">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Function&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F1_TO_odist">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1522919331">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;odist&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F1_TO_Obstacle">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1522919331">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Obstacle&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F1_TO_real">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="1522919331">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F1&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;real&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F2_TO_Function">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="582124035">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Function&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F2_TO_hdist">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="582124035">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;hdist&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F2_TO_Obstacle">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="582124035">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Obstacle&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F2_TO_real">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="582124035">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F2&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;real&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F3_TO_Function">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-358671261">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Concept.all.select(r|r.name = &quot;Function&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F3_TO_vdist">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-358671261">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;vdist&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F3_TO_Obstacle">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-358671261">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;Obstacle&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="Platform-F3_TO_real">
+    <source location="platform:/resource/llm.mde.case.study/model/AUV.requirement" type="EMF" version="-358671261">
+      <metadata>\metamodel\base.ecore, \metamodel\requirement.ecore</metadata>
+      <constraint>S!Requirement.all.select(r|r.gid = &quot;Platform-F3&quot;).first();</constraint>
+    </source>
+    <target location="platform:/resource/llm.mde.case.study/model/req2concept.bifrost" type="EMF">
+      <metadata>\metamodel\base.ecore, \metamodel\terminology.ecore</metadata>
+      <constraint>T!Instance.all.select(r|r.name = &quot;real&quot;).first();</constraint>
+    </target>
+  </bridgeElement>
+</bridge_:BridgePackage>

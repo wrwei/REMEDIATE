@@ -1,0 +1,53 @@
+package AUV_Module;
+
+abstract class NamedElement {
+    attr String name;
+}
+
+class Module extends NamedElement {
+    val RoboticPlatform[*] robotic_platforms;
+    val Interface[*] interfaces;
+    val Controller[*] controllers;
+    val PrimitiveType[*] primitive_types;
+    val CompositeType[*] composite_types;
+    val Function[*] functions;
+}
+
+class RoboticPlatform extends NamedElement {
+    ref Interface[*] interfaces;
+}
+
+class Interface extends NamedElement {
+    val Value[*] values;
+    val Event[*] events;
+}
+
+class Controller extends NamedElement {
+    ref Interface[*] inputs;
+    ref Interface[*] outputs;
+}
+
+class PrimitiveType extends NamedElement {
+}
+
+class CompositeType extends NamedElement {
+    val Value[*] values;
+}
+
+class Value extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class Event extends NamedElement {
+    attr PrimitiveType returnType;
+    val Parameter[*] parameters;
+}
+
+class Parameter extends NamedElement {
+    attr PrimitiveType type;
+}
+
+class Function extends NamedElement {
+    val Parameter[*] parameters;
+    attr PrimitiveType returnType;
+}

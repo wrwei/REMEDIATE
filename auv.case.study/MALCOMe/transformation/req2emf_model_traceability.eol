@@ -1,0 +1,85 @@
+"Transformation starting...".println();
+
+var source_metamodel = "\\metamodel\\base.ecore, \\metamodel\\requirement.ecore".split(",");
+var target_metamodel = "\\metamodel\\base.ecore, \\metamodel\\terminology.ecore".split(",");
+
+//create bridge package
+var bridgePackage = new B!BridgePackage;
+bridgePackage.name = "req2DSL";
+bridgePackage.gid = "RBP1";
+
+var source_model = S.getModelFileUri()+"";
+var target_model = T.getModelFileUri()+"";
+
+
+for (entry in J.root.model_trace) {
+	for(r in entry) {
+		var gid = r.requirement_gid;
+		var class_name = r.Model_Element;
+		var object_name = r.Model_Element_id;
+		
+		createReqEObjectBridge(gid, class_name, object_name);
+		
+		if(r.Model_reference <> null) {
+			var reference_name = r.Model_reference;
+			//index of reference
+			var reference_value = r.Reference_value;
+			createReqERefBridge(gid, class_name, object_name, reference_name, reference_value);
+		}
+	}
+}
+bridgePackage.bridgeElement.select(s|s.isTypeOf(B!Bridge)).size().println();
+"Transformation finished!".println();
+
+operation getHash() {
+	return (self.getName() + "-" + self.getGid() + "-" + self.getDescription()).hashCode().toString();
+}
+
+operation createReqEObjectBridge(gid, class_name, object_name) {
+	var bridge = new B!Bridge;
+	bridge.name=gid+"_TO_"+class_name+"."+object_name;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = gid).first();
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!"+class_name+".all.select(c|c.name = \"" + object_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+
+operation createReqEObjectBridge(gid, class_name, object_name, reference_name, reference_value) {
+	var bridge = new B!Bridge;
+	bridge.name=gid+"_TO_"+class_name+"."+object_name;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = gid).first();
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!"+class_name+".all.select(c|c.name = \"" + object_name + "\").first()." + reference_name + ".at("+reference_value+");");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}

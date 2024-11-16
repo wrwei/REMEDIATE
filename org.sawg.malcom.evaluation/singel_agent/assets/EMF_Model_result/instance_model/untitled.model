@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="auv">
+  <Module name="AUV_Module">
+    <robotic_platforms name="AUV_Platform">
+      <interfaces name="Sensors"/>
+      <interfaces name="Actuators"/>
+    </robotic_platforms>
+    <controllers name="AUV_Operator" interfaces="/0/@interfaces.0"/>
+    <controllers name="LRE_Ctrl" interfaces="/0/@interfaces.0 /0/@interfaces.1"/>
+    <controllers name="AUV_Autopilot" interfaces="/0/@interfaces.1"/>
+    <primitive_types name="nat"/>
+    <primitive_types name="int"/>
+    <primitive_types name="string"/>
+    <primitive_types name="boolean"/>
+    <primitive_types name="real"/>
+    <composite_types name="SVec">
+      <values name="radial" type="/0/@primitive_types.4"/>
+      <values name="polar" type="/0/@primitive_types.4"/>
+      <values name="azimuth" type="/0/@primitive_types.4"/>
+    </composite_types>
+    <composite_types name="Obstacle">
+      <values name="ns_rel_dist" type="/0/@primitive_types.4"/>
+      <values name="ew_rel_dist" type="/0/@primitive_types.4"/>
+      <values name="depth" type="/0/@primitive_types.4"/>
+      <values name="id" type="/0/@primitive_types.4"/>
+    </composite_types>
+    <interfaces name="Inputs"/>
+    <interfaces name="Outputs"/>
+  </Module>
+  <Value name="obs_hdng"/>
+</xmi:XMI>

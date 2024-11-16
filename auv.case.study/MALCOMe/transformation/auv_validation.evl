@@ -1,0 +1,25 @@
+context Module {
+	constraint　PrimitiveTypes {
+		guard: self.preimitive_types.size = 5
+		check: self.preimitive_types.select(p|p.name = "nat").size() = 1
+		and self.preimitive_types.select(p|p.name = "int").size() = 1
+		and self.preimitive_types.select(p|p.name = "string").size() = 1
+		and self.preimitive_types.select(p|p.name = "boolean").size() = 1
+		and self.preimitive_types.select(p|p.name = "real").size() = 1
+	}
+	
+	constraint Controllers {
+		guard: self.controllers.size = 3
+		check: self.controllers.select(c|c.name = "AUV_Operator").size() = 1
+		and self.controllers.select(c|c.name = "LRE_Ctrl").size() = 1
+		and self.controllers.select(c|c.name = "AUV_Autopilot").size() = 1
+	}
+	
+	constraint　Interface {
+		guard: self.interfaces.size = 4
+		check: self.interfaces.select(i|i.name = "Sensors").size() = 1
+		and self.interfaces.select(i|i.name = "Actuators").size() = 1
+		and self.interfaces.select(i|i.name = "Inputs").size() = 1
+		and self.interfaces.select(i|i.name = "Outputs").size() = 1
+	}
+}

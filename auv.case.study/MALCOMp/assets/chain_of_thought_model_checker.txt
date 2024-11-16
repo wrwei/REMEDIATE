@@ -1,0 +1,6 @@
+Here are some steps to help you create the model that conform to the extracted metamodel, from requirements provided to you.
+1. The name of the model to be created is "M", so when you create an instance using the 'new' keyword, try something like: new M!$xxx, where xxx is the name of the meta-class, the object of which you want to create.
+2. Whilst the Term JSON provided to you provides some guidance, you have to consider the JSON in its entirety to find unestablished relationships between "Concept"s and "Instance"s.
+3. Make sure the EOL source code is correct in terms of syntax.
+4. Make sure the EOL source code does not create anything out of the scope of the system.
+5. In the requirements when it says "A defines B", it means that A has a containment reference to B. Normally, it means that B shall be created.

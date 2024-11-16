@@ -1,0 +1,742 @@
+@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
+@namespace(uri="http://www.robocalc.circus/RoboChart", prefix="robochart")
+package robochart;
+
+class BasicPackage {
+	attr String name;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Import[*] imports;
+}
+
+class RCPackage extends BasicPackage {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Interface[*] interfaces;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val RoboticPlatformDef[*] robots;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val TypeDecl[*] types;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val StateMachineDef[*] machines;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val ControllerDef[*] controllers;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val RCModule[*] modules;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val OperationDef[*] operations;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Function[*] functions;
+}
+
+class Import {
+	attr String[1] importedNamespace;
+}
+
+abstract class NamedElement {
+	attr String[1] name;
+}
+
+@GenModel(documentation="Definition of type declarations")
+abstract class TypeDecl extends NamedElement {
+}
+
+@GenModel(documentation="Primitive Types")
+class PrimitiveType extends TypeDecl {
+}
+
+@GenModel(documentation="Record Types")
+class RecordType extends TypeDecl {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Field[+] fields;
+}
+
+class Field extends Member, NamedExpression {
+}
+
+abstract class TypedNamedElement extends NamedElement {
+	val Type[1] type;
+}
+
+abstract class Member extends TypedNamedElement {
+}
+
+@GenModel(documentation="Enumeration Types")
+class Enumeration extends TypeDecl {
+	!ordered val Literal[*] literals;
+}
+
+class Literal extends TypeDecl, NamedExpression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Type[*] types;
+}
+
+@GenModel(documentation="Named Types")
+class NameType extends TypeDecl {
+	val Type[1] type;
+}
+
+@GenModel(documentation="Types")
+abstract class Type {
+}
+
+@GenModel(documentation="The order of types in a product type is important. It seems ecore ignores the
+ordered attribute, but I decided to keep it here for documentation purposes.")
+class ProductType extends Type {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Type[2..*] types;
+}
+
+class RelationType extends Type {
+	val Type[1] domain;
+	val Type[1] range;
+}
+
+class FunctionType extends RelationType {
+}
+
+class SetType extends Type {
+	val Type[1] domain;
+}
+
+class SeqType extends SetType {
+}
+
+class TypeRef extends Type {
+	ref TypeDecl[1] ~ref;
+}
+
+@GenModel(documentation="The class AnyType represents generics")
+class AnyType extends Type {
+	attr String[1] identifier;
+}
+
+@GenModel(documentation="Variables")
+class VariableList {
+	attr VariableModifier[1] modifier;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Variable[+] vars;
+}
+
+enum VariableModifier {
+	VAR = 0;
+	CONST = 0;
+}
+
+class Variable extends TypedNamedElement, Member, Mutable {
+	val Expression initial;
+	volatile transient derived attr VariableModifier[1] modifier;
+}
+
+@GenModel(documentation="Events")
+class Event extends NamedElement {
+	val Type type;
+	attr boolean[1] broadcast;
+}
+
+@GenModel(documentation="Functions")
+class Function extends TypedNamedElement, NamedExpression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Parameter[*] parameters;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[*] preconditions;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[*] postconditions;
+}
+
+class Parameter extends Variable {
+}
+
+@GenModel(documentation="Operations")
+class OperationSig extends NamedElement {
+	attr boolean[1] terminates;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Parameter[*] parameters;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[*] preconditions;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[*] postconditions;
+}
+
+abstract class Operation extends NamedElement, ConnectionNode {
+}
+
+class OperationDef extends Operation, OperationSig, StateMachineBody {
+}
+
+@GenModel(documentation="The Reference class identifies reference constructs")
+abstract class Reference {
+}
+
+class OperationRef extends Operation, Reference {
+	ref OperationDef[1] ~ref;
+}
+
+@GenModel(documentation="Interfaces")
+class Interface extends NamedElement, BasicContext {
+}
+
+abstract class BasicContext {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val VariableList[*] variableList;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val OperationSig[*] operations;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Event[*] events;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Clock[*] clocks;
+}
+
+@GenModel(documentation="Robotic Platforms")
+abstract class RoboticPlatform extends NamedElement, ConnectionNode {
+}
+
+class RoboticPlatformDef extends Context, RoboticPlatform {
+}
+
+abstract class Context extends BasicContext {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!unique !ordered ref Interface[*] pInterfaces;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!unique !ordered ref Interface[*] rInterfaces;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!unique !ordered ref Interface[*] interfaces;
+}
+
+class RoboticPlatformRef extends RoboticPlatform, Reference {
+	ref RoboticPlatformDef[1] ~ref;
+}
+
+@GenModel(documentation="State Machines")
+abstract class StateMachine extends NamedElement, ConnectionNode {
+}
+
+class StateMachineDef extends StateMachineBody, StateMachine {
+}
+
+class StateMachineRef extends StateMachine, Reference {
+	ref StateMachineDef[1] ~ref;
+}
+
+class StateMachineBody extends Context, NodeContainer {
+}
+
+class Clock extends NamedElement {
+}
+
+abstract class NodeContainer {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Node[*] nodes;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Transition[*] transitions;
+}
+
+abstract class Node extends NamedElement {
+}
+
+class Junction extends Node {
+}
+
+class Initial extends Junction {
+}
+
+class State extends Node, NodeContainer {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Action[*] actions;
+}
+
+@GenModel(documentation="Semantically, Final is a state, but in the metamodel that would
+include nodes, transitions and actions. For this reason, I'm keeping
+it as a node.")
+class Final extends State {
+}
+
+class ProbabilisticJunction extends Junction {
+}
+
+class Transition extends NamedElement {
+	ref Node[1] source;
+	ref Node[1] target;
+	val Communication trigger;
+	val Expression deadline;
+	val Expression condition;
+	val Statement action;
+	val Expression probability;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val ClockReset[*] reset;
+}
+
+class Communication {
+	ref Event[1] event;
+	ref Variable _from;
+	val Expression _predicate;
+	ref Variable parameter;
+	val Expression value;
+	attr CommunicationType[1] _type;
+}
+
+enum CommunicationType {
+	SIMPLE = 0;
+	INPUT = 0;
+	OUTPUT = 0;
+	SYNC = 0;
+}
+
+@GenModel(documentation="Actions")
+abstract class Action {
+	val Statement[1] action;
+}
+
+class EntryAction extends Action {
+}
+
+class DuringAction extends Action {
+}
+
+class ExitAction extends Action {
+}
+
+@GenModel(documentation="Controllers")
+abstract class Controller extends NamedElement, ConnectionNode {
+}
+
+class ControllerDef extends Context, Controller {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val StateMachine[*] machines;
+
+	@GenModel(documentation="These are the operations defined or referenced locally in the controller")
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Operation[*] lOperations;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Connection[*] connections;
+}
+
+class Connection {
+	ref ConnectionNode[1] from;
+	ref ConnectionNode[1] to;
+	ref Event[1] efrom;
+	ref Event[1] eto;
+	attr boolean[1] async;
+	attr boolean[1] bidirec;
+}
+
+class ControllerRef extends Controller {
+	ref ControllerDef[1] ~ref;
+}
+
+@GenModel(documentation="Modules")
+class RCModule extends NamedElement {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Connection[*] connections;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val ConnectionNode[*] nodes;
+}
+
+@GenModel(documentation="Statements")
+abstract class Statement {
+}
+
+class TimedStatement extends Statement {
+	val Statement[1] stmt;
+	val Expression[1] deadline;
+}
+
+class Wait extends Statement {
+	val Expression[1] duration;
+}
+
+class Skip extends Statement {
+}
+
+@GenModel(documentation="The else branch of an if statement is now optional")
+class IfStmt extends Statement {
+	val Expression[1] expression;
+	val Statement[1] then;
+	val Statement else;
+}
+
+class Assignment extends Statement {
+	val Assignable[1] left;
+	val Expression[1] right;
+}
+
+class CommunicationStmt extends Statement {
+	val Communication[1] communication;
+}
+
+class SeqStatement extends Statement {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Statement[2..*] statements;
+}
+
+class ParStmt extends Statement {
+	val Statement[1] stmt;
+}
+
+class Call extends Statement {
+	ref OperationSig[1] operation;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Expression[*] args;
+}
+
+class ClockReset extends Statement {
+	ref Clock[1] clock;
+}
+
+@GenModel(documentation="Expression")
+abstract class Expression {
+}
+
+class ResultExp extends Expression {
+}
+
+class ArrayExp extends Expression {
+	val Expression[1] value;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[*] parameters;
+}
+
+class ClockExp extends Expression {
+	ref Clock[1] clock;
+}
+
+class StateClockExp extends Expression {
+	ref State[1] state;
+}
+
+abstract class BinaryExpression extends Expression {
+	val Expression[1] left;
+	val Expression[1] right;
+}
+
+class Iff extends BinaryExpression {
+}
+
+class Implies extends BinaryExpression {
+}
+
+class Or extends BinaryExpression {
+}
+
+abstract class QuantifierExpression extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Variable[+] variables;
+	val Expression suchthat;
+	val Expression[1] predicate;
+}
+
+class Forall extends QuantifierExpression {
+}
+
+class Exists extends QuantifierExpression {
+	attr boolean[1] ~unique;
+}
+
+class LambdaExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Variable[+] variables;
+	val Expression suchthat;
+	val Expression[1] expression;
+}
+
+class DefiniteDescription extends LambdaExp {
+}
+
+class IfExpression extends Expression {
+	val Expression[1] condition;
+	val Expression[1] ifexp;
+	val Expression[1] elseexp;
+}
+
+class Declaration extends NamedElement, NamedExpression {
+	val Expression[1] value;
+}
+
+class LetExpression extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Declaration[+] declarations;
+	val Expression[1] expression;
+}
+
+class And extends BinaryExpression {
+}
+
+class Not extends Expression {
+	val Expression[1] exp;
+}
+
+class InExp extends Expression {
+	val Expression[1] member;
+	val Expression[1] set;
+}
+
+class TypeExp extends Expression {
+	val Type[1] type;
+}
+
+class Equals extends BinaryExpression {
+}
+
+class Different extends BinaryExpression {
+}
+
+class GreaterThan extends BinaryExpression {
+}
+
+class GreaterOrEqual extends BinaryExpression {
+}
+
+class LessThan extends BinaryExpression {
+}
+
+class LessOrEqual extends BinaryExpression {
+}
+
+class Plus extends BinaryExpression {
+}
+
+class Minus extends BinaryExpression {
+}
+
+class Modulus extends BinaryExpression {
+}
+
+class Mult extends BinaryExpression {
+}
+
+class Div extends BinaryExpression {
+}
+
+class Cat extends BinaryExpression {
+}
+
+class Neg extends Expression {
+	val Expression[1] exp;
+}
+
+class Selection extends Expression {
+	val Expression[1] receiver;
+	ref Member[1] member;
+}
+
+class IntegerExp extends Expression {
+	attr int[1] value;
+}
+
+class FloatExp extends Expression {
+	attr float[1] value;
+}
+
+class StringExp extends Expression {
+	attr String[1] value;
+}
+
+class BooleanExp extends Expression {
+	attr String[1] value;
+}
+
+class VarExp extends Expression {
+	ref Variable[1] value;
+}
+
+class RefExp extends Expression {
+	ref NamedExpression[1] ~ref;
+}
+
+class ToExp extends Expression {
+}
+
+class FromExp extends Expression {
+}
+
+class IdExp extends Expression {
+}
+
+class AsExp extends Expression {
+	val Expression[1] exp;
+	val Type[1] type;
+}
+
+class IsExp extends Expression {
+	val Expression[1] exp;
+	val Type[1] type;
+}
+
+class EnumExp extends Expression {
+	ref Enumeration[1] type;
+	ref Literal[1] literal;
+}
+
+class ParExp extends Expression {
+	val Expression[1] exp;
+}
+
+class SeqExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Expression[*] values;
+}
+
+class SetExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[*] values;
+}
+
+class SetComp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Variable[+] variables;
+	val Expression predicate;
+	val Expression expression;
+}
+
+class SetRange extends Expression {
+	val Expression[1] start;
+	val Expression[1] end;
+}
+
+class TupleExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Expression[2..*] values;
+}
+
+class RangeExp extends Expression {
+	attr String[1] linterval;
+	val Expression[1] lrange;
+	val Expression[1] rrange;
+	attr String[1] rinterval;
+}
+
+class CallExp extends Expression {
+	val Expression[1] function;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Expression[*] args;
+}
+
+class ElseExp extends Expression {
+}
+
+@GenModel(documentation="Assignable")
+abstract class Assignable {
+}
+
+class VarSelection extends Assignable {
+	val Assignable[1] receiver;
+	ref Member[1] member;
+}
+
+class ArrayAssignable extends Assignable {
+	val Assignable[1] value;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered val Expression[+] parameters;
+}
+
+class VarRef extends Assignable {
+	ref Mutable[1] name;
+}
+
+abstract class ConnectionNode {
+}
+
+abstract class NamedExpression {
+}
+
+class WaitingCondition extends NamedElement {
+	ref Expression expression;
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	ref Transition[*] transitions;
+}
+
+class WaitingConditionRef extends Expression {
+	ref WaitingCondition ~ref;
+}
+
+class VectorType extends Type {
+	val Type[1] base;
+	val Expression[1] size;
+}
+
+class MatrixType extends Type {
+	val Type[1] base;
+	val Expression[1] rows;
+	val Expression[1] columns;
+}
+
+class RecordExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val FieldDefinition[+] definitions;
+	ref RecordType[1] record;
+}
+
+class FieldDefinition {
+	ref Field[1] field;
+	val Expression[1] value;
+}
+
+abstract class Mutable extends NamedElement, NamedExpression {
+}
+
+class VectorExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val Expression[+] values;
+}
+
+class MatrixExp extends Expression {
+
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	val VectorExp[+] values;
+}
+
+class InverseExp extends Expression {
+	val Expression[1] value;
+}
+
+class TransposeExp extends Expression {
+	val Expression[1] value;
+}
+

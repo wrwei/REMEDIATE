@@ -1,0 +1,55 @@
+var acmeProject = new M!Project;
+acmeProject.name = "ACME";
+
+var alice = new M!Person;
+alice.name = "Alice";
+
+var bob = new M!Person;
+bob.name = "Bob";
+
+acmeProject.people.add(alice);
+acmeProject.people.add(bob);
+
+var analysisTask = new M!Task;
+analysisTask.name = "Analysis";
+analysisTask.startMonth = 1;
+analysisTask.duration = 3;
+
+acmeProject.tasks.add(analysisTask);
+
+var analysisEffort = new M!Effort;
+analysisEffort.percentage = 100;
+analysisEffort.person = alice;
+
+analysisTask.efforts.add(analysisEffort);
+
+var designTask = new M!Task;
+designTask.name = "Design";
+designTask.startMonth = 7;
+designTask.duration = 3;
+
+acmeProject.tasks.add(designTask);
+
+var designEffort = new M!Effort;
+designEffort.percentage = 100;
+designEffort.person = bob;
+
+designTask.efforts.add(designEffort);
+
+var implementationTask = new M!Task;
+implementationTask.name = "Implementation";
+implementationTask.startMonth = 7;
+implementationTask.duration = 3;
+
+acmeProject.tasks.add(implementationTask);
+
+var implementationEffortBob = new M!Effort;
+implementationEffortBob.percentage = 50;
+implementationEffortBob.person = bob;
+
+var implementationEffortAlice = new M!Effort;
+implementationEffortAlice.percentage = 50;
+implementationEffortAlice.person = alice;
+
+implementationTask.efforts.add(implementationEffortBob);
+implementationTask.efforts.add(implementationEffortAlice);

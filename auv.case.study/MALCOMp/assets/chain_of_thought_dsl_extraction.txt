@@ -1,0 +1,9 @@
+Here are some steps to help you extract the metamodels from requirements and the Term model provided to you in JSON.
+1. Identify obvious classes (in Emfatic, the key word is 'class'), which are tag "Concept" in the Term model. Similarly, contents of tag "Instances" in the Term model are definitely not classes.
+2. Identify attributes of a class (in Emfatic, the key word is 'attr'), which are often the properties of a class (to often record values) whose type is primitive (i.e. int, float, String, boolean).
+3. Identify containment references of a class (in Emfatic, the key word is 'val'), which denotes a relationship between a class A and a class B if A contains B. The type of the containment reference should be another class. In the requirement, when it says "A contains B" or "A defines B", it often denotes a containment reference.
+4. Identify non-containment references of a class (in Emfatic, the key word is 'ref'), which denotes a relationship between a class A and a class B if A interacts with B, but A does not contain B. The type of the reference should be another class. In the requirement, when it says "A uses B" or "A refers to B", it often denotes a non-containment reference.
+5. Identify operations of a class (in Emfatic, the key word is 'op'), which denotes a function that a class may define.
+6. Identify inheritance relationships among classes, a class B is said to be the sub-class of A (in Emfatic, it should be 'class B extends A') if B is a specialisation of A. For classes with inheritance relationships, you need to summarise common attributes, references and containement references and include them only once appropriately up the inheritance hierarchy.
+7. Make sure that the class hierarchy of the metamodel is a tree structure, and there should only be one root of the metamodel.
+8. Make use of chat history to find classes that was defined before, and merge them for duplicates.

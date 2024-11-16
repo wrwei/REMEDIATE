@@ -1,0 +1,104 @@
+[%for (p in getPrimitiveTypes()) {%]
+type [%=p.name%]
+
+[%}%]
+
+[%for (c in getCompositeTypes()) {%]
+record [%=c.name%] {[%=assembleValues(c)%]}
+[%}%]
+
+[%for (i in getInterfaces()) {%]
+interface [%=i.name%] {
+[%if (not i.values.isEmpty()) {%]
+	[%=assembleValues(i)%]
+[%}%]
+[%if (not i.events.isEmpty()) {%]
+	[%=assembleEvents(i)%]
+[%}%]
+}
+
+[%=assembleModule()%]
+ 
+[%}%]
+
+[%
+operation assembleValues(c) {
+	var seq = new Sequence;
+	for(v in c.values) {
+		var entry = v.name + ": ";
+		if(v.type.isDefined()){
+			entry = entry + v.type.name;
+		}
+		else {
+			entry = entry + v.compositeType.name;
+		}
+		seq.add(entry);
+	}
+	var result = seq.concat(", ") + "\n}.";
+	return result;
+}
+
+operation assembleEvents(c) {
+	var seq = new Sequence;
+	for(e in c.events) {
+		var entry = e.name + ": ";
+		if(not e.parameters.isEmpty()) {
+			entry = entry + "("; 
+			var param = new Sequence;
+			for(p in e.parameters) {
+				param.add(p.name);
+			}
+			entry = entry + param.concat(", ") + ")";
+		}
+		if(e.returnType.isDefined()){
+			entry = entry + e.returnType.name;
+		}
+		seq.add(entry);
+	}
+	var result = seq.concat(", ") + "\n}.";
+	return result;
+}
+
+operation assembleModule() {
+	var m = Module.all.first;
+	var begin = "module " + m.name + "{ \n";
+	for(r in m.robotic_platforms) {
+		var rob = "robotic platform" + r.name + "{ \n";
+		for(i in r.interfaces) {
+			rob = rob + "provides " + i.name;
+		}
+		rob = rob + "}\n";
+		begin = begin + rob;
+	}
+	for(c in m.controllers) {
+		var ctr = "controller " + c.name + "{\n";
+		for(i in c.interfaces) {
+			ctr = ctr + "uses" + i.name; 
+		}
+		ctr = ctr + "}\n";
+		begin = begin + ctr;
+	}
+	return begin;
+}
+
+@cached
+operation getInterfaces() {
+    return Interface.all;
+}
+
+@cached
+operation getPrimitiveTypes() {
+    return PrimitiveType.all;
+}
+
+@cached
+operation getCompositeTypes() {
+    return CompositeType.all;
+}
+
+@cached
+operation getModules() {
+    return Module.all;
+}
+
+%]

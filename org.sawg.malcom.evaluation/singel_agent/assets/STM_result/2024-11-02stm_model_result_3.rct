@@ -1,0 +1,160 @@
+Based on the provided functional and non-functional requirements, we can create a state machine named `LRE_Beh` that models the behavior of the LRE. The state machine will include the states, transitions, variables, constants, events, and functions as specified in the requirements. Here's how the DSL code for the state machine might look:
+
+```plaintext
+stm LRE_Beh {
+    // Required Interfaces
+    requires AUV_Platform
+
+    // Initial State
+    initial i0
+
+    // States
+    state OCM {
+        // Transitions within OCM
+        transition t1 {
+            from OCM
+            to OCM
+            trigger reqVel ? x
+            action advVel ! x
+        }
+        transition t2 {
+            from OCM
+            to OCM
+            trigger reqHdng ? x
+            action advHdng ! x
+        }
+    }
+
+    state MOM {
+        entry advVel ! 1
+        transition t5 {
+            from MOM
+            to OCM
+            condition inOPEZ
+        }
+        transition t6 {
+            from MOM
+            to OCM
+            trigger reqOCM
+        }
+        transition t7 {
+            from MOM
+            to OCM
+            trigger endTask
+            action advVel ! 0
+        }
+        transition t8 {
+            from MOM
+            to CAM
+            condition CDA < MinSafeDist /\ TCPA >= 0
+        }
+        transition t9 {
+            from MOM
+            to HCM
+            condition hvel >= 0.1 /\ hdist(cstc) < StaticObsHorizDist
+        }
+        transition t10 {
+            from MOM
+            to HCM
+            condition vdist(cstc) <= StaticObsDfltVertDist
+        }
+        transition t11 {
+            from MOM
+            to HCM
+            condition vvel >= 0.1 /\ vdist(cstc) < StaticObsVertDist
+        }
+        transition t12 {
+            from MOM
+            to HCM
+            trigger reqHCM
+        }
+    }
+
+    state CAM {
+        transition t17 {
+            from CAM
+            to OCM
+            trigger reqOCM
+        }
+        transition t18 {
+            from CAM
+            to OCM
+            condition CDA >= MinSafeDist
+        }
+    }
+
+    state HCM {
+        entry advVel ! 0.1
+        transition t13 {
+            from HCM
+            to MOM
+            condition hdist(cstc) > StaticObsHorizDist /\ vdist(cstc) > StaticObsVertDist
+        }
+        transition t14 {
+            from HCM
+            to CAM
+            condition CDA < MinSafeDist /\ TCPA >= 0
+        }
+        transition t15 {
+            from HCM
+            to OCM
+            trigger reqOCM
+        }
+        transition t16 {
+            from HCM
+            to OCM
+            condition inOPEZ
+        }
+    }
+
+    // Transitions from Initial State
+    transition t0 {
+        from i0
+        to OCM
+    }
+
+    // Variables
+    var cobs: Close
+    var inOPEZ: boolean
+    var hvel: real
+    var vvel: real
+    var cstc: Obstacle
+    var cdyn: Obstacle
+    var depth: real
+    var CDA: real
+    var TCPA: real
+    var x: real
+
+    // Constants
+    const AvoidanceMargin: real
+    const StaticObsHorizDist: real
+    const StaticObsVertDist: real
+    const MinSafeDist: real
+    const StaticObsDfltVertDist: real
+
+    // Events
+    event reqVel
+    event advVel
+    event reqHdng
+    event advHdng
+    event reqMOM
+    event reqOCM
+    event endTask
+    event reqHCM
+
+    // Functions
+    function odist(o: Obstacle): real
+    function hdist(o: Obstacle): real
+    function vdist(o: Obstacle): real
+}
+```
+
+### Explanation:
+
+- **States**: The state machine includes states OCM, MOM, CAM, and HCM, as specified in the requirements.
+- **Transitions**: Transitions are defined based on the conditions and triggers provided in the requirements. Each transition specifies the source and target states, any trigger events, conditions, and actions.
+- **Variables and Constants**: Variables and constants are declared at the state machine level, as specified in the non-functional requirements.
+- **Events**: Events are defined and used as triggers for transitions.
+- **Functions**: Functions `odist`, `hdist`, and `vdist` are defined as required by the functional requirements.
+
+This DSL code captures the behavior of the LRE as described in the requirements, using the syntax and semantics of the provided examples.

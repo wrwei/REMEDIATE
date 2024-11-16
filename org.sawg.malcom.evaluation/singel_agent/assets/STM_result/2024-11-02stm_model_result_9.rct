@@ -1,0 +1,155 @@
+stm LRE_Beh {
+    requires AUV_Platform
+    initial i0
+
+    state OCM {
+    }
+
+    state MOM {
+        entry advVel ! 1
+    }
+
+    state CAM {
+    }
+
+    state HCM {
+        entry advVel ! 0.1
+    }
+
+    transition t0 {
+        from i0
+        to OCM
+    }
+
+    transition t1 {
+        from OCM
+        to OCM
+        trigger reqVel ? x
+        action advVel ! x
+    }
+
+    transition t2 {
+        from OCM
+        to OCM
+        trigger reqHdng ? x
+        action advHdng ! x
+    }
+
+    transition t3 {
+        from OCM
+        to MOM
+        trigger reqMOM
+        condition vel < 0.1 /\ odist(cdyn) > 7.5 /\ odist(cstc) > 0.3 /\ not inOPEZ
+    }
+
+    transition t4 {
+        from MOM
+        to OCM
+        condition inOPEZ
+    }
+
+    transition t5 {
+        from MOM
+        to OCM
+        trigger reqOCM
+    }
+
+    transition t6 {
+        from MOM
+        to CAM
+        condition CDA < MinSafeDist /\ TCPA >= 0
+    }
+
+    transition t7 {
+        from MOM
+        to OCM
+        trigger endTask
+        action advVel ! 0
+    }
+
+    transition t8 {
+        from MOM
+        to HCM
+        condition hvel >= 0.1 /\ hdist(cstc) < StaticObsHorizDist
+    }
+
+    transition t9 {
+        from MOM
+        to HCM
+        condition vdist(cstc) <= StaticObsDfltVertDist
+    }
+
+    transition t10 {
+        from MOM
+        to HCM
+        condition vvel >= 0.1 /\ vdist(cstc) < StaticObsVertDist
+    }
+
+    transition t11 {
+        from MOM
+        to HCM
+        trigger reqHCM
+    }
+
+    transition t12 {
+        from HCM
+        to MOM
+        condition hdist(cstc) > StaticObsHorizDist /\ vdist(cstc) > StaticObsVertDist
+    }
+
+    transition t13 {
+        from HCM
+        to CAM
+        condition CDA < MinSafeDist /\ TCPA >= 0
+    }
+
+    transition t14 {
+        from HCM
+        to OCM
+        trigger reqOCM
+    }
+
+    transition t15 {
+        from HCM
+        to OCM
+        condition inOPEZ
+    }
+
+    transition t16 {
+        from CAM
+        to OCM
+        trigger reqOCM
+    }
+
+    transition t17 {
+        from CAM
+        to OCM
+        condition CDA >= MinSafeDist
+    }
+
+    var cobs : Close
+    var inOPEZ : boolean
+    var hvel : real
+    var vvel : real
+    var cstc : Obstacle
+    var cdyn : Obstacle
+    var depth : real
+    var CDA : real
+    var TCPA : real
+    var x : real
+
+    const AvoidanceMargin : real
+    const StaticObsHorizDist : real
+    const StaticObsVertDist : real
+    const MinSafeDist : real
+    const StaticObsDfltVertDist : real
+}
+
+function odist(o : Obstacle) : real {
+}
+
+function hdist(o : Obstacle) : real {
+}
+
+function vdist(o : Obstacle) : real {
+}

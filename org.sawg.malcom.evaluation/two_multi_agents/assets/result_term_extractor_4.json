@@ -1,0 +1,301 @@
+{
+    "term_trace": [
+        {
+            "Requirement": "User Requirement{\"name\": \"AUV Mobility\"; \"gid\": \"REQ-001\"; \"description\": \"The AUV must be able to navigate autonomously in underwater environments.\"; \"priority\": \"High\"}.",
+            "GID": "REQ-001",
+            "Concept": "AUV",
+            "Concept_description": "The AUV must be able to navigate autonomously in underwater environments.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "User",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Functional Requirement{\"name\": \"Visual Mapping\"; \"gid\": \"REQ-002\"; \"description\": \"The AUV shall create a visual map of the surveyed area.\"; \"priority\": \"Medium\"}.",
+            "GID": "REQ-002",
+            "Concept": null,
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Non-Functional Requirement{\"name\": \"Battery Life\"; \"gid\": \"REQ-003\"; \"description\": \"The AUV should operate for at least 8 hours on a single charge.\"; \"priority\": \"High\"; \"performance\": \"Battery Efficiency\"}.",
+            "GID": "REQ-003",
+            "Concept": null,
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "Battery Efficiency"
+        },
+        {
+            "Requirement": "Functional Requirement{\"name\": \"Intervention Capability\"; \"gid\": \"REQ-004\"; \"description\": \"The AUV shall be capable of performing light intervention tasks such as cathodic protection surveys and simple coring.\"; \"priority\": \"Medium\"}.",
+            "GID": "REQ-004",
+            "Concept": "InterventionTask",
+            "Concept_description": "The AUV shall be capable of performing light intervention tasks such as cathodic protection surveys and simple coring.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Non-Functional Requirement{\"name\": \"Safety\"; \"gid\": \"REQ-005\"; \"description\": \"The AUV must comply with international safety standards.\"; \"priority\": \"High\"; \"safety\": \"Compliance\"}.",
+            "GID": "REQ-005",
+            "Concept": "Safety",
+            "Concept_description": "The AUV must comply with international safety standards.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "Compliance"
+        },
+        {
+            "Requirement": "Functional Requirement{\"name\": \"Autonomy Verification\"; \"gid\": \"REQ-006\"; \"description\": \"The AUV's on-board autonomy shall be verified.\"; \"priority\": \"Medium\"}.",
+            "GID": "REQ-006",
+            "Concept": "Autonomy",
+            "Concept_description": "The AUV's on-board autonomy shall be verified.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Non-Functional Requirement{\"name\": \"Portability\"; \"gid\": \"REQ-007\"; \"description\": \"The AUV should be portable and easy to deploy.\"; \"priority\": \"Low\"; \"usability\": \"Ease of Deployment\"}.",
+            "GID": "REQ-007",
+            "Concept": "Portability",
+            "Concept_description": "The AUV should be portable and easy to deploy.",
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "Ease of Deployment"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD1\", \"id\": \"SD1\", \"description\": \"The AUV system is developed as a Module named \\\"AUV_Module\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD1",
+            "Concept": "Module",
+            "Concept_description": "The AUV system is developed as a Module.",
+            "Instance": "AUV_Module",
+            "Instance_of": "Module",
+            "Instance_description": "A Module named \"AUV_Module\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD2\", \"id\": \"SD2\", \"description\": \"\\\"AUV_Module\\\" should contain a Robotic Platform named \\\"AUV_Platform\\\", it should use the Interfaces \\\"Sensors\\\" and \\\"Actuators\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD2",
+            "Concept": "RoboticPlatform",
+            "Concept_description": "AUV_Module should contain a Robotic Platform.",
+            "Instance": "AUV_Platform",
+            "Instance_of": "RoboticPlatform",
+            "Instance_description": "A Robotic Platform named \"AUV_Platform\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD2\", \"id\": \"SD2\", \"description\": \"\\\"AUV_Module\\\" should contain a Robotic Platform named \\\"AUV_Platform\\\", it should use the Interfaces \\\"Sensors\\\" and \\\"Actuators\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD2",
+            "Concept": "Interface",
+            "Concept_description": "It should use the Interfaces.",
+            "Instance": "Sensors",
+            "Instance_of": "Interface",
+            "Instance_description": "An Interface named \"Sensors\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD2\", \"id\": \"SD2\", \"description\": \"\\\"AUV_Module\\\" should contain a Robotic Platform named \\\"AUV_Platform\\\", it should use the Interfaces \\\"Sensors\\\" and \\\"Actuators\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD2",
+            "Concept": "Interface",
+            "Concept_description": "It should use the Interfaces.",
+            "Instance": "Actuators",
+            "Instance_of": "Interface",
+            "Instance_description": "An Interface named \"Actuators\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD3\", \"id\": \"SD3\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"AUV_Operator\\\", it should use the Interface \\\"Inputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD3",
+            "Concept": "Controller",
+            "Concept_description": "AUV_Module should contain a Controller.",
+            "Instance": "AUV_Operator",
+            "Instance_of": "Controller",
+            "Instance_description": "A Controller named \"AUV_Operator\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD3\", \"id\": \"SD3\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"AUV_Operator\\\", it should use the Interface \\\"Inputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD3",
+            "Concept": "Interface",
+            "Concept_description": "It should use the Interface.",
+            "Instance": "Inputs",
+            "Instance_of": "Interface",
+            "Instance_description": "An Interface named \"Inputs\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD4\", \"id\": \"SD4\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"LRE_Ctrl\\\" (for Last Response Engine), it should use the Interfaces \\\"Inputs\\\" and \\\"Outputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD4",
+            "Concept": "Controller",
+            "Concept_description": "AUV_Module should contain a Controller.",
+            "Instance": "LRE_Ctrl",
+            "Instance_of": "Controller",
+            "Instance_description": "A Controller named \"LRE_Ctrl\" (for Last Response Engine).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD4\", \"id\": \"SD4\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"LRE_Ctrl\\\" (for Last Response Engine), it should use the Interfaces \\\"Inputs\\\" and \\\"Outputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD4",
+            "Concept": "Interface",
+            "Concept_description": "It should use the Interfaces.",
+            "Instance": "Inputs",
+            "Instance_of": "Interface",
+            "Instance_description": "An Interface named \"Inputs\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD4\", \"id\": \"SD4\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"LRE_Ctrl\\\" (for Last Response Engine), it should use the Interfaces \\\"Inputs\\\" and \\\"Outputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD4",
+            "Concept": "Interface",
+            "Concept_description": "It should use the Interfaces.",
+            "Instance": "Outputs",
+            "Instance_of": "Interface",
+            "Instance_description": "An Interface named \"Outputs\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD5\", \"id\": \"SD5\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"AUV_Autopilot\\\", it should use the Interface \\\"Outputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD5",
+            "Concept": "Controller",
+            "Concept_description": "AUV_Module should contain a Controller.",
+            "Instance": "AUV_Autopilot",
+            "Instance_of": "Controller",
+            "Instance_description": "A Controller named \"AUV_Autopilot\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"SD5\", \"id\": \"SD5\", \"description\": \"\\\"AUV_Module\\\" should contain a Controller named \\\"AUV_Autopilot\\\", it should use the Interface \\\"Outputs\\\".\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "SD5",
+            "Concept": "Interface",
+            "Concept_description": "It should use the Interface.",
+            "Instance": "Outputs",
+            "Instance_of": "Interface",
+            "Instance_description": "An Interface named \"Outputs\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"PT1\", \"id\": \"PT1\", \"description\": \"The \\\"AUV_Platform\\\" should define a Primitive Type named \\\"nat\\\" (for natural numbers).\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "PT1",
+            "Concept": "PrimitiveType",
+            "Concept_description": "The AUV_Platform should define a Primitive Type.",
+            "Instance": "nat",
+            "Instance_of": "PrimitiveType",
+            "Instance_description": "A Primitive Type named \"nat\" (for natural numbers).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"PT2\", \"id\": \"PT2\", \"description\": \"The \\\"AUV_Platform\\\" should define a Primitive Type named \\\"int\\\" (for integers).\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "PT2",
+            "Concept": "PrimitiveType",
+            "Concept_description": "The AUV_Platform should define a Primitive Type.",
+            "Instance": "int",
+            "Instance_of": "PrimitiveType",
+            "Instance_description": "A Primitive Type named \"int\" (for integers).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"PT3\", \"id\": \"PT3\", \"description\": \"The \\\"AUV_Platform\\\" should define a Primitive Type named \\\"string\\\" (for string values).\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "PT3",
+            "Concept": "PrimitiveType",
+            "Concept_description": "The AUV_Platform should define a Primitive Type.",
+            "Instance": "string",
+            "Instance_of": "PrimitiveType",
+            "Instance_description": "A Primitive Type named \"string\" (for string values).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"PT4\", \"id\": \"PT4\", \"description\": \"The \\\"AUV_Platform\\\" should define a Primitive Type named \\\"boolean\\\" (for boolean values).\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "PT4",
+            "Concept": "PrimitiveType",
+            "Concept_description": "The AUV_Platform should define a Primitive Type.",
+            "Instance": "boolean",
+            "Instance_of": "PrimitiveType",
+            "Instance_description": "A Primitive Type named \"boolean\" (for boolean values).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"PT5\", \"id\": \"PT5\", \"description\": \"The \\\"AUV_Platform\\\" should define a Primitive Type named \\\"real\\\" (for real numbers).\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "PT5",
+            "Concept": "PrimitiveType",
+            "Concept_description": "The AUV_Platform should define a Primitive Type.",
+            "Instance": "real",
+            "Instance_of": "PrimitiveType",
+            "Instance_description": "A Primitive Type named \"real\" (for real numbers).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"CT1\", \"id\": \"CT1\", \"description\": \"The \\\"AUV_Platform\\\" should define a Composite Type named \\\"SVec\\\" (Spherical Vector), to record values such as \\\"radial\\\" (of type \\\"real\\\"), \\\"polar\\\" (of type \\\"real\\\"), and \\\"azimuth\\\" (of type \\\"real\\\").\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "CT1",
+            "Concept": "CompositeType",
+            "Concept_description": "The AUV_Platform should define a Composite Type.",
+            "Instance": "SVec",
+            "Instance_of": "CompositeType",
+            "Instance_description": "A Composite Type named \"SVec\" (Spherical Vector).",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"CT1\", \"id\": \"CT1\", \"description\": \"The \\\"AUV_Platform\\\" should define a Composite Type named \\\"SVec\\\" (Spherical Vector), to record values such as \\\"radial\\\" (of type \\\"real\\\"), \\\"polar\\\" (of type \\\"real\\\"), and \\\"azimuth\\\" (of type \\\"real\\\").\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "CT1",
+            "Concept": "Value",
+            "Concept_description": "To record values such as radial, polar, and azimuth.",
+            "Instance": "radial",
+            "Instance_of": "Value",
+            "Instance_description": "A value named \"radial\" of type \"real\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"CT1\", \"id\": \"CT1\", \"description\": \"The \\\"AUV_Platform\\\" should define a Composite Type named \\\"SVec\\\" (Spherical Vector), to record values such as \\\"radial\\\" (of type \\\"real\\\"), \\\"polar\\\" (of type \\\"real\\\"), and \\\"azimuth\\\" (of type \\\"real\\\").\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "CT1",
+            "Concept": "Value",
+            "Concept_description": "To record values such as radial, polar, and azimuth.",
+            "Instance": "polar",
+            "Instance_of": "Value",
+            "Instance_description": "A value named \"polar\" of type \"real\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        },
+        {
+            "Requirement": "{\"kind\": \"Non-Functional Requirement\", \"name\": \"CT1\", \"id\": \"CT1\", \"description\": \"The \\\"AUV_Platform\\\" should define a Composite Type named \\\"SVec\\\" (Spherical Vector), to record values such as \\\"radial\\\" (of type \\\"real\\\"), \\\"polar\\\" (of type \\\"real\\\"), and \\\"azimuth\\\" (of type \\\"real\\\").\", \"priority\": \"6\", \"types\": [\"architecture\"]}",
+            "GID": "CT1",
+            "Concept": "Value",
+            "Concept_description": "To record values such as radial, polar, and azimuth.",
+            "Instance": "azimuth",
+            "Instance_of": "Value",
+            "Instance_description": "A value named \"azimuth\" of type \"real\".",
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "architecture"
+        }
+    ]
+}

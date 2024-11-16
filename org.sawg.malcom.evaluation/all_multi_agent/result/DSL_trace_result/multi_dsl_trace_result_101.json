@@ -1,0 +1,266 @@
+{
+    "dsl_trace": [
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "Obstacle",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "ns_rel_dist",
+                "ew_rel_dist",
+                "depth",
+                "id",
+                "obs_hdng"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "ns_rel_dist",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "ew_rel_dist",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "depth",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "id",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CT2",
+            "Emfatic_class": "obs_hdng",
+            "Emfatic_attributes": [
+                "SVec type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "Sensors",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "depth",
+                "hdng",
+                "obs"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "depth",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "hdng",
+            "Emfatic_attributes": [
+                "SVec type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Emfatic_class": "obs",
+            "Emfatic_attributes": [
+                "Obstacle type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "Intpus",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "endTask",
+                "reqOCM",
+                "reqMOM",
+                "reqHCM",
+                "reqVel",
+                "reqHdng"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "endTask",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "reqOCM",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "reqMOM",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "reqHCM",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "reqVel",
+            "Emfatic_attributes": [
+                "Real returnType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Emfatic_class": "reqHdng",
+            "Emfatic_attributes": [
+                "Real returnType"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "Outputs",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "advVel",
+                "advHdng"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "advVel",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "parameter"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface3",
+            "Emfatic_class": "advHdng",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "parameter"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Emfatic_class": "Actuators",
+            "Emfatic_attributes": null,
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CF3",
+            "Emfatic_class": "Close",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "horiz_cda",
+                "vert_cda",
+                "id"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CF3",
+            "Emfatic_class": "horiz_cda",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CF3",
+            "Emfatic_class": "vert_cda",
+            "Emfatic_attributes": [
+                "Real type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "CF3",
+            "Emfatic_class": "id",
+            "Emfatic_attributes": [
+                "Nat type"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Platform-F1",
+            "Emfatic_class": "odist",
+            "Emfatic_attributes": [
+                "Real returnType"
+            ],
+            "Emfatic_references": [
+                "obstacle"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Platform-F2",
+            "Emfatic_class": "hdist",
+            "Emfatic_attributes": [
+                "Real returnType"
+            ],
+            "Emfatic_references": [
+                "obstacle"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "Platform-F3",
+            "Emfatic_class": "vdist",
+            "Emfatic_attributes": [
+                "Real returnType"
+            ],
+            "Emfatic_references": [
+                "obstacle"
+            ],
+            "Emfatic_operations": null
+        }
+    ]
+}

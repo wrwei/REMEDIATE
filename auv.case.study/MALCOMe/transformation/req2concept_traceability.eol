@@ -1,0 +1,150 @@
+"Transformation starting...".println();
+
+var source_metamodel = "\\metamodel\\base.ecore, \\metamodel\\requirement.ecore".split(",");
+var target_metamodel = "\\metamodel\\base.ecore, \\metamodel\\terminology.ecore".split(",");
+
+//create bridge package
+var bridgePackage = new B!BridgePackage;
+bridgePackage.name = "Req2Concept";
+bridgePackage.gid = "RBP1";
+
+var source_model = S.getModelFileUri()+"";
+var target_model = T.getModelFileUri()+"";
+
+//create new terminololgy package
+var tp = new T!TerminologyPackage;
+createName(tp, "Req");
+
+for (entry in J.root.req) {
+	for(r in entry) {
+		var gid = r.GID;
+		if(r.Concept <> null) {
+			var concept = getConcept(tp, r);
+	    	createReqConceptBridge(gid, concept);
+		}
+		if(r.Instance <> null) {
+			var instance = getInstance(tp, r);
+			createReqInstanceBridge(gid, instance);
+		}
+	}
+}
+bridgePackage.bridgeElement.select(s|s.isTypeOf(B!Bridge)).size().println();
+"Transformation finished!".println();
+
+
+operation getInstance(tp, r) {
+	//get the Instance
+	var ret = tp.terminologyElement.select(c|c.isTypeOf(T!Instance) and c.name.content = r.Instance).first();
+	
+	//create instance if non
+	if(ret.isUndefined()) {
+		ret = new T!Instance;
+    	createName(ret, r.Instance);
+    	createDescription(ret, r.Instance_description);
+    	ret.concept = getConcept(tp, r);
+    	tp.terminologyElement.add(ret);
+	}
+	return ret;
+}
+
+operation getConcept(tp, r) {
+	var ret = tp.terminologyElement.select(c|c.isTypeOf(T!Concept) and c.name.content = r.Concept).first();
+	if(ret.isUndefined()) {
+		ret = new T!Concept;
+    	createName(ret, r.Concept);
+    	createDescription(ret, r.Concept_description);
+    	tp.terminologyElement.add(ret);
+	}
+	return ret;
+}
+
+operation createName(element, name) {
+	var langString = new T!LangString;
+	langString.content = name;
+	element.name = langString;
+}
+
+operation createDescription(element, description) {
+	var desc = new T!Description;
+	var multiLangString = new T!MultiLangString;
+	desc.content = multiLangString;
+    var langString = new T!LangString;
+    langString.content = description;
+    langString.lang = "English";
+    multiLangString.value.add(langString);
+    element.description = desc;
+}
+
+operation getDescription() {
+	return self.description.content.value.at(0).content;
+}
+
+operation getName() {
+	return self.name.content;
+}
+
+operation getGid() {
+	return self.gid;
+}
+
+operation getHash() {
+	return (self.getName() + "-" + self.getGid() + "-" + self.getDescription()).hashCode().toString();
+}
+
+operation createReqConceptBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name.content;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var concept_name = target.name.content;
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!Concept.all.select(r|r.name = \"" + concept_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation createReqInstanceBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name.content;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var instance_name = target.name.content;
+	
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!Instance.all.select(r|r.name = \"" + instance_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation printModels() {
+	source_model.println();
+	source_metamodel.println();
+	target_model.println();
+	target_metamodel.println();
+}

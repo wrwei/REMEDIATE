@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="auv">
+  <Module name="AUV_Module" interfaces="/1 /2">
+    <robotic_platforms name="AUV_Platform"/>
+  </Module>
+  <Interface name="Sensors"/>
+  <Interface name="Actuators"/>
+  <Controller name="AUV_Operator"/>
+</xmi:XMI>

@@ -1,0 +1,195 @@
+var auv_module = new AUV!Module;
+auv_module.name = "AUV_Module";
+
+var auv_platform = new AUV!RoboticPlatform;
+auv_platform.name = "AUV_Platform";
+
+var auv_operator = new AUV!Controller;
+auv_operator.name = "AUV_Operator";
+
+var lre_ctrl = new AUV!Controller;
+lre_ctrl.name = "LRE_Ctrl";
+
+var auv_autopilot = new AUV!Controller;
+auv_autopilot.name = "AUV_Autopilot";
+
+var nat = new AUV!PrimitiveType;
+nat.name = "nat";
+
+var intType = new AUV!PrimitiveType;
+intType.name = "int";
+
+var stringType = new AUV!PrimitiveType;
+stringType.name = "string";
+
+var booleanType = new AUV!PrimitiveType;
+booleanType.name = "boolean";
+
+var real = new AUV!PrimitiveType;
+real.name = "real";
+
+var svec = new AUV!SVec;
+svec.name = "SVec";
+
+var radial = new AUV!Value;
+radial.name = "radial";
+radial.type = real;
+
+var polar = new AUV!Value;
+polar.name = "polar";
+polar.type = real;
+
+var azimuth = new AUV!Value;
+azimuth.name = "azimuth";
+azimuth.type = real;
+
+svec.values.add(radial);
+svec.values.add(polar);
+svec.values.add(azimuth);
+
+var obstacle = new AUV!Obstacle;
+obstacle.name = "Obstacle";
+
+var ns_rel_dist = new AUV!Value;
+ns_rel_dist.name = "ns_rel_dist";
+ns_rel_dist.type = real;
+
+var ew_rel_dist = new AUV!Value;
+ew_rel_dist.name = "ew_rel_dist";
+ew_rel_dist.type = real;
+
+var depth = new AUV!Value;
+depth.name = "depth";
+depth.type = real;
+
+var id = new AUV!Value;
+id.name = "id";
+id.type = real;
+
+obstacle.values.add(ns_rel_dist);
+obstacle.values.add(ew_rel_dist);
+obstacle.values.add(depth);
+obstacle.values.add(id);
+obstacle.obs_hdng = svec;
+
+var sensors = new AUV!Interface;
+sensors.name = "Sensors";
+
+var depthValue = new AUV!Value;
+depthValue.name = "depth";
+depthValue.type = real;
+
+var hdng = new AUV!Value;
+hdng.name = "hdng";
+hdng.type = svec;
+
+var obs = new AUV!Value;
+obs.name = "obs";
+obs.type = obstacle;
+
+sensors.values.add(depthValue);
+sensors.values.add(hdng);
+sensors.values.add(obs);
+
+var inputs = new AUV!Interface;
+inputs.name = "Inputs";
+
+var endTask = new AUV!Event;
+endTask.name = "endTask";
+
+var reqOCM = new AUV!Event;
+reqOCM.name = "reqOCM";
+
+var reqMOM = new AUV!Event;
+reqMOM.name = "reqMOM";
+
+var reqHCM = new AUV!Event;
+reqHCM.name = "reqHCM";
+
+var reqVel = new AUV!Event;
+reqVel.name = "reqVel";
+reqVel.returnType = real;
+
+var reqHdng = new AUV!Event;
+reqHdng.name = "reqHdng";
+reqHdng.returnType = real;
+
+inputs.events.add(endTask);
+inputs.events.add(reqOCM);
+inputs.events.add(reqMOM);
+inputs.events.add(reqHCM);
+inputs.events.add(reqVel);
+inputs.events.add(reqHdng);
+
+var outputs = new AUV!Interface;
+outputs.name = "Outputs";
+
+var advVel = new AUV!Event;
+advVel.name = "advVel";
+
+var advVelParam = new AUV!Parameter;
+advVelParam.name = "advVelParam";
+advVelParam.type = real;
+
+advVel.parameters.add(advVelParam);
+
+var advHdng = new AUV!Event;
+advHdng.name = "advHdng";
+
+var advHdngParam = new AUV!Parameter;
+advHdngParam.name = "advHdngParam";
+advHdngParam.type = real;
+
+advHdng.parameters.add(advHdngParam);
+
+outputs.events.add(advVel);
+outputs.events.add(advHdng);
+
+var actuators = new AUV!Interface;
+actuators.name = "Actuators";
+
+var close = new AUV!Close;
+close.name = "Close";
+
+var horiz_cda = new AUV!Value;
+horiz_cda.name = "horiz_cda";
+horiz_cda.type = real;
+
+var vert_cda = new AUV!Value;
+vert_cda.name = "vert_cda";
+vert_cda.type = real;
+
+var close_id = new AUV!Value;
+close_id.name = "id";
+close_id.type = nat;
+
+close.values.add(horiz_cda);
+close.values.add(vert_cda);
+close.values.add(close_id);
+
+auv_module.robotic_platforms.add(auv_platform);
+auv_module.controllers.add(auv_operator);
+auv_module.controllers.add(lre_ctrl);
+auv_module.controllers.add(auv_autopilot);
+auv_module.primitive_types.add(nat);
+auv_module.primitive_types.add(intType);
+auv_module.primitive_types.add(stringType);
+auv_module.primitive_types.add(booleanType);
+auv_module.primitive_types.add(real);
+auv_module.composite_types.add(svec);
+auv_module.composite_types.add(obstacle);
+auv_module.composite_types.add(close);
+auv_module.interfaces.add(sensors);
+auv_module.interfaces.add(inputs);
+auv_module.interfaces.add(outputs);
+auv_module.interfaces.add(actuators);
+
+auv_platform.interfaces.add(sensors);
+auv_platform.interfaces.add(actuators);
+
+auv_operator.interfaces.add(inputs);
+
+lre_ctrl.interfaces.add(inputs);
+lre_ctrl.interfaces.add(outputs);
+
+auv_autopilot.interfaces.add(outputs);

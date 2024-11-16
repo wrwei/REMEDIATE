@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ASCII"?>
+<auv_:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:auv_="http://www.sawg.org/auv" xmi:id="_zzQkgJ9sEe-R6LZ_52e7aA" name="AUV_Module">
+  <robotic_platforms xmi:id="_zzQkgZ9sEe-R6LZ_52e7aA" name="AUV_Platform"/>
+  <interfaces xmi:id="_zzQkgp9sEe-R6LZ_52e7aA" name="Sensors">
+    <values xmi:id="_zzQkg59sEe-R6LZ_52e7aA" name="depth" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzQkhJ9sEe-R6LZ_52e7aA" name="hdng" compositeType="_zzRLpp9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLkJ9sEe-R6LZ_52e7aA" name="obs" compositeType="_zzRLqp9sEe-R6LZ_52e7aA"/>
+  </interfaces>
+  <interfaces xmi:id="_zzRLkZ9sEe-R6LZ_52e7aA" name="Actuators"/>
+  <interfaces xmi:id="_zzRLkp9sEe-R6LZ_52e7aA" name="Inputs">
+    <events xmi:id="_zzRLk59sEe-R6LZ_52e7aA" name="endTask"/>
+    <events xmi:id="_zzRLlJ9sEe-R6LZ_52e7aA" name="reqOCM"/>
+    <events xmi:id="_zzRLlZ9sEe-R6LZ_52e7aA" name="reqMOM"/>
+    <events xmi:id="_zzRLlp9sEe-R6LZ_52e7aA" name="reqHCM"/>
+    <events xmi:id="_zzRLl59sEe-R6LZ_52e7aA" name="reqVel" returnType="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <events xmi:id="_zzRLmJ9sEe-R6LZ_52e7aA" name="reqHdng" returnType="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+  </interfaces>
+  <interfaces xmi:id="_zzRLmZ9sEe-R6LZ_52e7aA" name="Outputs">
+    <events xmi:id="_zzRLmp9sEe-R6LZ_52e7aA" name="advVel">
+      <parameters xsi:type="auv_:Value" xmi:id="_zzRLm59sEe-R6LZ_52e7aA" name="parameter" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    </events>
+    <events xmi:id="_zzRLnJ9sEe-R6LZ_52e7aA" name="advHdng">
+      <parameters xsi:type="auv_:Value" xmi:id="_zzRLnZ9sEe-R6LZ_52e7aA" name="parameter" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    </events>
+  </interfaces>
+  <controllers xmi:id="_zzRLnp9sEe-R6LZ_52e7aA" name="AUV_Operator" interfaces="_zzRLkp9sEe-R6LZ_52e7aA"/>
+  <controllers xmi:id="_zzRLn59sEe-R6LZ_52e7aA" name="LRE_Ctrl" interfaces="_zzRLkp9sEe-R6LZ_52e7aA _zzRLmZ9sEe-R6LZ_52e7aA"/>
+  <controllers xmi:id="_zzRLoJ9sEe-R6LZ_52e7aA" name="AUV_Autopilot" interfaces="_zzRLmZ9sEe-R6LZ_52e7aA"/>
+  <functions xmi:id="_zzRLtJ9sEe-R6LZ_52e7aA" name="odist" returnType="_zzRLpZ9sEe-R6LZ_52e7aA">
+    <parameters xsi:type="auv_:Value" xmi:id="_zzRLtZ9sEe-R6LZ_52e7aA" name="parameter" compositeType="_zzRLqp9sEe-R6LZ_52e7aA"/>
+  </functions>
+  <functions xmi:id="_zzRLtp9sEe-R6LZ_52e7aA" name="hdist" returnType="_zzRLpZ9sEe-R6LZ_52e7aA">
+    <parameters xsi:type="auv_:Value" xmi:id="_zzRLt59sEe-R6LZ_52e7aA" name="parameter" compositeType="_zzRLqp9sEe-R6LZ_52e7aA"/>
+  </functions>
+  <functions xmi:id="_zzRLuJ9sEe-R6LZ_52e7aA" name="vdist" returnType="_zzRLpZ9sEe-R6LZ_52e7aA">
+    <parameters xsi:type="auv_:Value" xmi:id="_zzRLuZ9sEe-R6LZ_52e7aA" name="parameter" compositeType="_zzRLqp9sEe-R6LZ_52e7aA"/>
+  </functions>
+  <preimitive_types xmi:id="_zzRLoZ9sEe-R6LZ_52e7aA" name="nat"/>
+  <preimitive_types xmi:id="_zzRLop9sEe-R6LZ_52e7aA" name="int"/>
+  <preimitive_types xmi:id="_zzRLo59sEe-R6LZ_52e7aA" name="string"/>
+  <preimitive_types xmi:id="_zzRLpJ9sEe-R6LZ_52e7aA" name="boolean"/>
+  <preimitive_types xmi:id="_zzRLpZ9sEe-R6LZ_52e7aA" name="real"/>
+  <composite_types xmi:id="_zzRLpp9sEe-R6LZ_52e7aA" name="SVec">
+    <values xmi:id="_zzRLp59sEe-R6LZ_52e7aA" name="radial" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLqJ9sEe-R6LZ_52e7aA" name="polar" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLqZ9sEe-R6LZ_52e7aA" name="azimuth" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+  </composite_types>
+  <composite_types xmi:id="_zzRLqp9sEe-R6LZ_52e7aA" name="Obstacle">
+    <values xmi:id="_zzRLq59sEe-R6LZ_52e7aA" name="ns_rel_dist" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLrJ9sEe-R6LZ_52e7aA" name="ew_rel_dist" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLrZ9sEe-R6LZ_52e7aA" name="depth" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLrp9sEe-R6LZ_52e7aA" name="id" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLr59sEe-R6LZ_52e7aA" name="obs_hdng" compositeType="_zzRLpp9sEe-R6LZ_52e7aA"/>
+  </composite_types>
+  <composite_types xmi:id="_zzRLsJ9sEe-R6LZ_52e7aA" name="Close">
+    <values xmi:id="_zzRLsZ9sEe-R6LZ_52e7aA" name="horiz_cda" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLsp9sEe-R6LZ_52e7aA" name="vert_cda" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_zzRLs59sEe-R6LZ_52e7aA" name="id" type="_zzRLoZ9sEe-R6LZ_52e7aA"/>
+  </composite_types>
+  <composite_types xmi:id="_fmJ8kJ9tEe-R6LZ_52e7aA" name="SVec">
+    <values xmi:id="_fmJ8kZ9tEe-R6LZ_52e7aA" name="radial" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8kp9tEe-R6LZ_52e7aA" name="polar" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8k59tEe-R6LZ_52e7aA" name="azimuth" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+  </composite_types>
+  <composite_types xmi:id="_fmJ8lJ9tEe-R6LZ_52e7aA" name="Obstacle">
+    <values xmi:id="_fmJ8lZ9tEe-R6LZ_52e7aA" name="ns_rel_dist" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8lp9tEe-R6LZ_52e7aA" name="ew_rel_dist" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8l59tEe-R6LZ_52e7aA" name="depth" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8mJ9tEe-R6LZ_52e7aA" name="id" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8mZ9tEe-R6LZ_52e7aA" name="obs_hdng" compositeType="_fmJ8kJ9tEe-R6LZ_52e7aA"/>
+  </composite_types>
+  <composite_types xmi:id="_fmJ8mp9tEe-R6LZ_52e7aA" name="Close">
+    <values xmi:id="_fmJ8m59tEe-R6LZ_52e7aA" name="horiz_cda" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8nJ9tEe-R6LZ_52e7aA" name="vert_cda" type="_zzRLpZ9sEe-R6LZ_52e7aA"/>
+    <values xmi:id="_fmJ8nZ9tEe-R6LZ_52e7aA" name="id" type="_zzRLoZ9sEe-R6LZ_52e7aA"/>
+  </composite_types>
+</auv_:Module>

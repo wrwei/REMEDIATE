@@ -1,0 +1,208 @@
+"Transformation starting...".println();
+
+var source_metamodel = "\\metamodel\\base.ecore, \\metamodel\\requirement.ecore".split(",");
+var target_metamodel = "\\metamodel\\base.ecore, \\metamodel\\terminology.ecore".split(",");
+
+//create bridge package
+var bridgePackage = new B!BridgePackage;
+bridgePackage.name = "req2DSL";
+bridgePackage.gid = "RBP1";
+
+var source_model = S.getModelFileUri()+"";
+var target_model = T.getModelFileUri()+"";
+
+
+for (entry in J.root.dsl_trace) {
+	for(r in entry) {
+		var gid = r.requirement_gid;
+		if(r.Emfatic_class <> null) {
+			var class = getEClass(r);
+	    	createReqEClassBridge(gid, class);
+		}
+		if(r.Emfatic_attributes <> null) {
+			for(a in r.Emfatic_attributes) {
+				var attr = getEAttribute(a);
+				createReqEAttributeBridge(gid, attr);
+			}
+		}
+		if(r.Emfatic_references <> null) {
+			for(a in r.Emfatic_references) {
+				var ref = getEReference(a);
+				createReqEAttributeBridge(gid, ref);
+			}
+		}
+		if(r.Emfatic_operations <> null) {
+			for(a in r.Emfatic_references) {
+				var op = getEOperation(a);
+				createReqEAttributeBridge(gid, op);
+			}
+		}
+	}
+}
+bridgePackage.bridgeElement.select(s|s.isTypeOf(B!Bridge)).size().println();
+"Transformation finished!".println();
+
+
+operation getEClass(r) {
+	var ret = EClass.all.select(c|c.name = r.Emfatic_class).first();
+	return ret;
+}
+
+operation getEAttribute(r) {
+	var ret = EAttribute.all.select(a|a.name = r.Emfatic_class and a.eContainingClass.name = r.Emfatic_class).first();
+	return ret;
+}
+
+operation getEReference(r) {
+	var ret = EReference.all.select(a|a.name = r.Emfatic_class and a.eContainingClass.name = r.Emfatic_class).first();
+	return ret;
+}
+
+operation getEOperation(r) {
+	var ret = EOperation.all.select(a|a.name = r.Emfatic_class and a.eContainingClass.name = r.Emfatic_class).first();
+	return ret;
+}
+
+
+operation createName(element, name) {
+	var langString = new T!LangString;
+	langString.content = name;
+	element.name = langString;
+}
+
+operation createDescription(element, description) {
+	var desc = new T!Description;
+	var multiLangString = new T!MultiLangString;
+	desc.content = multiLangString;
+    var langString = new T!LangString;
+    langString.content = description;
+    langString.lang = "English";
+    multiLangString.value.add(langString);
+    element.description = desc;
+}
+
+operation getDescription() {
+	return self.description.content.value.at(0).content;
+}
+
+operation getName() {
+	return self.name.content;
+}
+
+operation getGid() {
+	return self.gid;
+}
+
+operation getHash() {
+	return (self.getName() + "-" + self.getGid() + "-" + self.getDescription()).hashCode().toString();
+}
+
+operation createReqEClassBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var class_name = target.name;
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!EClass.all.select(c|c.name = \"" + class_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation createReqEAttributeBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var attr_name = target.name;
+	
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!EAttribute.all.select(r|r.name = \"" + attr_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation createReqEReferenceBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var ref_name = target.name;
+	
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!EReference.all.select(r|r.name = \"" + ref_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation createReqEOperationBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var op_name = target.name;
+	
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.addAll(source_metamodel);
+	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
+	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.addAll(target_metamodel);
+	er2.constraint.add("T!EOperation.all.select(r|r.name = \"" + op_name + "\").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation printModels() {
+	source_model.println();
+	source_metamodel.println();
+	target_model.println();
+	target_metamodel.println();
+}
