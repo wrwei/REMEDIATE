@@ -1,0 +1,57 @@
+@namespace(uri="http://www.sawg.org/base", prefix="base_")
+package base;
+
+abstract class Element{
+	attr String gid;
+	attr boolean isCitation = false;
+	attr boolean isAbstract = false;
+	ref Element citedElement;
+}	
+
+abstract class ModelElement extends Element {
+	val LangString[1] name;
+	val Description description;
+	val ImplementationConstraint[*] constraint;
+	val Note[*] note;
+	val TaggedValue[*] taggedValue;
+	val ExternalReference[*] externalReference;
+}
+
+class LangString extends Element {
+	attr String lang;
+	attr String content;
+}
+
+class MultiLangString extends Element {
+	val LangString[+] value;
+}
+
+abstract class UtilityElement extends ModelElement {
+	val MultiLangString[1] content;
+}
+
+class ExternalReference extends UtilityElement {
+	val LangString location;
+	val LangString type;
+	val LangString metadata;
+	val LangString version;
+	val ImplementationConstraint[*] implementationConstraint;
+}
+
+class Description extends UtilityElement {
+}
+
+class ImplementationConstraint extends UtilityElement {
+}
+
+class Note extends UtilityElement {
+}
+
+class TaggedValue extends UtilityElement {
+	val MultiLangString[1] key;
+}
+
+abstract class ArtifactElement extends ModelElement {
+}
+
+

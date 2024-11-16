@@ -1,0 +1,146 @@
+"Transformation starting...".println();
+var bridgePackage = new B!BridgePackage;
+bridgePackage.name = "requirement_bridge_Package";
+bridgePackage.gid = "RBP1";
+
+var source_model = S.getModelFileUri()+"";
+var target_model = T.getModelFileUri()+"";
+//var source_metamodel = S.getMetamodelFileUris()+"";
+//var target_metamodel = T.getMetamodelFileUris()+"";
+var source_metamodel = S.getMetamodelUris()+"";
+var target_metamodel = T.getMetamodelUris()+"";
+
+
+source_model.println();
+source_metamodel.println();
+target_model.println();
+target_metamodel.println();
+
+var tp = new T!TerminologyPackage;
+createName(tp, "Req");
+
+var map = new Map;
+for (r in J.root.req) {
+	var gid = r.ID;
+	
+    var expression = new T!Expression;
+    createName(expression, getExpressionName(gid));
+	createDescription(expression, r.Sentence);
+    tp.terminologyElement.add(expression);
+
+	if(r.Term <> null) {
+		var term = getTerm(tp, r.Term);
+    	createReqTermBridge(gid, term);
+	}
+
+    var category = getCategory(tp, r.Category);
+    expression.category.add(category);
+
+	createReqCategoryBridge(gid, category);
+}
+"Transformation finished!".println();
+
+operation getExpressionName(gid) {
+	var counter = map.get(gid);
+	var name = gid+"";
+	if(counter.isUndefined()) {
+		counter = 1;
+		map.put(gid, counter);
+	}
+	else {
+		counter += 1;
+	}
+	name = name + "_" + counter;
+}
+
+operation getCategory(tp, name) {
+	var ret = tp.terminologyElement.select(c|c.isTypeOf(T!Category) and c.name = name).first();
+	 
+	if(ret.isUndefined()) {
+		ret = new T!Category;
+    	createName(ret, name);
+    	tp.terminologyElement.add(ret);
+	}
+	return ret;
+}
+
+operation getTerm(tp, name) {
+	var ret = tp.terminologyElement.select(c|c.isTypeOf(T!Term) and c.name = name).first();
+	 
+	if(ret.isUndefined()) {
+		ret = new T!Term;
+    	createName(ret, name);
+    	tp.terminologyElement.add(ret);
+	}
+	return ret;
+}
+
+operation createName(element, name) {
+	var langString = new T!LangString;
+	langString.content = name;
+	element.name = langString;
+}
+
+operation createDescription(element, description) {
+	var desc = new T!Description;
+	var multiLangString = new T!MultiLangString;
+	desc.content = multiLangString;
+    var langString = new T!LangString;
+    langString.content = description;
+    langString.lang = "English";
+    multiLangString.value.add(langString);
+    element.description = desc;
+}
+
+operation createReqTermBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name.content;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var term_name = target.name.content;
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.add(source_metamodel);
+	er1.version = s.hashCode().toString();
+	er1.constraints.add("R!Requirement.all.select(r|r.gid = " + source + ").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.add(target_metamodel);
+	er2.version = target.hashCode().toString();
+	er2.constraints.add("T!Term.all.select(r|r.name = " + term_name + ").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}
+
+operation createReqCategoryBridge(source, target) {
+	var bridge = new B!Bridge;
+	bridge.name=source+"_TO_"+target.name.content;
+	var er1 = new B!ExternalReference;
+	var er2 = new B!ExternalReference;
+	
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	var category_name = target.name.content;
+	
+	
+	er1.location = source_model;
+	er1.type = "EMF";
+	er1.metadata.add(source_metamodel);
+	er1.version = s.hashCode().toString();
+	er1.constraints.add("R!Requirement.all.select(r|r.gid = " + source + ").first();");
+	
+	er2.location = target_model;
+	er2.type = "EMF";
+	er2.metadata.add(target_metamodel);
+	er2.version = target.hashCode().toString();
+	er2.constraints.add("T!Category.all.select(r|r.name = " + category_name + ").first();");
+	
+	bridge.source = er1;
+	bridge.target = er2;
+	bridgePackage.bridgeElement.add(bridge);
+}

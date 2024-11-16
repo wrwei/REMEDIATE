@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated bifrost -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="bifrost.presentation.Bifrost_ModelWizardID"
+            name="%_UI_Bifrost_ModelWizard_label"
+            class="bifrost.presentation.Bifrost_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Bifrost_ModelFile.gif">
+         <description>%_UI_Bifrost_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated bifrost -->
+      <editor
+            id="bifrost.presentation.Bifrost_EditorID"
+            name="%_UI_Bifrost_Editor_label"
+            icon="icons/full/obj16/Bifrost_ModelFile.gif"
+            extensions="bifrost"
+            class="bifrost.presentation.Bifrost_Editor"
+            contributorClass="bifrost.presentation.Bifrost_ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

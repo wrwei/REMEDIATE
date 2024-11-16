@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated requirement -->
+      <package
+            uri="http://www.sawg.org/requirement"
+            class="requirement.Requirement_Package"
+            genModel="metamodel/requirement.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated terminology -->
+      <package
+            uri="http://www.sawg.org/terminology"
+            class="terminology.Terminology_Package"
+            genModel="metamodel/terminology.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.sawg.org/base"
+            class="base.Base_Package"
+            genModel="metamodel/base.genmodel"/>
+   </extension>
+
+</plugin>

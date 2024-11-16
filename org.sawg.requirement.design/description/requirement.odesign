@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="requirement" version="12.0.0.2017041100">
+  <ownedViewpoints name="MyViewpoint">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirement Package Diagram" initialisation="true" domainClass="requirement::RequirementPackage" enablePopupBars="true">
+      <metamodel href="http://www.sawg.org/base#/"/>
+      <metamodel href="http://www.sawg.org/requirement#/"/>
+      <defaultLayer name="RP">
+        <nodeMappings name="Requirement Package" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::RequirementPackage) and s.eContainer() = self)" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='RequirementPackage%20Properties']" domainClass="requirement::RequirementPackage">
+          <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelExpression="['RP: '+self.name.content /]" labelAlignment="LEFT" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="User Requirement" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::UserRequirement) and s.eContainer() = self)" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UR%20Properties']" domainClass="requirement::UserRequirement">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['UR-' + self.gid + ': '+self.name.content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Functional Requirement" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::FunctionalRequirement) and s.eContainer() = self)" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='FR%20Properties']" domainClass="requirement::FunctionalRequirement">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['FR-' + self.gid + ': '+self.name.content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Non-Functional Requirement" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::NonFunctionalRequirement) and s.eContainer() = self)" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NFR%20Properties']" domainClass="requirement::NonFunctionalRequirement">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['NFR-' + self.gid + ': '+self.name.content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Category" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::Category) and s.eContainer() = self)" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Category%20Properties']" domainClass="requirement::Category">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['Category: '+self.name.content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Stakeholder" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::Stakeholder) and s.eContainer() = self)" doubleClickDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Stakeholder%20Properties']" domainClass="requirement::Stakeholder">
+          <style xsi:type="style:EllipseNodeDescription" labelSize="12" showIcon="false" labelExpression="['Stakeholder : '+self.name.content/]" labelAlignment="LEFT" sizeComputationExpression="15" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Glossary" detailDescriptions="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='Create%20Glossary']" semanticCandidatesExpression="aql:self.requirementAsset -> select(s|s.oclIsTypeOf(requirement::Glossary) and s.eContainer() = self)" domainClass="requirement::Glossary">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['Glossary: '+self.name.content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Dependency" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']" targetFinderExpression="aql:self.dependent_requirement">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Requirement Package">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Requirement Package" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Requirement%20Package']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::RequirementPackage" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="ReqPackage"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="abccba"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="RequirementPackage Properties" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Requirement%20Package']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='RequirementPackage%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextAreaDescription" name="Description" labelExpression="Description" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="UR Properties" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0 //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1" indented="true"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Description" labelExpression="Description" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Priority" labelExpression="Priority" valueExpression="aql:self.priority">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="Satisfied" labelExpression="Satisfied" valueExpression="aql:self.satisfied">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="satisfied" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:FillLayoutDescription"/>
+                    </controls>
+                  </groups>
+                  <groups name="category_group" labelExpression="Category" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:ListDescription" name="Category" labelExpression="Category" valueExpression="aql:self.category">
+                        <onClickOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </onClickOperation>
+                        <actions labelExpression="Add Category">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                                  <initialOperation/>
+                                </buttons>
+                                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                                  <initialOperation/>
+                                </buttons>
+                                <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1/@controls.0/@controls.0/@actions.0/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                                <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                                  <controls xsi:type="properties:SelectDescription" name="select_category" labelExpression="Select Category" candidatesExpression="service:categories()" candidateDisplayExpression="aql:candidate.name.content">
+                                    <initialOperation>
+                                      <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="category" valueExpression="var:newValue"/>
+                                      </firstModelOperations>
+                                    </initialOperation>
+                                  </controls>
+                                </groups>
+                              </subModelOperations>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </actions>
+                      </controls>
+                      <layout xsi:type="properties:FillLayoutDescription"/>
+                    </controls>
+                  </groups>
+                  <groups name="reference_group" labelExpression="External References">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="source_uri" labelExpression="Location" valueExpression="aql:self.externalReference.location.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="type" labelExpression="Type" valueExpression="aql:self.externalReference.type.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="metadata" labelExpression="Metadata" valueExpression="aql:self.externalReference.metadata.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="version" labelExpression="Version" valueExpression="aql:self.externalReference.version.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextAreaDescription" labelExpression="Query" valueExpression="aql:self.externalReference.implementationConstraint->at(1).content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="FR Properties" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='FR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0 //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='FR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1" indented="true"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextAreaDescription" name="Description" labelExpression="Description" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Priority" labelExpression="Priority" valueExpression="aql:self.priority">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:FillLayoutDescription"/>
+                    </controls>
+                  </groups>
+                  <groups name="spec_group" labelExpression="Specification" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="Function" labelExpression="Function     " valueExpression="aql:self.function">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Inputs" labelExpression="Inputs       " valueExpression="aql:self.inputs">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="inputs" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Outputs" labelExpression="Outputs      " valueExpression="aql:self.outputs">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="outputs" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Source" labelExpression="Source       " valueExpression="aql:self.source">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Destination" labelExpression="Destination  " valueExpression="aql:self.destination">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="destination" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Action" labelExpression="Action       " valueExpression="aql:self.action">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="action" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Requires" labelExpression="Requires" valueExpression="aql:self.requires">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="requires" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="PreCondition" labelExpression="PreCondition" valueExpression="aql:self.pre_condition">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="pre_condition" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="PostCondition" labelExpression="PostCondition" valueExpression="aql:self.post_condition">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="post_condition" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="SideEffects" labelExpression="SideEffects" valueExpression="aql:self.side_effects">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="side_effects" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:FillLayoutDescription"/>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="NFR Properties" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NFR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0 //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NFR%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1" indented="true"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextAreaDescription" name="Description" labelExpression="Description" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Priority" labelExpression="Priority" valueExpression="aql:self.priority">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:FillLayoutDescription"/>
+                    </controls>
+                  </groups>
+                  <groups name="type_group" labelExpression="Secondary Requirement Type" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:CheckboxDescription" name="architecture" labelExpression="Architecture" valueExpression="aql: self.type.architecture">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="architecture" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="dependability" labelExpression="Dependability" valueExpression="aql: self.type.dependability">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="dependability" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="safety" labelExpression="Ssafety" valueExpression="aql: self.type.safety">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="safety" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="security" labelExpression="Security" valueExpression="aql: self.type.security">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="security" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="usability" labelExpression="Usability" valueExpression="aql: self.type.usability">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="usability" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="performance" labelExpression="Performance" valueExpression="aql: self.type.performance">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="performance" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="operational" labelExpression="Operational" valueExpression="aql: self.type.operational">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="operational" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="space" labelExpression="Space" valueExpression="aql: self.type.space">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="space" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="environmental" labelExpression="Environmental" valueExpression="aql: self.type.environmental">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="environmental" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="regulatory" labelExpression="Regulatory" valueExpression="aql: self.type.regulatory">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="regulatory" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="ethical" labelExpression="Ethical" valueExpression="aql: self.type.ethical">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="ethical" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="accounting" labelExpression="Accounting" valueExpression="aql: self.type.accounting">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="accounting" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:CheckboxDescription" name="development" labelExpression="Development" valueExpression="aql: self.type.development">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.type">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="development" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:FillLayoutDescription"/>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Category Properties" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Category']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Category%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Description" labelExpression="Description" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="Stakeholder Properties" mappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Stakeholder']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Stakeholder%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextAreaDescription" name="Description" labelExpression="Description" lineCount="10" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Requirement">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="User Requirement" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::UserRequirement" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="User Requirement"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="abccba"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="5"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Functional Requirement" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::FunctionalRequirement" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="aaabbb"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="5"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="FR"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NonFunctional Requirement" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::NonFunctionalRequirement" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="abcabc"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="6"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name" variableName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="NFR"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::SecondaryRequirementType" referenceName="type" variableName="type">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="usability" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="performance" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="space" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="dependability" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="security" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="environmental" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="operational" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="development" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="regulatory" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="ethical" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="safety" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="accounting" valueExpression="aql: false"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Category" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Category']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::Category" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="zxcv"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Category"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Stakeholder" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Stakeholder']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::Stakeholder" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="zxcv"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Stakeholder"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Glossary" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Glossary']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::Glossary" referenceName="requirementAsset">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="zxcv"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Glossary"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Dependency" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@edgeMappings[name='Dependency']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dependent_requirement" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="Navigate">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'Category'">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Category%20Diagram']"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'UserRequirement' or self.eClass().name = 'FunctionalRequirement' or self.eClass().name = 'NonFunctionalRequirement'">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'RequirementPackage'">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="description_2:TableCreationDescription" name="Create Glossary" forceRefresh="true" tableDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Glossary%20Table']">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::GlossaryEntry" referenceName="entries">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="term" valueExpression="Term"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="pitch" valueExpression="Description"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="tableName"/>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Requirement Modelling Diagram" initialisation="true" domainClass="requirement::Requirement" enablePopupBars="true">
+      <metamodel href="http://www.sawg.org/base#/"/>
+      <metamodel href="http://www.sawg.org/requirement#/"/>
+      <defaultLayer name="RMD">
+        <nodeMappings name="User Requirement" semanticCandidatesExpression="aql: self.sub_requirement" domainClass="requirement::UserRequirement">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['    UR: '+self.name.content  + '\n    Description: ' + self.description.content.value->at(1).content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Functional Requirement" semanticCandidatesExpression="aql: self.sub_requirement" domainClass="requirement::FunctionalRequirement">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['    FR: '+self.name.content  + '\n    Description: ' + self.description.content.value->at(1).content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Non-Functional Requirement" semanticCandidatesExpression="aql: self.sub_requirement" domainClass="requirement::NonFunctionalRequirement">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['    FR: '+self.name.content  + '\n    Description: ' + self.description.content.value->at(1).content/]" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Dependency" sourceMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']" targetMapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement'] //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']" targetFinderExpression="aql:self.dependent_requirement">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="User Requirement" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::UserRequirement" referenceName="sub_requirement">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="User Requirement"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="abccba"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="5"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Functional Requirement" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::FunctionalRequirement" referenceName="sub_requirement">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="aaabbb"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="5"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="FR"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NonFunctional Requirement" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::NonFunctionalRequirement" referenceName="sub_requirement">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="abcabc"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="priority" valueExpression="6"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="NFR"/>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::Description" referenceName="description" variableName="description">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Description"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ExternalReference" referenceName="externalReference" variableName="er">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="location" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="location"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="type" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="type"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="metadata" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="metadata"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="version" variableName="location">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="version"/>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::ImplementationConstraint" referenceName="implementationConstraint" variableName="ic">
+                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::MultiLangString" referenceName="content" variableName="content">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="value" variableName="value">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Constraint"/>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::SecondaryRequirementType" referenceName="type">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="usability" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="performance" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="space" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="dependability" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="security" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="environmental" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="operational" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="development" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="regulatory" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="ethical" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="safety" valueExpression="aql: false"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="accounting" valueExpression="aql: false"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Dependency" edgeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@edgeMappings[name='Dependency']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dependent_requirement" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="Navigate">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self->oclIsKindOf(requirement::Requirement)">
+                  <subModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="View Properties">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="aql: self.name.content" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='View%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0 //@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='View%20Properties']/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.1"/>
+                  <groups name="feature_group" labelExpression="Basic Attributes" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Description" labelExpression="Description" valueExpression="aql:self.description.content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.description.content.value->at(1)">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="GID" labelExpression="GID" valueExpression="aql:self.gid">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="Priority" labelExpression="Priority" valueExpression="aql:self.priority">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.name">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="var:newValue"/>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </controls>
+                  </groups>
+                  <groups name="reference_group" labelExpression="External References">
+                    <controls xsi:type="properties:ContainerDescription">
+                      <controls xsi:type="properties:TextDescription" name="source_uri" labelExpression="Location" valueExpression="aql:self.externalReference.location.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="type" labelExpression="Type" valueExpression="aql:self.externalReference.type.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="metadata" labelExpression="Metadata" valueExpression="aql:self.externalReference.metadata.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextDescription" name="version" labelExpression="Version" valueExpression="aql:self.externalReference.version.content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:TextAreaDescription" labelExpression="Query" valueExpression="aql:self.externalReference.implementationConstraint->at(1).content.value->at(1).content">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self"/>
+                        </initialOperation>
+                      </controls>
+                    </controls>
+                  </groups>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Category Diagram" domainClass="requirement::Category" enablePopupBars="true">
+      <metamodel href="http://www.sawg.org/requirement#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Category" semanticCandidatesExpression="aql: self.sub_category" domainClass="requirement::Category">
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="['Category : '+self.name.content/]" labelPosition="node" resizeKind="NSEW" width="14" height="7">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Category" nodeMappings="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Category%20Diagram']/@defaultLayer/@nodeMappings[name='Category']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::Category" referenceName="sub_category">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="gid" valueExpression="zxcv"/>
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="base::LangString" referenceName="name">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="content" valueExpression="Category"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="Glossary Table" initialisation="true" domainClass="requirement::Glossary">
+      <metamodel href="http://www.sawg.org/requirement#/"/>
+      <metamodel href="http://www.sawg.org/base#/"/>
+      <ownedLineMappings name="Entry" domainClass="requirement::GlossaryEntry" semanticCandidatesExpression="aql:self.entries" headerLabelExpression="aql:self.term">
+        <create name="Create Entry" mapping="//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Glossary%20Table']/@ownedLineMappings[name='Entry']">
+          <variables name="root" documentation="The semantic root element of the table."/>
+          <variables name="element" documentation="The semantic currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="requirement::GlossaryEntry" referenceName="entries">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="term" valueExpression="Term"/>
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="pitch" valueExpression="Description"/>
+            </subModelOperations>
+          </firstModelOperation>
+        </create>
+      </ownedLineMappings>
+      <ownedColumnMappings name="Term" headerLabelExpression="Term" featureName="term" labelExpression="aql: self.term"/>
+      <ownedColumnMappings name="Description" headerLabelExpression="Description" featureName="pitch" labelExpression="aql:self.pitch"/>
+    </ownedRepresentations>
+    <ownedJavaExtensions/>
+  </ownedViewpoints>
+</description:Group>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.epsilon.eol.eclipse.dt.launching.EolLaunchConfigurationDelegate">
+    <booleanAttribute key="fine_grained_profiling" value="false"/>
+    <stringAttribute key="implementation_name" value="Parallel"/>
+    <listAttribute key="models">
+        <listEntry value="#Sun Jul 14 22:47:03 BST 2024&#13;&#10;aliases=&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;modelFile=/org.sawg.requirement.design/models/my.bridge&#13;&#10;metamodelUri=http\://www.sawg.org/bridge&#13;&#10;concurrent=false&#13;&#10;type=EMF&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;expand=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelFile=&#13;&#10;cached=true&#13;&#10;name=B&#13;&#10;modelUri=platform\:/resource/org.sawg.requirement.design/models/my.bridge&#13;&#10;isMetamodelFileBased=false&#13;&#10;validate=false"/>
+        <listEntry value="#Sun Jul 14 22:47:16 BST 2024&#13;&#10;aliases=&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;modelFile=/org.sawg.requirement.design/models/my.terminology&#13;&#10;metamodelUri=http\://www.sawg.org/base,http\://www.sawg.org/terminology&#13;&#10;concurrent=false&#13;&#10;type=EMF&#13;&#10;readOnLoad=false&#13;&#10;storeOnDisposal=true&#13;&#10;expand=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelFile=&#13;&#10;cached=true&#13;&#10;name=T&#13;&#10;modelUri=platform\:/resource/org.sawg.requirement.design/models/my.terminology&#13;&#10;isMetamodelFileBased=false&#13;&#10;validate=false"/>
+        <listEntry value="#Sun Jul 14 22:47:23 BST 2024&#13;&#10;aliases=&#13;&#10;reuseUnmodifiedFileBasedMetamodels=true&#13;&#10;modelFile=/org.sawg.requirement.design/models/Mashbot.requirement&#13;&#10;metamodelUri=http\://www.sawg.org/base,http\://www.sawg.org/requirement&#13;&#10;concurrent=false&#13;&#10;type=EMF&#13;&#10;readOnLoad=true&#13;&#10;storeOnDisposal=false&#13;&#10;expand=true&#13;&#10;fileBasedMetamodelUri=&#13;&#10;metamodelFile=&#13;&#10;cached=true&#13;&#10;name=S&#13;&#10;modelUri=platform\:/resource/org.sawg.requirement.design/models/Mashbot.requirement&#13;&#10;isMetamodelFileBased=false&#13;&#10;validate=false"/>
+        <listEntry value="#Sun Jul 14 22:47:29 BST 2024&#13;&#10;storeOnDisposal=false&#13;&#10;aliases=&#13;&#10;file=/org.sawg.requirement.design/models/demo.json&#13;&#10;cached=true&#13;&#10;name=J&#13;&#10;concurrent=false&#13;&#10;type=JSON&#13;&#10;readOnLoad=true&#13;&#10;uri="/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+        <listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+    </listAttribute>
+    <intAttribute key="parallelism" value="7"/>
+    <listAttribute key="parameters"/>
+    <booleanAttribute key="profile_model_loading" value="false"/>
+    <booleanAttribute key="profiling_enabled" value="false"/>
+    <booleanAttribute key="reset_profiler" value="false"/>
+    <stringAttribute key="source" value="/org.sawg.requirement.design/transformation/req2term_traceability.eol"/>
+</launchConfiguration>

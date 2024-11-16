@@ -1,0 +1,73 @@
+@namespace(uri="psl", prefix="")
+package my.metamodel;
+
+class Sentence {
+    attr String gid;
+    attr String text;
+    attr String expression;
+    ref Category category;
+}
+
+class Category {
+    attr String name;
+}
+
+class EmailSystem extends Category {
+}
+
+class Format extends Category {
+}
+
+class Contributors extends Category {
+    operation createContent();
+    operation importContent();
+    operation editContent();
+    operation deleteContent();
+}
+
+class Approvers extends Category {
+    operation approveActions();
+}
+
+class System extends Category {
+    operation modifyAccount();
+    operation login();
+    operation encryptData();
+    operation backupData();
+    operation useAuthenticationModule();
+    operation configureAuthenticationMethod();
+    operation configureTimeout();
+}
+
+class Campaign extends Category {
+    attr String name;
+    attr int piecesOfContent;
+    attr String schedule;
+    attr String userGroupPermissions;
+}
+
+class Schedule extends Category {
+    ref PublishingAction[] publishingActions;
+    attr String time;
+}
+
+class PublishingAction {
+    attr String action;
+}
+
+class Content extends Category {
+    attr ContentForm form;
+}
+
+enum ContentForm {
+    Text,
+    Image,
+    Audio,
+    Video
+}
+
+class Mashbot extends Category {
+    operation associateAccount();
+    operation authenticateAccount();
+    operation interactWithExternalService();
+}

@@ -1,0 +1,106 @@
+[%for (p in getRequirementPackages()) {%]
+	Requirement Package: [%=getName(p)%] \n	
+	[%for (c in getCategories(p)) {%]
+		Category [%=getName(c)%] (id [%=c.gid%]): [%=getDescription(c)%].\n
+	[%}%]
+	
+	[%for (s in getStakeholders(p)) {%]
+		Stakeholder [%=getName(s)%] (id [%=s.gid%]): [%=getDescription(s)%].\n
+	[%}%]
+	
+	[%for (ur in getUserRequirements(p)) {%]
+		User Requirement [%=getName(ur)%] (id [%=ur.gid%]): [%=getDescription(ur)%]; priority: [%=ur.priority%]; categories: [%=flattenCategory(ur.category)%]; stakeholders: [%=flattenCategory(ur.category)%]; dependancies: [%=getDependentRequirements(ur)%].\n
+	[%}%]
+	
+	[%for (r in getFunctionalRequirements(p)) {%]
+		Functional Requirement [%=getName(r)%] (id [%=r.gid%]): [%=getDescription(r)%]; priority: [%=r.priority%]; categories: [%=flattenCategory(r.category)%]; stakeholders: [%=flattenCategory(r.category)%]; dependancies: [%=getDependentRequirements(r)%]; function: [%=r.~function%]; inputs: [%=r.inputs%]; outputs: [%=r.outputs%]; source: [%=r.source%]; destination: [%=r.destination%]; action: [%=r.action%]; requires: [%=r.requires%]; pre-condition: [%=r.pre_condition%]; post-condition: [%=r.post_condition%]; side effects: [%=r.side_effects%].\n
+	[%}%]
+	
+	[%for (r in getNonFunctionalRequirements(p)) {%]
+		Non-Functional Requirement [%=getName(r)%] (id [%=r.gid%]): [%=getDescription(r)%]; priority: [%=r.priority%]; categories: [%=flattenCategory(r.category)%]; stakeholders: [%=flattenCategory(r.category)%]; dependancies: [%=getDependentRequirements(r)%]; types: {[%=getTypes(r)%]}.\n
+	[%}%]
+[%}%]
+
+
+[%
+
+@cached
+operation getRequirementPackages() {
+    return RequirementPackage.all;
+}
+
+@cached
+operation getUserRequirements(p) {
+    return p.requirementAsset.closure(x | x.eContents()).select(ur|ur.isTypeOf(UserRequirement));
+}
+
+@cached
+operation getFunctionalRequirements(p) {
+    return p.requirementAsset.closure(x | x.eContents()).select(r|r.isTypeOf(FunctionalRequirement));
+}
+
+@cached
+operation getNonFunctionalRequirements(p) {
+    return p.requirementAsset.closure(x | x.eContents()).select(r|r.isTypeOf(NonFunctionalRequirement));
+}
+
+@cached
+operation getCategories(p) {
+	return p.requirementAsset.closure(x | x.eContents()).select(r|r.isTypeOf(Category));
+}
+
+@cached
+operation getStakeholders(p) {
+	return p.requirementAsset.closure(x | x.eContents()).select(r|r.isTypeOf(Stakeholder));
+}
+
+operation flattenCategory(cat) {
+	return cat.name.content.flatten();
+}
+
+operation flattenStakeholder(sta) {
+	return sta.name.content.flatten();
+}
+
+operation getDependentRequirements(req) {
+	return req.dependent_requirement.gid.flatten();
+}
+
+operation getName(element) {
+	return element.name.content;
+}
+
+operation getDescription(element) {
+	return element.description.content.value.at(0).content;
+}
+
+operation getTypes(r) {
+	var ret = new Sequence;
+	if(r.type.usability)
+		ret.add("usability");
+	if(r.type.performance)
+		ret.add("performance");
+	if(r.type.space)
+		ret.add("space");
+	if(r.type.dependability)
+		ret.add("dependability");
+	if(r.type.security)
+		ret.add("security");
+	if(r.type.environmental)
+		ret.add("environmental");
+	if(r.type.operational)
+		ret.add("operational");
+	if(r.type.development)
+		ret.add("development");
+	if(r.type.regulatory)
+		ret.add("regulatory");
+	if(r.type.ethical)
+		ret.add("ethical");
+	if(r.type.safety)
+		ret.add("safety");
+	if(r.type.accounting)
+		ret.add("accounting");
+	
+	return ret;
+}
+%]

@@ -1,0 +1,7 @@
+M.println();
+
+M.getModelFileUri().println();
+
+M.getMetamodelFileUris().println;
+
+M.getMetamodelUris().println;

@@ -1,0 +1,39 @@
+@namespace(uri="http://www.sawg.org/bifrost", prefix="bifrost_")
+package bifrost;
+
+abstract class NamedElement{
+	attr String gid;
+	attr String name;
+}
+
+class TracePackage extends NamedElement {
+	val TraceElement[*] traceElement;
+	val TracePackage[*] tracePackage;
+	val TracePackageInterface[*] interfaces;
+}
+
+class TracePackageInterface extends TracePackage {
+	
+}
+
+abstract class TraceElement extends NamedElement{
+	attr String description;
+	attr String[*] note;
+}
+
+class Trace extends TraceElement {
+	attr boolean updated;
+	val ExternalReference[1] source;
+	val ExternalReference[1] target;
+}
+
+class ExternalReference extends TraceElement {
+	attr String location;
+	attr String type;
+	attr String[*] metadata;
+	attr String version;
+	attr String[*] constraints;
+}
+
+
+

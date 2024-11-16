@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ASCII"?>
+<bridge_:BridgePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bridge_="http://www.sawg.org/bridge" gid="RBP1" name="requirement_bridge_Package">
+  <bridgeElement xsi:type="bridge_:Bridge" name="1.1_TO_external email system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1956375021">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 1.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1419790785">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Term.all.select(r|r.name = external email system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="1.1_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1956375021">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 1.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="524224248">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="1.1_TO_external email system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1956375021">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 1.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1484355046">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Term.all.select(r|r.name = external email system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="1.1_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1956375021">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 1.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1778170076">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="1.2_TO_format">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="346110664">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 1.2).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1117643694">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = format).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="2.1_TO_contributors">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1388990500">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 2.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="626550182">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = contributors).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="2.2_TO_approvers">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1940692209">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 2.2).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1493321702">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = approvers).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="2.3_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1905638331">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 2.3).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="532472649">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="2.4_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1813390983">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 2.4).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1034504855">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="3.1_TO_campaign">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="923288920">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 3.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1387315229">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = campaign).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="3.2_TO_schedule">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1456807831">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 3.2).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1443010872">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = schedule).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="4.1_TO_Mashbot">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="172852118">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 4.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="317560716">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = Mashbot).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="4.2_TO_Mashbot">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="844470103">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 4.2).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="538641010">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = Mashbot).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="4.3_TO_Mashbot">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="403086082">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 4.3).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1330503737">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = Mashbot).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="5.1_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="170385360">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 5.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1717325471">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="5.2_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="93134977">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 5.2).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1090876591">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="5.4_TO_System Administrator">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="822935799">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 5.4).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="1521849026">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = System Administrator).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="5.3_TO_system">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="314136339">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 5.3).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="930312807">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = system).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="6.1_TO_user">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="80774245">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 6.1).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="808950831">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = user).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="6.2_TO_user">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1242712052">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 6.2).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="212550849">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = user).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="6.3_TO_member">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="1824191399">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 6.3).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="550400486">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = member).first();</constraints>
+    </target>
+  </bridgeElement>
+  <bridgeElement xsi:type="bridge_:Bridge" name="6.4_TO_member">
+    <source location="platform:/resource/org.sawg.requirement.design/models/Mashbot.requirement" type="EMF" version="448797181">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/requirement}</metadata>
+      <constraints>R!Requirement.all.select(r|r.gid = 6.4).first();</constraints>
+    </source>
+    <target location="platform:/resource/org.sawg.requirement.design/models/my.terminology" type="EMF" version="2000026310">
+      <metadata>Sequence {http://www.sawg.org/base, http://www.sawg.org/terminology}</metadata>
+      <constraints>T!Category.all.select(r|r.name = member).first();</constraints>
+    </target>
+  </bridgeElement>
+</bridge_:BridgePackage>

@@ -1,0 +1,65 @@
+@namespace(
+	uri="http://a.b.c/x/y/Z",
+	prefix="p")
+package top;
+
+class  external_email_system{
+	op void provide_message();
+}
+
+class format{
+	op void use_SMTP_protocol();
+}
+
+class Contributors{
+	op void create_new_contents();
+	op void import_existing_content();
+	op void edit_content();
+}
+
+class Approvers{
+	op void approve_actions();
+	
+}
+
+class System{
+	op void modify_accounts();
+	op void require_login();
+	op void encrypts();
+	op void allow_backup_data();
+	op void allow_configure();
+	op void use_configured_modules();
+}
+
+class Campaign{
+	attr String Name;
+	val Piece_of_content piece_contents;
+	val Schedule schedule;
+	attr String Permissions;
+}
+
+class Schedule{
+	op void publishing();
+}
+
+class Piece_of_content{
+	attr String Text;
+	attr String Image;
+	attr String Audio;
+	attr String Video;
+}
+
+class Mashbot{
+	op void provide_interface_authentic();
+	op void allow_association();
+	op void provide_standardized_method();
+}
+
+class User{
+	op void register_account();
+	op void login();
+	op void logout();
+	op void have_profile();
+}
+
+

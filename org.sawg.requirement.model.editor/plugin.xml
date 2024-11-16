@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated requirement -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="requirement.presentation.Requirement_ModelWizardID"
+            name="%_UI_Requirement_ModelWizard_label"
+            class="requirement.presentation.Requirement_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Requirement_ModelFile.gif">
+         <description>%_UI_Requirement_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated requirement -->
+      <editor
+            id="requirement.presentation.Requirement_EditorID"
+            name="%_UI_Requirement_Editor_label"
+            icon="icons/full/obj16/Requirement_ModelFile.gif"
+            extensions="requirement"
+            class="requirement.presentation.Requirement_Editor"
+            contributorClass="requirement.presentation.Requirement_ActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated terminology -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="terminology.presentation.Terminology_ModelWizardID"
+            name="%_UI_Terminology_ModelWizard_label"
+            class="terminology.presentation.Terminology_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Terminology_ModelFile.gif">
+         <description>%_UI_Terminology_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated terminology -->
+      <editor
+            id="terminology.presentation.Terminology_EditorID"
+            name="%_UI_Terminology_Editor_label"
+            icon="icons/full/obj16/Terminology_ModelFile.gif"
+            extensions="terminology"
+            class="terminology.presentation.Terminology_Editor"
+            contributorClass="terminology.presentation.Terminology_ActionBarContributor">
+      </editor>
+   </extension>
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated base -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="base.presentation.Base_ModelWizardID"
+            name="%_UI_Base_ModelWizard_label"
+            class="base.presentation.Base_ModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Base_ModelFile.gif">
+         <description>%_UI_Base_ModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated base -->
+      <editor
+            id="base.presentation.Base_EditorID"
+            name="%_UI_Base_Editor_label"
+            icon="icons/full/obj16/Base_ModelFile.gif"
+            extensions="base"
+            class="base.presentation.Base_Editor"
+            contributorClass="base.presentation.Base_ActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

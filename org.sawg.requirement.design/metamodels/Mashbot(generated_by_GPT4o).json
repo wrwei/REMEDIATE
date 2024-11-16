@@ -1,0 +1,144 @@
+{
+    "req": [
+        {
+            "Sentence": "The external email system is to provide a messaging service from Mashbot to the Mashbot users.",
+            "ID": "1.1",
+            "Expression": "provide a messaging service from Mashbot to the Mashbot users",
+            "Term": null,
+            "Category": "email system"
+        },
+        {
+            "Sentence": "The format uses SMTP protocol.",
+            "ID": "1.2",
+            "Expression": "uses SMTP protocol",
+            "Term": null,
+            "Category": "format"
+        },
+        {
+            "Sentence": "Contributors may create new content, import existing content into the system, edit content, and delete it.",
+            "ID": "2.1",
+            "Expression": "create new content, import existing content into the system, edit content, and delete it",
+            "Term": null,
+            "Category": "Contributors"
+        },
+        {
+            "Sentence": "Approvers can approve actions performed by contributors.",
+            "ID": "2.2",
+            "Expression": "approve actions performed by contributors",
+            "Term": null,
+            "Category": "Approvers"
+        },
+        {
+            "Sentence": "The system allows users to modify their accounts once created.",
+            "ID": "2.3",
+            "Expression": "modify their accounts once created",
+            "Term": null,
+            "Category": "system"
+        },
+        {
+            "Sentence": "The system requires that a user have logged in before modifications can be made.",
+            "ID": "2.4",
+            "Expression": "have logged in before modifications can be made",
+            "Term": null,
+            "Category": "system"
+        },
+        {
+            "Sentence": "A campaign has the following components: Name, Pieces of content, Schedule, User/Group Permissions.",
+            "ID": "3.1",
+            "Expression": "has the following components: Name, Pieces of content, Schedule, User/Group Permissions",
+            "Term": null,
+            "Category": "campaign"
+        },
+        {
+            "Sentence": "A schedule is a mapping of times to publishing actions. It may contain any actions a publisher can perform, and these actions are performed at the associated time.",
+            "ID": "3.2",
+            "Expression": "is a mapping of times to publishing actions. It may contain any actions a publisher can perform, and these actions are performed at the associated time",
+            "Term": null,
+            "Category": "schedule"
+        },
+        {
+            "Sentence": "A piece of content may take the following forms: Text, Image, Audio, Video.",
+            "ID": "3.3",
+            "Expression": "may take the following forms: Text, Image, Audio, Video",
+            "Term": null,
+            "Category": "content"
+        },
+        {
+            "Sentence": "Mashbot will allow for the association of Mashbot accounts with external service accounts.",
+            "ID": "4.1",
+            "Expression": "allow for the association of Mashbot accounts with external service accounts",
+            "Term": null,
+            "Category": "Mashbot"
+        },
+        {
+            "Sentence": "Mashbot will provide an interface for authenticating a user account to an external service account.",
+            "ID": "4.2",
+            "Expression": "provide an interface for authenticating a user account to an external service account",
+            "Term": null,
+            "Category": "Mashbot"
+        },
+        {
+            "Sentence": "Mashbot will provide a standardized method of interacting with external service accounts.",
+            "ID": "4.3",
+            "Expression": "provide a standardized method of interacting with external service accounts",
+            "Term": null,
+            "Category": "Mashbot"
+        },
+        {
+            "Sentence": "The system encrypts data over a direct connection between the web client and the server.",
+            "ID": "5.1",
+            "Expression": "encrypts data over a direct connection between the web client and the server",
+            "Term": null,
+            "Category": "system"
+        },
+        {
+            "Sentence": "The system allows for the backup of the data system to local or remote non-volatile storage systems.",
+            "ID": "5.2",
+            "Expression": "allows for the backup of the data system to local or remote non-volatile storage systems",
+            "Term": null,
+            "Category": "system"
+        },
+        {
+            "Sentence": "The system uses the configured authentication module. The authentication method is configurable by the System Administrator.",
+            "ID": "5.3",
+            "Expression": "uses the configured authentication module. The authentication method is configurable by the System Administrator",
+            "Term": null,
+            "Category": "system"
+        },
+        {
+            "Sentence": "The system allows the System Administrator to configure a timeout after which a user is automatically logged out of Mashbot.",
+            "ID": "5.4",
+            "Expression": "allows the System Administrator to configure a timeout after which a user is automatically logged out of Mashbot",
+            "Term": null,
+            "Category": "system"
+        },
+        {
+            "Sentence": "A user should be able to register a new account",
+            "ID": "6.1",
+            "Expression": "register a new account",
+            "Term": null,
+            "Category": "user"
+        },
+        {
+            "Sentence": "A user should be able to log in",
+            "ID": "6.2",
+            "Expression": "log in",
+            "Term": null,
+            "Category": "user"
+        },
+        {
+            "Sentence": "A member should be able to log out",
+            "ID": "6.3",
+            "Expression": "log out",
+            "Term": null,
+            "Category": "member"
+        },
+        {
+            "Sentence": "A member should have a profile",
+            "ID": "6.4",
+            "Expression": "have a profile",
+            "Term": null,
+            "Category": "member"
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="ASCII"?>
+<terminology_:TerminologyPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:terminology_="http://www.sawg.org/terminology">
+  <name content="Req"/>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.2">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The external email system is to provide a messaging service from Mashbot to the Mashbot users."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Term">
+    <name content="external email system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.5">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The external email system is to provide a messaging service from Mashbot to the Mashbot users."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Term">
+    <name content="external email system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.7">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The format uses SMTP protocol."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="format"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.9">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="Contributors may create new content, import existing content into the system, edit content, and delete it."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="contributors"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.11">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="Approvers can approve actions performed by contributors"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="approvers"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.13">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The system allows users to modify their accounts once created."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.15">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The system requires that a user have logged in before modifications can be made."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.17">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="A campaign has the following components: Name, Pieces of content, Schedule, User/Group Permissions."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="campaign"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.19">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="A schedule is a mapping of times to publishing actions."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="schedule"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.21">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="Mashbot will allow for the association of Mashbot accounts with external service accounts."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="Mashbot"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.23">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="Mashbot will provide an interface for authenticating a user account to an external service account."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="Mashbot"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.25">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="Mashbot will provide a standardized method of interacting with external service accounts."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="Mashbot"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.27">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The system encrypts data over a direct connection between the web client and the server."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.29">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The system allows for the backup of the data system to local or remote non-volatile storage systems."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.31">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The system allows the System Administrator to configure a timeout after which a user is automatically logged out of Mashbot."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="System Administrator"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.33">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="The system uses the configured authentication module."/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="system"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.35">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="A user should be able to register a new account"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="user"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.37">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="A user should be able to log in"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="user"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.39">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="A member should be able to log out"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="member"/>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Expression" category="//@terminologyElement.41">
+    <name/>
+    <description>
+      <content>
+        <value lang="English" content="A member should have a profile"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Category">
+    <name content="member"/>
+  </terminologyElement>
+</terminology_:TerminologyPackage>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:requirement_="http://www.sawg.org/requirement" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_7G5BEDN6Ee--0MD0LX815w" selectedViews="_GsHXwDN7Ee--0MD0LX815w" version="15.1.0.202211301600">
+    <semanticResources>MyRequirement.requirement</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_GsHXwDN7Ee--0MD0LX815w">
+      <viewpoint xmi:type="description:Viewpoint" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_GsH-0DN7Ee--0MD0LX815w" name="Requirement Package Diagram" repPath="#_GsHXwTN7Ee--0MD0LX815w" changeId="1719378929483">
+        <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+        <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_HA1DgjN7Ee--0MD0LX815w" name="new Requirement Package Diagram" repPath="#_HA1DgDN7Ee--0MD0LX815w" changeId="1719379383587">
+        <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+        <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ukKq4jN7Ee--0MD0LX815w" name="Requirement Package Diagram" repPath="#_ukKq4DN7Ee--0MD0LX815w" changeId="1719393100799">
+        <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+        <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#//@requirementAsset.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XYcDwDN-Ee--0MD0LX815w" name="Requirement Modelling Diagram" repPath="#_XYbcsDN-Ee--0MD0LX815w" changeId="1719380330490">
+        <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']"/>
+        <target xmi:type="requirement_:FunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.0"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_ZgD3kjN-Ee--0MD0LX815w" name="Requirement Modelling Diagram" repPath="#_ZgD3kDN-Ee--0MD0LX815w" changeId="1719380365052">
+        <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']"/>
+        <target xmi:type="requirement_:NonFunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.1"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_GsHXwTN7Ee--0MD0LX815w">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_GsIl4DN7Ee--0MD0LX815w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_GsIl4TN7Ee--0MD0LX815w" type="Sirius" element="_GsHXwTN7Ee--0MD0LX815w" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_GsIl4jN7Ee--0MD0LX815w"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_GsMQQDN7Ee--0MD0LX815w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_GsMQQTN7Ee--0MD0LX815w"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_GsHXwjN7Ee--0MD0LX815w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer"/>
+    <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_HA1DgDN7Ee--0MD0LX815w">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_HA1qkDN7Ee--0MD0LX815w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_HA1qkTN7Ee--0MD0LX815w" type="Sirius" element="_HA1DgDN7Ee--0MD0LX815w" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_qLgokDN7Ee--0MD0LX815w" type="2001" element="_qLXeoDN7Ee--0MD0LX815w">
+          <children xmi:type="notation:Node" xmi:id="_qLgokzN7Ee--0MD0LX815w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_qLgolDN7Ee--0MD0LX815w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qLgolTN7Ee--0MD0LX815w" type="3004" element="_qLah8DN7Ee--0MD0LX815w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qLgoljN7Ee--0MD0LX815w" fontName="Microsoft YaHei UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qLgolzN7Ee--0MD0LX815w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_qLgokTN7Ee--0MD0LX815w" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qLgokjN7Ee--0MD0LX815w" x="335" y="315" width="150" height="150"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_HA1qkjN7Ee--0MD0LX815w"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_HA3fwDN7Ee--0MD0LX815w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_HA3fwTN7Ee--0MD0LX815w"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_qLXeoDN7Ee--0MD0LX815w" name="RP: ReqPackage" width="15" height="15" resizeKind="NSEW">
+      <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#//@requirementAsset.0"/>
+      <semanticElements xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#//@requirementAsset.0"/>
+      <ownedStyle xmi:type="diagram:BundledImage" uid="_qLah8DN7Ee--0MD0LX815w" labelSize="12" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="252,233,79">
+        <description xmi:type="style:BundledImageDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Requirement%20Package']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Requirement%20Package']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_HA1DgTN7Ee--0MD0LX815w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer"/>
+    <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_ukKq4DN7Ee--0MD0LX815w">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ukNuMDN7Ee--0MD0LX815w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_ukNuMTN7Ee--0MD0LX815w" type="Sirius" element="_ukKq4DN7Ee--0MD0LX815w" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_u4ofAjN7Ee--0MD0LX815w" type="2001" element="_u4c40DN7Ee--0MD0LX815w">
+          <children xmi:type="notation:Node" xmi:id="_u4pGEDN7Ee--0MD0LX815w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_u4pGETN7Ee--0MD0LX815w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_u4pGEjN7Ee--0MD0LX815w" type="3003" element="_u4hKQDN7Ee--0MD0LX815w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_u4pGEzN7Ee--0MD0LX815w" fontName="Microsoft YaHei UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_u4pGFDN7Ee--0MD0LX815w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_u4ofAzN7Ee--0MD0LX815w" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_u4ofBDN7Ee--0MD0LX815w" x="78" y="145" width="523" height="70"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_vFuf0jN7Ee--0MD0LX815w" type="2001" element="_vFlV4DN7Ee--0MD0LX815w">
+          <children xmi:type="notation:Node" xmi:id="_vFvG4DN7Ee--0MD0LX815w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_vFvG4TN7Ee--0MD0LX815w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_vFvG4jN7Ee--0MD0LX815w" type="3003" element="_vFnLEDN7Ee--0MD0LX815w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_vFvG4zN7Ee--0MD0LX815w" fontName="Microsoft YaHei UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vFvG5DN7Ee--0MD0LX815w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_vFuf0zN7Ee--0MD0LX815w" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vFuf1DN7Ee--0MD0LX815w" x="85" y="310" width="521" height="70"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_Lmi08DN8Ee--0MD0LX815w" type="2001" element="_LmVZkDN8Ee--0MD0LX815w">
+          <children xmi:type="notation:Node" xmi:id="_Lmi08zN8Ee--0MD0LX815w" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Lmi09DN8Ee--0MD0LX815w" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Lmi09TN8Ee--0MD0LX815w" type="3003" element="_LmZrADN8Ee--0MD0LX815w">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Lmi09jN8Ee--0MD0LX815w" fontName="Microsoft YaHei UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lmi09zN8Ee--0MD0LX815w"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_Lmi08TN8Ee--0MD0LX815w" fontName="Microsoft YaHei UI" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lmi08jN8Ee--0MD0LX815w" x="75" y="30" width="526" height="70"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_ukNuMjN7Ee--0MD0LX815w"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ukO8UDN7Ee--0MD0LX815w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_ukO8UTN7Ee--0MD0LX815w"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_u4c40DN7Ee--0MD0LX815w" name="FR-1.1: ABC" width="14" height="7" resizeKind="NSEW">
+      <target xmi:type="requirement_:FunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.0"/>
+      <semanticElements xmi:type="requirement_:FunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_u4hKQDN7Ee--0MD0LX815w" labelSize="12" showIcon="false" labelAlignment="LEFT" labelPosition="node" width="14" height="7" color="204,242,166">
+        <description xmi:type="style:SquareDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Functional%20Requirement']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_vFlV4DN7Ee--0MD0LX815w" name="NFR-1.2: The system shall refresh the display every 60 seconds." width="14" height="7" resizeKind="NSEW">
+      <target xmi:type="requirement_:NonFunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.1"/>
+      <semanticElements xmi:type="requirement_:NonFunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_vFnLEDN7Ee--0MD0LX815w" labelSize="12" showIcon="false" labelAlignment="LEFT" labelPosition="node" width="14" height="7" color="255,245,181">
+        <description xmi:type="style:SquareDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='Non-Functional%20Requirement']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_LmVZkDN8Ee--0MD0LX815w" name="UR-1.3: The users shall login." width="14" height="7" resizeKind="NSEW">
+      <target xmi:type="requirement_:UserRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.2"/>
+      <semanticElements xmi:type="requirement_:UserRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.2"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_LmZrADN8Ee--0MD0LX815w" labelSize="12" showIcon="false" labelAlignment="LEFT" labelPosition="node" width="14" height="7" color="253,206,137">
+        <description xmi:type="style:SquareDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer/@nodeMappings[name='User%20Requirement']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_ukKq4TN7Ee--0MD0LX815w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Package%20Diagram']/@defaultLayer"/>
+    <target xmi:type="requirement_:RequirementPackage" href="MyRequirement.requirement#//@requirementAsset.0"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_XYbcsDN-Ee--0MD0LX815w">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_XYgVMDN-Ee--0MD0LX815w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_XYgVMTN-Ee--0MD0LX815w" type="Sirius" element="_XYbcsDN-Ee--0MD0LX815w" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_XYgVMjN-Ee--0MD0LX815w"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_XYg8QDN-Ee--0MD0LX815w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_XYg8QTN-Ee--0MD0LX815w"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_XYbcsTN-Ee--0MD0LX815w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer"/>
+    <target xmi:type="requirement_:FunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.0"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_ZgD3kDN-Ee--0MD0LX815w">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ZgG64DN-Ee--0MD0LX815w" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_ZgG64TN-Ee--0MD0LX815w" type="Sirius" element="_ZgD3kDN-Ee--0MD0LX815w" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_ZgG64jN-Ee--0MD0LX815w"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_ZgHh8DN-Ee--0MD0LX815w" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_ZgHh8TN-Ee--0MD0LX815w"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_ZgD3kTN-Ee--0MD0LX815w"/>
+    <activatedLayers xmi:type="description_1:Layer" href="../description/requirement.odesign#//@ownedViewpoints[name='MyViewpoint']/@ownedRepresentations[name='Requirement%20Modelling%20Diagram']/@defaultLayer"/>
+    <target xmi:type="requirement_:NonFunctionalRequirement" href="MyRequirement.requirement#//@requirementAsset.0/@requirementAsset.1"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

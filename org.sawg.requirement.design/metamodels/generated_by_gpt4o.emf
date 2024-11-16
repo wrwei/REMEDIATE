@@ -1,0 +1,56 @@
+@namespace(uri="http://www.example.org/models", prefix="models")
+package models;
+
+class Sentence {
+  attr String gid;
+  attr String sentence;
+  attr String expression;
+  attr String term;
+  ref Category category;
+}
+
+class Category {
+  attr String name;
+  op create();
+  op importContent();
+  op edit();
+  op delete();
+  op approve();
+  op modifyAccount();
+  op logIn();
+  op encryptData();
+  op backupData();
+  op configureAuthentication();
+  op configureTimeout();
+  op registerAccount();
+}
+
+class Campaign {
+  attr String name;
+  attr String piecesOfContent;
+  attr String schedule;
+  attr String userGroupPermissions;
+}
+
+class Schedule {
+  attr String mappingOfTimesToPublishingActions;
+}
+
+class Content {
+  attr String form;
+}
+
+class Mashbot {
+  op associateAccounts();
+  op authenticateUser();
+  op interactWithExternalService();
+}
+
+class User {
+  op logIn();
+}
+
+class Member {
+  op logOut();
+  attr String profile;
+}

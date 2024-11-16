@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.sawg.bifrost.model/src" modelPluginID="org.sawg.bifrost.model"
+    modelName="Bifrost" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>bifrost.ecore</foreignModel>
+  <genPackages prefix="Bifrost_" disposableProviderFactory="true" fileExtensions="bifrost"
+      ecorePackage="bifrost.ecore#/">
+    <genClasses image="false" ecoreClass="bifrost.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//NamedElement/gid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="bifrost.ecore#//TracePackage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bifrost.ecore#//TracePackage/traceElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bifrost.ecore#//TracePackage/tracePackage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bifrost.ecore#//TracePackage/interfaces"/>
+    </genClasses>
+    <genClasses ecoreClass="bifrost.ecore#//TracePackageInterface"/>
+    <genClasses image="false" ecoreClass="bifrost.ecore#//TraceElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//TraceElement/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//TraceElement/note"/>
+    </genClasses>
+    <genClasses ecoreClass="bifrost.ecore#//Trace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//Trace/updated"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bifrost.ecore#//Trace/source"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference bifrost.ecore#//Trace/target"/>
+    </genClasses>
+    <genClasses ecoreClass="bifrost.ecore#//ExternalReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//ExternalReference/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//ExternalReference/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//ExternalReference/metadata"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//ExternalReference/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute bifrost.ecore#//ExternalReference/constraints"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

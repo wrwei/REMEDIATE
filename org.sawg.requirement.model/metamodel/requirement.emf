@@ -1,0 +1,85 @@
+@namespace(uri="http://www.sawg.org/requirement", prefix="requirement_")
+package requirement;
+
+import "http://www.sawg.org/base";
+
+abstract class RequirementAsset extends base.ArtifactElement {
+}
+
+class RequirementPackage extends RequirementAsset {
+	val RequirementAsset[*] requirementAsset;
+	ref RequirementPackageInterface[*] interfaces;
+}
+
+class RequirementPackageInterface extends RequirementPackage {
+	ref RequirementPackage[1] interfaceOf;
+}
+
+abstract class RequirementUtilityAsset extends RequirementAsset {
+	
+}
+
+class Category extends RequirementUtilityAsset {
+	val Category[*] sub_category;
+}
+
+class Stakeholder extends RequirementUtilityAsset {
+}
+
+class Glossary extends RequirementUtilityAsset {
+	val GlossaryEntry[*] entries;
+}
+
+class GlossaryEntry extends RequirementUtilityAsset {
+	attr String term;
+	attr String pitch; 
+}
+
+abstract class Requirement extends RequirementAsset {
+	attr boolean satisfied;
+	attr int priority;
+	ref Category[*] category;
+	ref Stakeholder[*] stakeholders;
+	val Requirement[*] sub_requirement;
+	ref Requirement[*] dependent_requirement;
+}
+
+class UserRequirement extends Requirement {
+}
+
+abstract class SystemRequirement extends Requirement {
+}
+
+class FunctionalRequirement extends SystemRequirement {
+	attr String function;
+	attr String inputs;
+	attr String outputs;
+	attr String source;
+	attr String destination;
+	attr String action;
+	attr String requires;
+	attr String pre_condition;
+	attr String post_condition;
+	attr String side_effects;
+}
+
+class NonFunctionalRequirement extends SystemRequirement {
+	val SecondaryRequirementType[1] type;
+}
+
+class SecondaryRequirementType extends RequirementAsset {
+	attr boolean architecture;
+	attr boolean usability;
+	attr boolean performance;
+	attr boolean space;
+	attr boolean dependability;
+	attr boolean security;
+	attr boolean environmental;
+	attr boolean operational;
+	attr boolean development;
+	attr boolean regulatory;
+	attr boolean ethical;
+	attr boolean safety;
+	attr boolean accounting;
+}
+

@@ -1,0 +1,26 @@
+@namespace(uri="http://www.sawg.org/terminology", prefix="terminology_")
+package terminology;
+import "http://www.sawg.org/base";
+
+  abstract class TerminologyElement extends base.ArtifactElement {
+  }
+
+  class TerminologyPackage extends TerminologyElement {
+    val TerminologyElement[*] terminologyElement;
+  }
+
+  class TerminologyPackageInterface extends TerminologyPackage {
+    ref TerminologyPackage[1] implements;
+  }
+
+  abstract class TerminologyAsset extends TerminologyElement {
+    attr String[1] value;
+  }
+
+  class Concept extends TerminologyAsset {
+  	val Concept[*] concept;
+  }
+
+  class Instance extends TerminologyAsset {
+      ref Concept concept;
+  }

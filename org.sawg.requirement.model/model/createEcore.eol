@@ -1,0 +1,13 @@
+var classA = new M!EClass;
+classA.name = "Class A";
+
+var classB = new M!EClass;
+classB.name = "Class B";
+
+var refB = new M!EReference;
+refB.name = "Bs";
+classA.eStructuralFeatures.add(refB);
+
+var attrA = new M!EAttribute;
+attrA.name = "hello";
+classA.eStructuralFeatures.add(attrA);

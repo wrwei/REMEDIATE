@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/tree/description/1.0.0" xmlns:description_3="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="bridge" version="12.0.0.2017041100">
+  <ownedViewpoints name="TraceViewPoint">
+    <ownedRepresentations xsi:type="description_1:EditionTableDescription" name="bifrost_table_editor" initialisation="true" showOnStartup="true" domainClass="bifrost::TracePackage">
+      <metamodel href="http://www.sawg.org/bifrost#/"/>
+      <ownedLineMappings name="entry" domainClass="bifrost::Trace" semanticCandidatesExpression="aql: self.traceElement">
+        <delete name="Delete Entry" forceRefresh="true">
+          <variables name="element" documentation="The semantic currently edited element."/>
+          <variables name="root" documentation="The semantic root element of the table."/>
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:element">
+            <subModelOperations xsi:type="tool:RemoveElement"/>
+          </firstModelOperation>
+        </delete>
+      </ownedLineMappings>
+      <ownedCreateLine name="Create Entry" mapping="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='bifrost_table_editor']/@ownedLineMappings[name='entry']">
+        <variables name="root" documentation="The semantic root element of the table."/>
+        <variables name="element" documentation="The semantic currently edited element."/>
+        <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:container">
+          <subModelOperations xsi:type="tool:CreateInstance" typeName="bifrost::Trace" referenceName="traceElement">
+            <subModelOperations xsi:type="tool:SetValue" featureName="gid" valueExpression="bridge_id"/>
+            <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="bridge_name"/>
+            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="bridge::ExternalReference" referenceName="source" variableName="source_er"/>
+              <subModelOperations xsi:type="tool:CreateInstance" typeName="bridge::ExternalReference" referenceName="target" variableName="target_er"/>
+            </subModelOperations>
+          </subModelOperations>
+        </firstModelOperation>
+      </ownedCreateLine>
+      <ownedColumnMappings name="gid" headerLabelExpression="GID" featureName="GID" labelExpression="aql: self.gid"/>
+      <ownedColumnMappings name="name" headerLabelExpression="Name" featureName="Name" labelExpression="aql: self.name"/>
+      <ownedColumnMappings name="source" headerLabelExpression="Source" featureName="Source" labelExpression="aql:self.source"/>
+      <ownedColumnMappings name="target" headerLabelExpression="Target" featureName="Target" labelExpression="aql:self.target"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:TreeDescription" name="bifrost_model_tree_editor" initialisation="true" domainClass="bifrost::TracePackage">
+      <metamodel href="http://www.sawg.org/bifrost#/"/>
+      <subItemMappings name="Trace" domainClass="bifrost::Trace" semanticCandidatesExpression="aql: self.traceElement->select(b|b.oclIsTypeOf(bifrost::Trace))">
+        <defaultStyle>
+          <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+        </defaultStyle>
+        <directEdit name="name_edit" mapping="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='bifrost_model_tree_editor']/@subItemMappings[name='Trace']">
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:self">
+            <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:arg0"/>
+          </firstModelOperation>
+          <mask mask="{0}"/>
+          <element name="element"/>
+          <root name="root"/>
+        </directEdit>
+        <subItemMappings name="GID" domainClass="bifrost::Trace" semanticCandidatesExpression="var:self">
+          <defaultStyle labelExpression="feature:gid">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <directEdit name="gid_edit" mapping="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='bifrost_model_tree_editor']/@subItemMappings[name='Trace']/@subItemMappings[name='GID']">
+            <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:self">
+              <subModelOperations xsi:type="tool:SetValue" featureName="gid" valueExpression="var:arg0"/>
+            </firstModelOperation>
+            <mask mask="{0}"/>
+            <element name="element"/>
+            <root name="root"/>
+          </directEdit>
+        </subItemMappings>
+        <subItemMappings name="Source" domainClass="bifrost::ExternalReference" semanticCandidatesExpression="feature:source">
+          <defaultStyle labelExpression="Source">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <subItemMappings name="Location" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:location">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Type" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:type">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Metadata" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:metadata">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Version" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:version">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Constraints" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:constraints">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+        </subItemMappings>
+        <subItemMappings name="Target" domainClass="bifrost::ExternalReference" semanticCandidatesExpression="feature:target">
+          <defaultStyle labelExpression="Target">
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </defaultStyle>
+          <subItemMappings name="Location" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:location">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Type" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:type">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Metadata" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:metadata">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Version" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:version">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+          <subItemMappings name="Constraints" domainClass="bridge::ExternalReference" semanticCandidatesExpression="var:self">
+            <defaultStyle labelExpression="feature:constraints">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </defaultStyle>
+          </subItemMappings>
+        </subItemMappings>
+        <create name="Create Bridge" mapping="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='bifrost_model_tree_editor']/@subItemMappings[name='Trace']">
+          <firstModelOperation xsi:type="tool:ChangeContext" browseExpression="var:container">
+            <subModelOperations xsi:type="tool:CreateInstance" typeName="bifrost::Trace" referenceName="traceElement">
+              <subModelOperations xsi:type="tool:SetValue" featureName="gid" valueExpression="bridge_id"/>
+              <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="bridge_name"/>
+              <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="bridge::ExternalReference" referenceName="source" variableName="source_er">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="location" valueExpression="Location"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="Model Type"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="metadata" valueExpression="Metadata"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="version" valueExpression="Version"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="constraints" valueExpression="Constraints"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="bridge::ExternalReference" referenceName="target" variableName="target_er">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="location" valueExpression="Location"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="Model Type"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="metadata" valueExpression="Metadata"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="version" valueExpression="Version"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="constraints" valueExpression="Constraints"/>
+                </subModelOperations>
+              </subModelOperations>
+            </subModelOperations>
+          </firstModelOperation>
+          <variables name="root" documentation="The semantic element of the tree."/>
+          <variables name="element" documentation="The currently edited element."/>
+          <variables name="container" documentation="The semantic element corresponding to the view container."/>
+        </create>
+        <popupMenus name="Context Menu">
+          <menuItemDescriptions xsi:type="tool:OperationAction" name="Show Properties" precondition="aql: self.oclisTypeOf(bifrost::Trace)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                  <initialOperation/>
+                </buttons>
+                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                  <initialOperation/>
+                </buttons>
+                <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='bifrost_model_tree_editor']/@subItemMappings[name='Trace']/@popupMenus.0/@menuItemDescriptions.0/@initialOperation/@firstModelOperations/@groups.0"/>
+                <groups name="Feature Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:ContainerDescription" name="feature_container">
+                    <controls xsi:type="properties:TextDescription" name="Name" labelExpression="Name" valueExpression="aql:self.name">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </controls>
+                </groups>
+              </firstModelOperations>
+            </initialOperation>
+          </menuItemDescriptions>
+        </popupMenus>
+      </subItemMappings>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_3:DiagramDescription" name="trace_model_diagram" initialisation="true" domainClass="bifrost::TracePackage" enablePopupBars="true">
+      <metamodel href="http://www.sawg.org/bifrost#/"/>
+      <defaultLayer name="Trace_Package">
+        <nodeMappings name="Trace_entry" doubleClickDescription="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='trace_model_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Bridge%20Properties']" domainClass="bifrost::Trace">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW" width="15" height="5">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </nodeMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="Create_Trace" nodeMappings="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='trace_model_diagram']/@defaultLayer/@nodeMappings[name='Trace_entry']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="bifrost::Trace" referenceName="traceElement">
+                  <subModelOperations xsi:type="tool:SetValue" featureName="gid" valueExpression="bridge_id"/>
+                  <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="bridge_name"/>
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="bridge::ExternalReference" referenceName="source" variableName="source_er">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="location" valueExpression="Location"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="Model Type"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="metadata"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="version" valueExpression="Version"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:initConstraints()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                    <subModelOperations xsi:type="tool:CreateInstance" typeName="bridge::ExternalReference" referenceName="target" variableName="target_er">
+                      <subModelOperations xsi:type="tool:SetValue" featureName="location" valueExpression="Location"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="Model Type"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="metadata" valueExpression="Metadata"/>
+                      <subModelOperations xsi:type="tool:SetValue" featureName="version" valueExpression="Version"/>
+                      <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                        <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:initConstraints()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:DoubleClickDescription" name="Bridge Properties" mappings="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='trace_model_diagram']/@defaultLayer/@nodeMappings[name='Trace_entry']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Trace Property">
+                <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                  <initialOperation/>
+                </buttons>
+                <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                  <initialOperation/>
+                </buttons>
+                <page name="Default Page" labelExpression="Properties" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='trace_model_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Bridge%20Properties']/@initialOperation/@firstModelOperations/@groups.0 //@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='trace_model_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Bridge%20Properties']/@initialOperation/@firstModelOperations/@groups.1 //@ownedViewpoints[name='TraceViewPoint']/@ownedRepresentations[name='trace_model_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Bridge%20Properties']/@initialOperation/@firstModelOperations/@groups.2"/>
+                <groups name="feature_group" labelExpression="Attributes" domainClass="bridge::Bridge" semanticCandidateExpression="var:self">
+                  <controls xsi:type="properties:ContainerDescription" name="feature_container">
+                    <controls xsi:type="properties:LabelDescription" name="name_label" labelExpression="Name"/>
+                    <controls xsi:type="properties:TextDescription" name="name_text" valueExpression="aql:self.name">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="gid_label" labelExpression="GID"/>
+                    <controls xsi:type="properties:TextDescription" name="Gid" valueExpression="aql:self.gid">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="gid" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="description_label" labelExpression="Description"/>
+                    <controls xsi:type="properties:TextAreaDescription" name="Description" valueExpression="aql:self.description">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="description" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2" makeColumnsWithEqualWidth="true"/>
+                  </controls>
+                </groups>
+                <groups name="source_group" labelExpression="Source Trace" domainClass="bridge::ExternalReference" semanticCandidateExpression="aql:self.source">
+                  <controls xsi:type="properties:ContainerDescription" name="container1">
+                    <controls xsi:type="properties:LabelDescription" name="source_location_label" labelExpression="Location"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container11">
+                      <controls xsi:type="properties:TextDescription" name="source_location_text" valueExpression="aql:self.location">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="location" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="source_select" buttonLabelExpression="Browse...">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:browseModel()"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="source_version_label" labelExpression="Version"/>
+                    <controls xsi:type="properties:TextDescription" name="source_version_text" valueExpression="aql:self.version">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="version" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="source_type_label" labelExpression="Type"/>
+                    <controls xsi:type="properties:SelectDescription" name="source_type_label" valueExpression="aql: self.getSupportedTypes()->select(t|t = self.type)->first()" candidatesExpression="service:getSupportedTypes()" candidateDisplayExpression="aql:candidate">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="source_metadata_label" labelExpression="Metadata"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container3">
+                      <controls xsi:type="properties:ListDescription" name="metadata_list" valueExpression="aql:self.metadata" displayExpression="var:value">
+                        <onClickOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:selectMetadata(selection)"/>
+                          </firstModelOperations>
+                        </onClickOperation>
+                      </controls>
+                      <controls xsi:type="properties:ContainerDescription" name="container4">
+                        <controls xsi:type="properties:ButtonDescription" name="source_metadata_add" buttonLabelExpression="Add...   ">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:browseMetamodel()"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                        <controls xsi:type="properties:ButtonDescription" name="source_metadata_remove" buttonLabelExpression="Remove">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteMetamodel()"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="source_constraint_label" labelExpression="Constraint"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container4">
+                      <controls xsi:type="properties:TextAreaDescription" name="source_constraint_text" valueExpression="aql:self.constraint->at(1)">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:setQuery(newValue)"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="source_constraint_query" buttonLabelExpression="Query   ">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:invokeQuery()"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="source_query_label" labelExpression="Result"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container5">
+                      <controls xsi:type="properties:TextAreaDescription" name="source_constraint_result" valueExpression="aql:self.constraint->at(2)">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:setQueryResult(newValue)"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="source_query_clear" buttonLabelExpression="Clear   ">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:clearQueryResults()"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2" makeColumnsWithEqualWidth="true"/>
+                  </controls>
+                </groups>
+                <groups name="target_group" labelExpression="Target Trace" domainClass="bridge::ExternalReference" semanticCandidateExpression="aql:self.target">
+                  <controls xsi:type="properties:ContainerDescription" name="container1">
+                    <controls xsi:type="properties:LabelDescription" name="target_location_label" labelExpression="Location"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container11">
+                      <controls xsi:type="properties:TextDescription" name="target_location_text" valueExpression="aql:self.location">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:SetValue" featureName="location" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="target_select" buttonLabelExpression="Browse...">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:browseModel()"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="target_version_label" labelExpression="Version"/>
+                    <controls xsi:type="properties:TextDescription" name="target_version_text" valueExpression="aql:self.version">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="version" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="target_type_label" labelExpression="Type"/>
+                    <controls xsi:type="properties:SelectDescription" name="target_type_label" valueExpression="aql: self.getSupportedTypes()->select(t|t = self.type)->first()" candidatesExpression="service:getSupportedTypes()" candidateDisplayExpression="aql:candidate">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool:SetValue" featureName="type" valueExpression="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="target_metadata_label" labelExpression="Metadata"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container3">
+                      <controls xsi:type="properties:ListDescription" name="metadata_list" valueExpression="aql:self.metadata" displayExpression="var:value">
+                        <onClickOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:selectMetadata(selection)"/>
+                          </firstModelOperations>
+                        </onClickOperation>
+                      </controls>
+                      <controls xsi:type="properties:ContainerDescription" name="container4">
+                        <controls xsi:type="properties:ButtonDescription" name="target_metadata_add" buttonLabelExpression="Add...   ">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:browseMetamodel()"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                        <controls xsi:type="properties:ButtonDescription" name="target_metadata_remove" buttonLabelExpression="Remove">
+                          <initialOperation>
+                            <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                              <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:deleteMetamodel()"/>
+                            </firstModelOperations>
+                          </initialOperation>
+                        </controls>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="target_constraint_label" labelExpression="Constraint"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container4">
+                      <controls xsi:type="properties:TextAreaDescription" name="target_constraint_text" valueExpression="aql:self.constraint->at(1)">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:setQuery(newValue)"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="target_constraint_query" buttonLabelExpression="Query   ">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:invokeQuery()"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <controls xsi:type="properties:LabelDescription" name="target_query_label" labelExpression="Result"/>
+                    <controls xsi:type="properties:ContainerDescription" name="container5">
+                      <controls xsi:type="properties:TextAreaDescription" name="target_constraint_result" valueExpression="aql:self.constraint->at(2)">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:setQueryResult(newValue)"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ButtonDescription" name="target_query_clear" buttonLabelExpression="Clear   ">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:clearQueryResults()"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2"/>
+                    </controls>
+                    <layout xsi:type="properties:GridLayoutDescription" numberOfColumns="2" makeColumnsWithEqualWidth="true"/>
+                  </controls>
+                </groups>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:PopupMenu" name="pop_up">
+            <menuItemDescription xsi:type="tool:OperationAction" name="Change Impact Analysis">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="var:self">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="service:changeImpact()"/>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.sawg.bridge.design.Services"/>
+  </ownedViewpoints>
+</description:Group>

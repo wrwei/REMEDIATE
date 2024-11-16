@@ -1,0 +1,32 @@
+1  Email System
+1.1 The external email system is to provide a messaging service from Mashbot to the Mashbot users. Priority 2 FR
+1.2 The format uses SMTP protocol. The actual messages are provided by Mashbot. (Priority 2)NFR
+
+2 User Account 
+2.1 Contributors may create new content, import existing content into the system, edit content, and delete it. Priority 3
+2.2 Approvers can approve actions performed by contributors. Priority 3
+2.3 The system allows users to modify their accounts once created. Priority 1
+2.4 The system requires that a user have logged in before modifications can be made. Priority 1
+
+
+3 Marketing Campaigns:
+3.1 A campaign has the following components: Name, Pieces of content, Schedule, User/Group Permissions. Priority 1
+3.2 A schedule is a mapping of times to publishing actions. It may contain any actions a publisher can perform, and these actions are performed at the associated time. Priority 1
+3.3 A piece of content may take the following forms: Text, Image, Audio, Video. Priority 1
+
+
+4 External Service Accounts:
+4.1 Mashbot will allow for the association of Mashbot accounts with external service accounts.
+4.2 Mashbot will provide an interface for authenticating a user account to an external service account. Priority 1
+4.3 Mashbot will provide a standardized method of interacting with external service accounts. Priority 1
+
+5 Security Requirements:
+5.1 The system encrypts data over a direct connection between the web client and the server. Priority 1
+5.2 The system allows for the backup of the data system to local or remote non-volatile storage systems. Priority 1
+5.3 The system uses the configured authentication module. The authentication method is configurable by the System Administrator. Priority 1
+5.4 The system allows the System Administrator to configure a timeout after which a user is automatically logged out of Mashbot. Priority 1
+6.1 A user should be able to register a new account
+6.2 A user should be able to log in
+6.3  A member should be able to log out
+6.4  A member should have a profile
+
