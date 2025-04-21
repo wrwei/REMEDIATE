@@ -1,0 +1,124 @@
+{
+  "requirements": [
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Blocking Sickor In-Repair Entities",
+      "id": "006",
+      "description": "If a driver is marked as sick or a bus is marked as under repair, the system shall prevent their assignment to shifts or routes.",
+      "priority": "6",
+      "types": [
+        "dependability",
+        "safety"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "License Plate Length Constraint",
+      "id": "002",
+      "description": "The license plate number of a bus shall not exceed 10 characters in length.",
+      "priority": "6",
+      "types": [
+        "usability"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Visua lHighlighting of Exceptions",
+      "id": "007",
+      "description": "The system shall clearly highlight sick drivers and buses under repair in the daily overview.",
+      "priority": "6",
+      "types": [
+        "usability",
+        "performance"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Route Number Upper Limit",
+      "id": "003",
+      "description": "A bus route number shall not exceed 9999.",
+      "priority": "6",
+      "types": [
+        "usability"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Advance Planning Window",
+      "id": "001",
+      "description": "The system shall support bus and driver schedule planning up to one year in advance.",
+      "priority": "6",
+      "types": [
+        "operational"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "FlexibleShiftAssignment",
+      "id": "004",
+      "description": "The system shall allow unrestricted and potentially overlapping driver shift assignments within a day.",
+      "priority": "6",
+      "types": [
+        "usability",
+        "operational"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Daily Route Exclusivity for Buses",
+      "id": "008",
+      "description": "Each bus shall serve at most one route per day.",
+      "priority": "6",
+      "types": [
+        "operational",
+        "safety"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Immutable Entity Records",
+      "id": "005",
+      "description": "The system shall not allow updates to driver or bus records—only addition and deletion operations are permitted.",
+      "priority": "6",
+      "types": [
+        "security",
+        "regulatory"
+      ]
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Mark Driver as Sick",
+      "id": "004",
+      "description": "The system shall allow marking a driver as on sick leave, disabling scheduling.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Add Driver",
+      "id": "001",
+      "description": "The system shall allow city staff to add a new driver by entering the driver’s name.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Prevent Assignment of Inoperative Bus",
+      "id": "005",
+      "description": "The system shall prevent buses marked as in repair from being assigned to routes.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Assign Bus to Route",
+      "id": "002",
+      "description": "The system shall allow buses to be assigned to specific routes up to one year in advance.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Generate Daily Overview",
+      "id": "003",
+      "description": "The system shall provide a daily overview of route assignments, buses, shifts, and drivers.",
+      "priority": "5"
+    }
+  ]
+}
