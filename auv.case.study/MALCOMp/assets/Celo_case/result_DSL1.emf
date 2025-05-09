@@ -1,0 +1,78 @@
+package useraccountsecurity;
+
+class Password {
+    attr String value;
+}
+
+package emaildeliveryreliability;
+
+class Invitation {
+    attr String email;
+}
+
+package invitationresponsetracking;
+
+class RSVPStatus {
+    attr String status;
+}
+
+package tasklistreusability;
+
+class Task {
+    attr String description;
+}
+
+package tasklistvisibility;
+
+class Attendee {
+    attr String name;
+    attr boolean confirmedParticipation;
+}
+
+package createevent;
+
+class Event {
+    attr String eventType;
+    attr String occasion;
+    attr String dateTime;
+    attr String location;
+}
+
+package inviteattendees;
+
+class Organizer {
+    attr String firstName;
+    attr String lastName;
+    attr String email;
+    attr String postalAddress;
+    attr String phoneNumber;
+    attr String password;
+    val Attendee[*] attendees;
+}
+
+class Attendee {
+    attr String firstName;
+    attr String lastName;
+    attr String email;
+}
+
+package respondtoinvitation;
+
+class InvitationResponse {
+    attr String response;
+}
+
+package manageeventtasks;
+
+class TaskManagement {
+    attr String status;
+    val Task[*] tasks;
+    ref Attendee[*] assignedAttendees;
+}
+
+package claimattendeetasks;
+
+class AttendeeTask {
+    ref Task task;
+    ref Attendee attendee;
+}

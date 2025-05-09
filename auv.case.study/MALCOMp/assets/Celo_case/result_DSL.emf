@@ -1,0 +1,91 @@
+package security;
+
+class Password {
+    attr String value;
+}
+
+class Account {
+    attr Password password;
+}
+
+package communication;
+
+class Invitation {
+    attr String email;
+}
+
+class Attendee {
+    ref Invitation invitation;
+}
+
+package tracking;
+
+class RSVP {
+    attr String status;
+}
+
+class Invitee {
+    ref RSVP rsvp;
+}
+
+package planning;
+
+class Task {
+    attr String description;
+}
+
+class Checklist {
+    val Task[*] tasks;
+}
+
+package visibility;
+
+class Participation {
+    attr boolean confirmed;
+}
+
+class TaskAssignment {
+    ref Task task;
+    ref Attendee attendee;
+    ref Participation participation;
+}
+
+package eventManagement;
+
+class Event {
+    attr String type;
+    attr String occasion;
+    attr String dateTime;
+    attr String location;
+}
+
+class Name {
+    attr String firstName;
+    attr String lastName;
+}
+
+class Organizer {
+    val Attendee[*] attendees;
+    ref Name name;
+}
+
+class Response {
+    attr String status;
+}
+
+class EventInvitation {
+    ref Attendee attendee;
+    ref Response response;
+}
+
+class TaskManagement {
+    ref Organizer organizer;
+    ref Task task;
+    ref Attendee attendee;
+}
+
+class AttendeeTaskClaim {
+    ref Attendee attendee;
+    ref Task task;
+    ref Participation participation;
+}
