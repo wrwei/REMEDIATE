@@ -1,0 +1,310 @@
+{
+    "dsl_trace": [
+        {
+            "requirement_gid": "1",
+            "Emfatic_class": "System",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Requisition",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "1",
+            "Emfatic_class": "Requisition",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "Doctor",
+                "DigitalSignature"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "1",
+            "Emfatic_class": "Doctor",
+            "Emfatic_attributes": [
+                "practitionerNumber",
+                "fullName",
+                "address",
+                "phoneNumber"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "1",
+            "Emfatic_class": "DigitalSignature",
+            "Emfatic_attributes": "image",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "2",
+            "Emfatic_class": "DomainRule",
+            "Emfatic_attributes": "description",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "2",
+            "Emfatic_class": "TestType",
+            "Emfatic_attributes": "name",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "2",
+            "Emfatic_class": "Requisition",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "DomainRule",
+                "TestType"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "3",
+            "Emfatic_class": "LabNetwork",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Lab",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "3",
+            "Emfatic_class": "Lab",
+            "Emfatic_attributes": [
+                "name",
+                "address",
+                "registrationNumber"
+            ],
+            "Emfatic_references": "Test",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "3",
+            "Emfatic_class": "Test",
+            "Emfatic_attributes": [
+                "name",
+                "duration"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "4",
+            "Emfatic_class": "Frequency",
+            "Emfatic_attributes": "interval",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "4",
+            "Emfatic_class": "RepetitionCount",
+            "Emfatic_attributes": "count",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "4",
+            "Emfatic_class": "Requisition",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "Frequency",
+                "RepetitionCount"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "5",
+            "Emfatic_class": "AppointmentMode",
+            "Emfatic_attributes": "mode",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "5",
+            "Emfatic_class": "Test",
+            "Emfatic_attributes": [
+                "name",
+                "duration"
+            ],
+            "Emfatic_references": "AppointmentMode",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "6",
+            "Emfatic_class": "TestResult",
+            "Emfatic_attributes": "isPositive",
+            "Emfatic_references": "Report",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "6",
+            "Emfatic_class": "Report",
+            "Emfatic_attributes": "content",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "6",
+            "Emfatic_class": "Doctor",
+            "Emfatic_attributes": [
+                "practitionerNumber",
+                "fullName",
+                "address",
+                "phoneNumber"
+            ],
+            "Emfatic_references": "TestResult",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "6",
+            "Emfatic_class": "Patient",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "TestResult",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "7",
+            "Emfatic_class": "AppointmentConfirmation",
+            "Emfatic_attributes": [
+                "confirmationNumber",
+                "scheduledDateTime"
+            ],
+            "Emfatic_references": "Lab",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "8",
+            "Emfatic_class": "CancellationFee",
+            "Emfatic_attributes": "feeAmount",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "8",
+            "Emfatic_class": "Appointment",
+            "Emfatic_attributes": "scheduledDateTime",
+            "Emfatic_references": "CancellationFee",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "9",
+            "Emfatic_class": "YearRoundAvailability",
+            "Emfatic_attributes": "isOperational",
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "9",
+            "Emfatic_class": "Lab",
+            "Emfatic_attributes": [
+                "name",
+                "address",
+                "registrationNumber"
+            ],
+            "Emfatic_references": [
+                "Test",
+                "YearRoundAvailability"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "10",
+            "Emfatic_class": "LabHours",
+            "Emfatic_attributes": [
+                "startTime",
+                "endTime"
+            ],
+            "Emfatic_references": null,
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "10",
+            "Emfatic_class": "Lab",
+            "Emfatic_attributes": [
+                "name",
+                "address",
+                "registrationNumber"
+            ],
+            "Emfatic_references": [
+                "Test",
+                "YearRoundAvailability",
+                "LabHours"
+            ],
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "1",
+            "Emfatic_class": "System",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Requisition",
+            "Emfatic_operations": "createRequisition"
+        },
+        {
+            "requirement_gid": "1",
+            "Emfatic_class": "Patient",
+            "Emfatic_attributes": [
+                "healthNumber",
+                "firstName",
+                "lastName",
+                "dateOfBirth",
+                "address",
+                "phoneNumber"
+            ],
+            "Emfatic_references": "TestResult",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "2",
+            "Emfatic_class": "TestGroup",
+            "Emfatic_attributes": "groupName",
+            "Emfatic_references": "Test",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "2",
+            "Emfatic_class": "Requisition",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "TestGroup",
+            "Emfatic_operations": null
+        },
+        {
+            "requirement_gid": "3",
+            "Emfatic_class": "Requisition",
+            "Emfatic_attributes": null,
+            "Emfatic_references": [
+                "Frequency",
+                "RepetitionCount",
+                "TestGroup"
+            ],
+            "Emfatic_operations": "configureRepeatPattern"
+        },
+        {
+            "requirement_gid": "4",
+            "Emfatic_class": "System",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Requisition",
+            "Emfatic_operations": "viewTestResults"
+        },
+        {
+            "requirement_gid": "5",
+            "Emfatic_class": "System",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Requisition",
+            "Emfatic_operations": "bookAppointment"
+        },
+        {
+            "requirement_gid": "6",
+            "Emfatic_class": "System",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Requisition",
+            "Emfatic_operations": "updateAppointment"
+        },
+        {
+            "requirement_gid": "7",
+            "Emfatic_class": "System",
+            "Emfatic_attributes": null,
+            "Emfatic_references": "Requisition",
+            "Emfatic_operations": "processWalkInTest"
+        }
+    ]
+}
