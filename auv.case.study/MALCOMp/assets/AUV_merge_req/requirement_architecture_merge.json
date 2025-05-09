@@ -1,0 +1,73 @@
+{
+    "requirements": [
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD1",
+            "id": "SD1",
+            "description": "The AUV system is developed as a Module named \"AUV_Module\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD2",
+            "id": "SD2",
+            "description": "\"AUV_Module\" should contain a Robotic Platform named \"AUV_Platform\", it should use the Interfaces \"Sensors\" and \"Actuators\" (defined by \"AUV_Module\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD3",
+            "id": "SD3",
+            "description": "The \"AUV_Module\" should contain three Controllers: \"AUV_Operator\", which uses the \"Inputs\" Interface defined by \"AUV_Module\"; \"LRE_Ctrl\" (for Last Response Engine), which uses both the \"Inputs\" and \"Outputs\" Interfaces defined by \"AUV_Module\"; and \"AUV_Autopilot\", which uses the \"Outputs\" Interface defined by \"AUV_Module\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "PT1",
+            "id": "PT1",
+            "description": "The \"AUV_Module\" should define five Primitive Types: \"nat\" for natural numbers, \"int\" for integers, \"string\" for string values, \"boolean\" for boolean values, and \"real\" for real numbers.\n\n",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "CT1",
+            "id": "CT1",
+            "description": "The \"AUV_Module\" should define three Composite Types: \"SVec\" (Spherical Vector), which records the values \"radial\", \"polar\", and \"azimuth\", all of type \"real\"; \"Obstacle\", which records \"ns_rel_dist\", \"ew_rel_dist\", \"depth\", and \"id\" (all of type \"real\"), as well as \"obs_hdng\" of type \"SVec\"; and \"Close\", which records \"horiz_cda\" and \"vert_cda\" (both of type \"real\") and \"id\" of type \"nat\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "Interface1",
+            "id": "Interface1",
+            "description": "The \"AUV_Module\" should define four Interfaces. The \"Sensors\" Interface contains the Values \"depth\" (of type \"real\"), \"hdng\" (of type \"SVec\"), and \"obs\" (of type \"Obstacle\"). The \"Inputs\" Interface defines six Events: \"endTask\", \"reqOCM\", \"reqMOM\", and \"reqHCM\" (all with no Parameters and no Return Value), as well as \"reqVel\" and \"reqHdng\" (each with no Parameters but returning a value of type \"real\"). The \"Outputs\" Interface defines two Events: \"advVel\" and \"advHdng\", both of which take a single Parameter of type \"real\" and have no Return Value. The \"Actuators\" Interface should remain empty at this point.",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+
+        {
+            "kind": "Functional Requirement",
+            "name": "Function1",
+            "id": "Platform-F1",
+            "description": "The \"AUV_Module\" shall define three Functions: \"odist\", \"hdist\", and \"vdist\", each taking an \"Obstacle\" as input and returning a \"real\" value representing the overall distance, horizontal distance, and vertical distance from the AUV to the Obstacle, respectively.",
+            "priority": "5"
+        }
+
+    ]
+}
