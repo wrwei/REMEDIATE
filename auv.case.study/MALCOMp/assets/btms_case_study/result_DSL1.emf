@@ -1,0 +1,47 @@
+package transport;
+
+class Driver {
+    attr String name;
+    attr boolean isSick;
+    ref Shift[*] shifts;
+    op void markAsSick();
+    op void addDriver(String name);
+}
+
+class Bus {
+    @constraint(maxLength=10) attr String licensePlate;
+    attr boolean isInRepair;
+    ref Route[0..1] route;
+    op void preventAssignmentIfInRepair();
+    op void assignToRoute(Route route);
+}
+
+class Shift {
+    ref Driver[*] drivers;
+}
+
+class Route {
+    @constraint(maxValue=9999) attr int number;
+    ref Bus[*] buses;
+    ref Shift[*] shifts;
+    ref Driver[*] drivers;
+}
+
+class Overview {
+    ref Route[*] routes;
+    ref Driver[*] drivers;
+    ref Bus[*] buses;
+    op void generateDailyOverview();
+}
+
+class Schedule {
+    ref Bus[*] buses;
+    ref Driver[*] drivers;
+    attr Date startDate;
+    attr Date endDate;
+}
+
+class ImmutableRecord {
+    op void add();
+    op void delete();
+}
