@@ -1,92 +1,201 @@
 import json
+import logging
 import os
+from pathlib import Path
+
 import autogen
+import yaml
 from autogen import ConversableAgent
+from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
+
 
 class Base:
-    # set API and keyu
-    os.environ["OPENAI_API_BASE"] = "https://a.fe8.cn/v1"
-    os.environ["OPENAI_API_KEY"] = "sk-jxGxEstKGNXlwD4gaFIIveFQOAWm7hRxUZth8k191o5m8DE4"
+    """Base class for all MALCOMp pipeline stages.
 
-    def __init__(self):
+    Provides shared configuration loading, asset file reading, agent creation,
+    group chat setup, and result extraction helpers.
+    """
+
+    def __init__(self, stage_name, config_path="config.yaml"):
+        load_dotenv()
+        self._validate_env()
+
+        self.config = self._load_config(config_path)
+        self.stage_config = self.config["stages"][stage_name]
+        self.assets_dir = Path(self.config.get("assets_dir", "assets"))
+        self.output_dir = Path(self.config.get("output_dir", "output"))
+        self.output_dir.mkdir(exist_ok=True)
+
+        self.config_list = self._build_config_list()
+        self.default_llm_config = {
+            "temperature": self.config["model"].get("temperature", 0.5),
+            "config_list": self.config_list,
+            "timeout": 600000,
+            "cache_seed": None,
+        }
+
+        self.requirement_file = self.stage_config["requirement_file"]
+        self.user = self._create_user()
+        self.agents = []
         self.groupchat = None
-        self.user = None
-        self.requirement_file = None
-        self.config_list = None
-        self.groupt_chat_manager = None
+        self.group_chat_manager = None
 
-    def getUser(self):
-        self.user = MyConversableAgent(
-            file_path=self.requirement_file,
-            name = "User",
-            llm_config = False,
-            human_input_mode='ALWAYS',
-            description='A User to provide the requirements.'
-        )
-        return self.user
+    @staticmethod
+    def _validate_env():
+        if not os.environ.get("OPENAI_API_KEY"):
+            raise EnvironmentError(
+                "OPENAI_API_KEY not set. Create a .env file with your key."
+            )
 
-    def getConfigList(self):
-        self.config_list = [
+    @staticmethod
+    def _load_config(config_path):
+        with open(config_path, "r", encoding="utf-8") as f:
+            return yaml.safe_load(f)
+
+    def _build_config_list(self):
+        return [
             {
-                "model": "gpt-4o",
-                "api_key": os.environ.get("OPENAI_API_KEY"),
-                "base_url": os.environ.get("OPENAI_API_BASE"),
-            },
-        ]
-        return self.config_list
-
-    def init_group_chat_manager(self):
-        self.groupt_chat_manager = autogen.GroupChatManager(
-            self.groupchat,
-            llm_config={
-                "temperature": 0.5,
-                "config_list": self.config_list,
+                "model": self.config["model"]["name"],
+                "api_key": os.environ["OPENAI_API_KEY"],
+                "base_url": os.environ.get(
+                    "OPENAI_API_BASE",
+                    self.config["model"].get("api_base_url", ""),
+                ),
             }
+        ]
+
+    def load_asset(self, key):
+        """Load an asset file by its config key name."""
+        filename = self.stage_config["asset_files"][key]
+        path = self.assets_dir / filename
+        return path.read_text(encoding="utf-8")
+
+    def create_agent(self, name, system_message, description, **agent_kwargs):
+        """Create a ConversableAgent with the default llm_config.
+
+        Any extra keyword arguments are passed directly to ConversableAgent
+        (e.g. max_consecutive_auto_reply).
+        """
+        llm_config = {**self.default_llm_config}
+        agent = ConversableAgent(
+            name=name,
+            llm_config=llm_config,
+            system_message=system_message,
+            description=description,
+            **agent_kwargs,
+        )
+        self.agents.append(agent)
+        return agent
+
+    def _create_user(self):
+        return RequirementFeederAgent(
+            file_path=self.requirement_file,
+            name="User",
+            llm_config=False,
+            human_input_mode="ALWAYS",
+            description="A User to provide the requirements.",
         )
 
-    def storeJSON(self, chat_results, agent_name, file_name, tag_name):
-        content = [item['content'] for item in chat_results.chat_history if item.get('name') == agent_name]
-        temp = "{\"" + tag_name+ "\": []}"
-        data = json.loads(temp)
-        with open(file_name, 'w') as f:
-            json.dump(data, f, indent=4)
+    def init_group_chat(self):
+        """Create GroupChat and GroupChatManager from registered agents."""
+        all_agents = [self.user] + self.agents
+        self.groupchat = autogen.GroupChat(
+            agents=all_agents,
+            messages=[],
+            speaker_selection_method="round_robin",
+            max_round=self.stage_config.get("max_rounds", 100),
+            send_introductions=True,
+        )
+        self.group_chat_manager = autogen.GroupChatManager(
+            self.groupchat,
+            llm_config=self.default_llm_config,
+        )
+
+    def run(self, message=""):
+        """Execute the pipeline stage: initiate chat, store JSON trace and code artifact."""
+        chat_results = self.user.initiate_chat(
+            self.group_chat_manager,
+            message=message,
+            clear_history=True,
+        )
+        output_cfg = self.stage_config["output"]
+
+        # Store JSON traceability
+        self.store_json(
+            chat_results,
+            agent_name=output_cfg["json_agent"],
+            file_name=str(self.output_dir / output_cfg["json_file"]),
+            tag_name=output_cfg["json_tag"],
+        )
+
+        # Store code artifact if configured
+        if "code_agent" in output_cfg and "code_file" in output_cfg:
+            self._store_last_agent_output(
+                chat_results,
+                agent_name=output_cfg["code_agent"],
+                file_name=str(self.output_dir / output_cfg["code_file"]),
+            )
+
+        return chat_results
+
+    def store_json(self, chat_results, agent_name, file_name, tag_name):
+        """Extract JSON from an agent's messages and save to file."""
+        content = [
+            item["content"]
+            for item in chat_results.chat_history
+            if item.get("name") == agent_name
+        ]
+        data = {tag_name: []}
         for item in content:
             try:
-                parsed_json = json.loads(item)
-                if type(parsed_json) is list:
-                    for sub_json in parsed_json:
-                        data[tag_name].append(sub_json)
+                parsed = json.loads(item)
+                if isinstance(parsed, list):
+                    data[tag_name].extend(parsed)
                 else:
-                    data[tag_name].append(parsed_json)
+                    data[tag_name].append(parsed)
             except json.JSONDecodeError as e:
-                print(f"Error parsing JSON: {e}")
-        with open(file_name, 'w') as file:
-            json.dump(data, file, indent=4)
+                logger.warning("Skipping unparseable JSON from %s: %s", agent_name, e)
 
-class MyConversableAgent(ConversableAgent):
-    def __init__(self, file_path, *args, **kwargs, ):
+        with open(file_name, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=4)
+        logger.info("Stored JSON trace to %s", file_name)
+
+    def _store_last_agent_output(self, chat_results, agent_name, file_name):
+        """Extract the last message from a named agent and write to file."""
+        last_content = next(
+            (
+                entry["content"]
+                for entry in reversed(chat_results.chat_history)
+                if entry.get("name") == agent_name
+            ),
+            None,
+        )
+        if last_content:
+            with open(file_name, "w", encoding="utf-8") as f:
+                f.write(last_content)
+            logger.info("Stored %s output to %s", agent_name, file_name)
+        else:
+            logger.warning("No output found from agent %s", agent_name)
+
+
+class RequirementFeederAgent(ConversableAgent):
+    """A ConversableAgent that feeds requirements from a JSON file one by one."""
+
+    def __init__(self, file_path, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.file_path = file_path  # Path to your input file
-        self.current_index = 0  # Track the current index of req array
-        with open(self.file_path, 'r', encoding="utf-8") as file:
-            self.data = json.load(file)['requirements']
+        self.file_path = file_path
+        self.current_index = 0
+        with open(self.file_path, "r", encoding="utf-8") as f:
+            self.data = json.load(f)["requirements"]
 
-    def get_human_input(self, prompt: str) -> str:
-        """
-        Override to customize the way to get human input.
-        For example, read input from a JSON file.
-        Args:
-            prompt (str): prompt for the human input.
-        Returns:
-            str: human input from a JSON file.
-        """
+    def get_human_input(self, prompt):
         if self.current_index < len(self.data):
-            # Get the current item from req array
             item = self.data[self.current_index]
-            # Convert the item to string format
             reply = json.dumps(item)
             self.current_index += 1
         else:
-            reply = "exit"  # Or any other suitable message
+            reply = "exit"
         self._human_input.append(reply)
         return reply

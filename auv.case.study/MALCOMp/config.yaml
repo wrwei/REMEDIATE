@@ -1,0 +1,76 @@
+model:
+  name: "gpt-4o"
+  temperature: 0.5
+  api_base_url: "https://a.fe8.cn/v1"
+
+assets_dir: "assets"
+output_dir: "output"
+
+stages:
+  term_extraction:
+    requirement_file: "assets/requirement_architecture.json"
+    max_rounds: 100
+    asset_files:
+      system_description: "system_description.txt"
+      few_shot_example: "few_shot_example_term_extraction.txt"
+      chain_of_thought_extraction: "chain_of_thought_term_extraction.txt"
+      chain_of_thought_checker: "chain_of_thought_term_checker.txt"
+    output:
+      json_file: "result_term_extraction.json"
+      json_tag: "term_trace"
+      json_agent: "Term_checker"
+
+  dsl_extraction:
+    requirement_file: "assets/requirement_architecture.json"
+    max_rounds: 500
+    asset_files:
+      system_description: "system_description.txt"
+      few_shot_dsl_extraction: "few_shot_example_dsl_extraction.txt"
+      few_shot_dsl_checker: "few_shot_example_dsl_checker.txt"
+      chain_of_thought_extraction: "chain_of_thought_dsl_extraction.txt"
+      chain_of_thought_checker: "chain_of_thought_dsl_checker.txt"
+      extracted_terms: "result_term_extraction.json"
+      emfatic_rules: "emfatic.txt"
+    output:
+      json_file: "result_dsl_extraction.json"
+      json_tag: "dsl_trace"
+      json_agent: "Json_Generator"
+      code_file: "result_DSL.emf"
+      code_agent: "DSL_Refactor"
+
+  emf_model_creation:
+    requirement_file: "assets/requirement_architecture.json"
+    max_rounds: 1000
+    asset_files:
+      system_description: "system_description.txt"
+      few_shot_model_creation: "few_shot_example_model_creation.txt"
+      few_shot_model_checker: "few_shot_example_model_checker.txt"
+      chain_of_thought_creation: "chain_of_thought_model_creation.txt"
+      chain_of_thought_checker: "chain_of_thought_model_checker.txt"
+      chain_of_thought_trace: "chain_of_thought_model_trace.txt"
+      extracted_terms: "result_term_extraction.json"
+      dsl_source: "result_DSL.emf"
+    output:
+      json_file: "result_model_creation.json"
+      json_tag: "model_trace"
+      json_agent: "Json_Generator"
+      code_file: "result_eol_program.eol"
+      code_agent: "Model_Refactorer"
+
+  state_machine_extraction:
+    requirement_file: "assets/requirement_behaviour.json"
+    max_rounds: 500
+    asset_files:
+      robochart_ecore: "RoboChart_ecore.txt"
+      xtext: "Xtext.txt"
+      lre: "LRE.txt"
+      code_snippet_1: "code_snippet_1.txt"
+      code_snippet_2: "code_snippet_2.txt"
+      code_snippet_3: "code_snippet_3.txt"
+      semantic: "semantic.txt"
+    output:
+      json_file: "result_statemachine_extraction.json"
+      json_tag: "stm_trace"
+      json_agent: "Json_Generator"
+      code_file: "STM.txt"
+      code_agent: "Modeller"
