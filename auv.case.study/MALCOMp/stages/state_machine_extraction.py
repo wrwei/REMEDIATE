@@ -34,7 +34,7 @@ class StateMachineExtraction(Base):
                 "\n Here are example codes that are written in DSL which conforms to the Xtext. Please understand the codes, especially the syntax and semantics: \n" + code1 + "\n"
                 "\n Here is the second example, please follow the syntax and semantics of the code:\n" + code2 +
                 "\n Please find the States, Transitions, Constants, Events and Functions."
-                "Create only one state machine written in the DSL and the syntax that comforms to the code examples. "
+                "Create only one state machine written in the DSL and the syntax that conforms to the code examples. "
                 "State machines define behaviour using States, Junctions, and the possible Transitions among them. "
                 "States and Transitions also make use of the other elements that make up state machines which are: Events, Variables, required Interfaces, defined Interfaces, and Clocks; such elements can be used by the States and Transitions to accomplish the state machine's function."
                 "The actions of states can be specified as being executed on entry, during, or on exit of the state. "
@@ -64,10 +64,10 @@ class StateMachineExtraction(Base):
                 "For instance, the requirement statement may contain a source state, an end state, a transition, a id."
                 'Your answer should be in the form of a JSON format : {"requirement_gid" : ${the id of the requirement } , "source state" : ${the source state of the requirement}, "end state": ${the end state of the requirement}, "transition":${the transition from source to target of the requirement}'
                 "The id need to conform to the id of original statement provided by User."
-                "You may provide some more JSON elements and organised them in one array that confomrs to the JSON syntax."
+                "You may provide some more JSON elements and organised them in one array that conforms to the JSON syntax."
                 "The Output format is JSON only, no markdown permitted (no ```), no explain."
             ),
-            description="A Json_Generator to generate JSON elements based on the requirement statements provided by Modeller and the code provided by Checker.",
+            description="A Json_Generator to generate JSON elements based on the requirement statements provided by User and the code provided by Modeller.",
             max_consecutive_auto_reply=1,
         )
 

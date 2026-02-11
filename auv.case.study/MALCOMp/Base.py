@@ -20,9 +20,8 @@ class Base:
 
     def __init__(self, stage_name, config_path="config.yaml"):
         load_dotenv()
-        self._validate_env()
-
         self.config = self._load_config(config_path)
+        self._validate_env()
         self.stage_config = self.config["stages"][stage_name]
         self.assets_dir = Path(self.config.get("assets_dir", "assets"))
         self.output_dir = Path(self.config.get("output_dir", "output"))
@@ -42,12 +41,18 @@ class Base:
         self.groupchat = None
         self.group_chat_manager = None
 
-    @staticmethod
-    def _validate_env():
-        if not os.environ.get("OPENAI_API_KEY"):
-            raise EnvironmentError(
-                "OPENAI_API_KEY not set. Create a .env file with your key."
-            )
+    def _validate_env(self):
+        api_type = self.config["model"].get("api_type", "openai")
+        if api_type == "anthropic":
+            if not os.environ.get("ANTHROPIC_API_KEY"):
+                raise EnvironmentError(
+                    "ANTHROPIC_API_KEY not set. Add it to your .env file."
+                )
+        else:
+            if not os.environ.get("OPENAI_API_KEY"):
+                raise EnvironmentError(
+                    "OPENAI_API_KEY not set. Add it to your .env file."
+                )
 
     @staticmethod
     def _load_config(config_path):
@@ -55,16 +60,26 @@ class Base:
             return yaml.safe_load(f)
 
     def _build_config_list(self):
-        return [
-            {
-                "model": self.config["model"]["name"],
-                "api_key": os.environ["OPENAI_API_KEY"],
-                "base_url": os.environ.get(
-                    "OPENAI_API_BASE",
-                    self.config["model"].get("api_base_url", ""),
-                ),
-            }
-        ]
+        api_type = self.config["model"].get("api_type", "openai")
+        if api_type == "anthropic":
+            return [
+                {
+                    "model": self.config["model"]["name"],
+                    "api_key": os.environ["ANTHROPIC_API_KEY"],
+                    "api_type": "anthropic",
+                }
+            ]
+        else:
+            return [
+                {
+                    "model": self.config["model"]["name"],
+                    "api_key": os.environ["OPENAI_API_KEY"],
+                    "base_url": os.environ.get(
+                        "OPENAI_API_BASE",
+                        self.config["model"].get("api_base_url", ""),
+                    ),
+                }
+            ]
 
     def load_asset(self, key):
         """Load an asset file by its config key name."""

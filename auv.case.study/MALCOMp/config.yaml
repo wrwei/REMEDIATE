@@ -1,6 +1,8 @@
 model:
   name: "gpt-4o"
   temperature: 0.5
+  # Supported providers: "openai" (default), "anthropic"
+  api_type: "openai"
   api_base_url: "https://a.fe8.cn/v1"
 
 assets_dir: "assets"

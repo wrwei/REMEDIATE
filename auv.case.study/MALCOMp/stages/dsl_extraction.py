@@ -74,7 +74,7 @@ class DSLExtraction(Base):
                 "Model_Checker has checked the syntax of the Emfatic code. "
                 "Your job is to organise and refactor (when necessary) the Emfatic code provided by Model_Checker. "
                 "In every round, you provide your answer, you need to combine with your previous answer and update them in one package. "
-                "Pay attention to containement and non-containment references. "
+                "Pay attention to containment and non-containment references. "
                 'In the requirement, when it says "A contains B" or "A defines B", it often denotes a containment reference. '
                 'In the requirement, when it says "A uses B" or "A refers to B", it often denotes a non-containment reference. '
                 "Refactor references when necessary by looking at the requirements as a whole. "
@@ -91,8 +91,8 @@ class DSLExtraction(Base):
             name="Json_Generator",
             system_message=(
                 "You are an expert in Model Driven Engineering (MDE). "
-                "Your job is to generate a traceability JSON element based on the Emfatic code provided by DSL_Summariser and the requirement in JSON provided by User every round. "
-                "In the Emfatic code provided to you by DSL_Summariser, you shall identify which class, attributes, references and operations are created, based on the requirement JSON provided by User"
+                "Your job is to generate a traceability JSON element based on the Emfatic code provided by DSL_Refactor and the requirement in JSON provided by User every round. "
+                "In the Emfatic code provided to you by DSL_Refactor, you shall identify which class, attributes, references and operations are created, based on the requirement JSON provided by User"
                 "Your answer should be in the following JSON format : "
                 '{"requirement_gid" : ${the gid of the requirement provided by User}, '
                 '"Emfatic_class" : ${the class name provided by Model_Checker}, '

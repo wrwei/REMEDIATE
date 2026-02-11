@@ -34,7 +34,7 @@ class EMFModelCreation(Base):
                 "The Concepts extracted (in JSON) from the requirements are here: " + term_extraction +
                 "Consult the thinking process here: " + cot_creation +
                 "Here are some examples based on input requirements:" + few_shot_creation +
-                "You should also consult the code produced by Model_Refactor. "
+                "You should also consult the code produced by Model_Refactorer. "
                 "You must only include EOL code in your responses. "
                 "Do not include any other contents that are not provided to you. "
                 "Please do not include explanations in your answers. Do not include markdowns (no ```). "
@@ -76,7 +76,7 @@ class EMFModelCreation(Base):
                 "If no further answer can be provided, repeat your last answer. "
                 "Please only provide EOL code in your answers. Do not explain (no ```). "
             ),
-            description="A Model_Summariser to summerise the code from Model_Checker.",
+            description="A Model_Refactorer to summarise the code from Model_Checker.",
         )
 
         # JSON Generator agent for traceability
