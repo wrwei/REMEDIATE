@@ -1,0 +1,47 @@
+For the following JSON requirement: {"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The AUV system is developed as a Module named \"AUV_Module\".", "priority": "6", "types": ["architecture"]}, the EOL source code to create would be:
+{
+var auv_module = new M!Module;
+auv_module.name = "AUV_Module";
+}.
+
+For the following JSON requirements:
+{"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The AUV system is developed as a Module named \"AUV_Module\".", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"SD2", "id": "SD2", "description": "\"AUV_Module\" should contain a Robotic Platform named \"AUV_Platform\", it should use the Interfaces \"Sensors\" and \"Actuators\" (defined by \"AUV_Module\").", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"PT1", "id": "PT1", "description": "The \"AUV_Module\" should define a Primitive Type named \"nat\" (for natural numbers).", "priority": "6", "types": ["architecture"]}, the EOL source code to create would be:
+{
+var auv_module = new M!Module;
+auv_module.name = "AUV_Module";
+var auv_platform = new M!RoboticPlatform;
+auv_platform.name = "AUV_Platform";
+var nat = new M!PrimitiveType;
+nat.name = "nat";
+}.
+
+For the following JSON requirements:
+{"kind": "Non-Functional Requirement", "name":"PT5", "id": "PT5", "description": "The \"AUV_Module\" should define a Primitive Type named \"real\" (for real numbers).", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"CT1", "id": "CT1", "description": "The \"AUV_Module\" should define a Composite Type named \"SVec\" (Spherical Vector), to record values such as \"radial\" (of type \"real\"), \"polar\" (of type \"real\"), and \"azimuth\" (of type \"real\").", "priority": "6", "types": ["architecture"]}, the EOL source code to create would be:
+{
+var real = new M!PrimitiveType;
+real.name = "real";
+auv_platform.primitiveTypes.add(real);
+
+var svec = new M!CompositeType;
+svec.name = "SVec";
+
+var radial = new M!Value;
+radial.name = "radial";
+radial.type = real;
+
+var polar = new M!Value;
+polar.name = "polar";
+polar.type = real;
+
+var azimuth = new M!Value;
+azimuth.name = "azimuth";
+azimuth.type = real;
+
+svec.values.add(radial);
+svec.values.add(polar);
+svec.values.add(azimuth);
+
+}.

@@ -1,0 +1,268 @@
+{
+    "model_trace": [
+        {
+            "requirement_gid": "SD1",
+            "Model_Element": "Module",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "SD2",
+            "Model_Element": "RoboticPlatform",
+            "Model_attributes": "name",
+            "Model_references": "robotic_platforms"
+        },
+        {
+            "requirement_gid": "SD2",
+            "Model_Element": "Interface",
+            "Model_attributes": "name",
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD2",
+            "Model_Element": "Interface",
+            "Model_attributes": "name",
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD3",
+            "Model_Element": "Controller",
+            "Model_attributes": "name",
+            "Model_references": "controllers"
+        },
+        {
+            "requirement_gid": "SD3",
+            "Model_Element": "Interface",
+            "Model_attributes": "name",
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD3",
+            "Model_Element": "Controller",
+            "Model_attributes": [],
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Controller",
+            "Model_attributes": "name",
+            "Model_references": "controllers"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Controller",
+            "Model_attributes": [],
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Interface",
+            "Model_attributes": "name",
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD4",
+            "Model_Element": "Controller",
+            "Model_attributes": [],
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "SD5",
+            "Model_Element": "Controller",
+            "Model_attributes": "name",
+            "Model_references": "controllers"
+        },
+        {
+            "requirement_gid": "SD5",
+            "Model_Element": "Controller",
+            "Model_attributes": [],
+            "Model_references": "interfaces"
+        },
+        {
+            "requirement_gid": "PT1",
+            "Model_Element": "PrimitiveType",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "PT2",
+            "Model_Element": "PrimitiveType",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "PT3",
+            "Model_Element": "PrimitiveType",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "PT4",
+            "Model_Element": "PrimitiveType",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "PT5",
+            "Model_Element": "PrimitiveType",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "CompositeType",
+            "Model_attributes": "name",
+            "Model_references": "values"
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT1",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "CompositeType",
+            "Model_attributes": "name",
+            "Model_references": "values"
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "CT2",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name"
+            ],
+            "Model_references": "compositeType"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name",
+                "type"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name"
+            ],
+            "Model_references": "compositeType"
+        },
+        {
+            "requirement_gid": "Interface1",
+            "Model_Element": "Value",
+            "Model_attributes": [
+                "name"
+            ],
+            "Model_references": "compositeType"
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_attributes": "name",
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_attributes": [
+                "name",
+                "returnType"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface2",
+            "Model_Element": "Event",
+            "Model_attributes": [
+                "name",
+                "returnType"
+            ],
+            "Model_references": []
+        },
+        {
+            "requirement_gid": "Interface4",
+            "Model_Element": "Interface",
+            "Model_attributes": "name",
+            "Model_references": []
+        }
+    ]
+}

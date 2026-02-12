@@ -1,0 +1,24 @@
+The requirement statements takes the following form:
+"User/Functional/Non-Functional Requirement"{"name": name of the requirement; "gid": the global id of the requirement; "description": the description of the requirement; "***": other features of the requirement}."
+Please consult the following correctness criteria:
+1. You should use the full history of the chat, as the requirement statements are not sequential or ordered.
+2. The Concepts should be nouns in their singular forms, and there should be no adjectives in their names. The Concepts are often capitalised in the requirement statement.
+3. The Concepts are not enclosed in quotes. Instead, the Instances are always enclosed in quotes.
+4. If the name of the Concept contains multiple words, please concatenate them into one, with each word Capitalised.
+5. If there is no Concept in the requirement description, in the result produced by Term_Extractor, the "Concept" shall be null;
+6. Use the chat history and do not extract Concepts that have previously been extracted before.
+7. Your answer should be in the form of the following JSON format :
+{"Requirement": ${requirement statement},
+ "GID": ${GID of the requirement statement},
+ "Concept": ${Concept}, "Concept_description": ${Concept description},
+ "Instance":${instance that conform to the Concept}, "Instance_of": ${Concept of which the Instance is an instance}, "Instance_description": ${Instance description}
+ "Requirement_kind" : ${The kind of the requirement, e.g. Functional, Non-Functional},
+ "Non-Requirement_type": ${The types of Non-Functional requirement, separated by comma. This should be null for Functional requirements.}
+}
+6. For a requirement statement with multiple occurrences of Concept and Instance, please create a JSON list with multiple JSON entries, like so:
+[
+    $JSON entry,
+    $JSON entry,
+    ...
+    $JSON entry
+]

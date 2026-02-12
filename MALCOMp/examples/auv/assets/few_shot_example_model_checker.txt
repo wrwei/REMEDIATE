@@ -1,0 +1,15 @@
+For the following JSON requirement: {"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The AUV system is developed as a Module named \"AUV_Module\".", "priority": "6", "types": ["architecture"]}, for the EOL source code created:
+{
+var auv_module = new M!Module;
+}
+This is incomplete, as in the metamodel the class Module has an attribute called "name", therefore, the EOL source code should also set the name, like so:
+{
+var auv_module = new M!Module;
+auv_module.name = "AUV_Module";
+}.
+
+For the following JSON requirement: {"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The AUV system is developed as a Module named \"AUV_Module\".", "priority": "6", "types": ["architecture"]}, the EOL source code to create would be:
+{
+var auv_module = new M!Module;
+auv_module.name = "AUV_Module";
+}.

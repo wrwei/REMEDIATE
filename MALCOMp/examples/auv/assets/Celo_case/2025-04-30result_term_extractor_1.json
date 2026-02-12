@@ -1,0 +1,213 @@
+{
+    "term_trace": [
+        {
+            "Requirement": "The application shall allow an Organizer to create an Event, specifying the Event's start and end date/time, location, and type.",
+            "GID": "UR-001",
+            "Concept": "Organizer",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The application shall allow an Organizer to create an Event, specifying the Event's start and end date/time, location, and type.",
+            "GID": "UR-001",
+            "Concept": "Event",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Passwords for organizer and attendee accounts shall be stored securely and not transmitted in plain text.",
+            "GID": "1",
+            "Concept": "Password",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "security"
+        },
+        {
+            "Requirement": "Passwords for organizer and attendee accounts shall be stored securely and not transmitted in plain text.",
+            "GID": "1",
+            "Concept": "Account",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "security"
+        },
+        {
+            "Requirement": "Invitations shall be reliably delivered via email to all attendees.",
+            "GID": "2",
+            "Concept": "Invitation",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "performance, dependability"
+        },
+        {
+            "Requirement": "Invitations shall be reliably delivered via email to all attendees.",
+            "GID": "2",
+            "Concept": "Attendee",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "performance, dependability"
+        },
+        {
+            "Requirement": "The system shall clearly indicate the RSVP status of all invitees to the organizer.",
+            "GID": "3",
+            "Concept": "RSVP",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, operational"
+        },
+        {
+            "Requirement": "The system shall clearly indicate the RSVP status of all invitees to the organizer.",
+            "GID": "3",
+            "Concept": "Invitee",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, operational"
+        },
+        {
+            "Requirement": "Tasks added to a checklist shall be reusable in future events of the same type.",
+            "GID": "4",
+            "Concept": "Task",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational, development"
+        },
+        {
+            "Requirement": "Tasks added to a checklist shall be reusable in future events of the same type.",
+            "GID": "4",
+            "Concept": "Checklist",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational, development"
+        },
+        {
+            "Requirement": "Attendee-assigned tasks shall only be visible to attendees who have confirmed participation.",
+            "GID": "5",
+            "Concept": "Task",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, security"
+        },
+        {
+            "Requirement": "Attendee-assigned tasks shall only be visible to attendees who have confirmed participation.",
+            "GID": "5",
+            "Concept": "Participation",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, security"
+        },
+        {
+            "Requirement": "The system shall allow organizers to create a new event by specifying event type, occasion, date/time, and location.",
+            "GID": "1",
+            "Concept": "Occasion",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow organizers to create a new event by specifying event type, occasion, date/time, and location.",
+            "GID": "1",
+            "Concept": "Location",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow organizers to invite attendees by providing their names and email addresses.",
+            "GID": "2",
+            "Concept": "Name",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow organizers to invite attendees by providing their names and email addresses.",
+            "GID": "2",
+            "Concept": "EmailAddress",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Attendees shall be able to confirm, tentatively confirm, or decline an event invitation.",
+            "GID": "3",
+            "Concept": "Invitation",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Organizers shall be able to manage tasks: mark as done, add new tasks, or assign tasks to attendees.",
+            "GID": "4",
+            "Concept": "Task",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Attendees shall be able to select tasks assigned for attendees once they confirm attendance.",
+            "GID": "5",
+            "Concept": null,
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        }
+    ]
+}

@@ -1,0 +1,617 @@
+grammar circus.robocalc.robochart.textual.RoboChart with org.eclipse.xtext.common.Terminals
+
+import "http://www.robocalc.circus/RoboChart"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+RCPackage:
+	{RCPackage}('package' name=QualifiedName)?
+	(
+		'diagram' ID |
+		imports+=Import |
+		interfaces+=Interface |
+		robots+=RoboticPlatformDef |
+		types+=TypeDecl |
+		controllers+=ControllerDef |
+		machines+=StateMachineDef |
+		operations+=OperationDef |
+		functions+=Function |
+		modules+=RCModule
+	)*
+;
+
+terminal FLOAT returns ecore::EFloat: ('0'..'9')+'.'('0'..'9')+;
+
+Import:
+	'import' importedNamespace = QualifiedNameWithWildcard
+;
+
+QualifiedNameWithWildcard:
+	QualifiedName '::*'?
+;
+
+QualifiedName:
+	ID ('::' ID)*
+;
+
+// Definition of events
+
+Event: (broadcast?='_broadcast')? 'event' name=ID (':' type=Type)?;
+
+// Definition of types
+
+TypeDecl:
+	PrimitiveType | RecordType | Enumeration
+;
+
+Type: RelationType;
+
+RelationType returns Type:
+	FunctionType ({RelationType.domain=current} '<->' range=RelationType)?
+;
+
+FunctionType returns Type:
+	ProductType ({FunctionType.domain=current} '->' range=FunctionType)?
+;
+
+ProductType returns Type:
+	VectorType ({ProductType.types+=current} ('*' types+=TypeRef)+)?
+;
+
+VectorType returns Type:
+	{VectorType} 'vector' '(' base=Type ',' size=Atomic ')' |
+	{MatrixType} 'matrix' '(' base=Type ',' rows=Atomic ',' columns=Atomic ')' |
+	TypeRef
+;
+
+TypeRef returns Type:
+	{TypeRef} ref=[TypeDecl|QualifiedName] |
+	{SetType} 'Set(' domain=Type ')' |
+	{SeqType} 'Seq(' domain=Type ')' |
+	{AnyType} '?' identifier=ID |
+	'(' Type ')'
+;
+
+PrimitiveType:
+	'type' name=ID
+;
+
+RecordType:
+	('datatype'|'record') name=ID '{'
+		fields+=Field*
+	'}'
+;
+
+Field:
+	name=ID ':' type=Type
+;
+
+Enumeration:
+	'enumeration' name=ID '{'
+		literals+=Literal*
+	'}'
+;
+
+Literal:
+	{Literal} name=ID ('(' types+=Type (',' types+=Type)*')')?
+;
+
+// Definition of interfaces
+
+Interface:
+	{Interface}'interface' name=ID '{'
+		(
+			operations+=OperationSig |
+			events+=Event |
+			variableList+=VariableList |
+			clocks+=Clock
+		)*
+	'}'
+;
+
+// Definition of robotic platforms
+
+RoboticPlatform: RoboticPlatformDef | RoboticPlatformRef;
+
+RoboticPlatformDef:
+	{RoboticPlatformDef}'robotic' 'platform' name=ID '{'
+		(
+			'uses' interfaces+=[Interface|QualifiedName] |
+			'provides' pInterfaces+=[Interface|QualifiedName] |
+			'requires' rInterfaces+=[Interface|QualifiedName] |
+			variableList+=VariableList |
+			operations+=OperationSig |
+			events+=Event
+		)*
+	'}'
+;
+
+RoboticPlatformRef:
+	{RoboticPlatformRef} 'rref' name=ID '=' ref=[RoboticPlatformDef|QualifiedName]
+;
+
+//NamedConstructs: RoboticPlatform | Controller | StateMachineDef | StateMachineRef;
+// Definition of statemachines
+
+ControllerDef:
+	{ControllerDef}'controller' name=ID '{'
+	(
+		'uses' interfaces+=[Interface|QualifiedName] |
+		'provides' pInterfaces+=[Interface|QualifiedName] |
+		'requires' rInterfaces+=[Interface|QualifiedName] |
+		variableList+=VariableList |
+		events+=Event |
+		lOperations+=OperationDef |
+		lOperations+=OperationRef |
+		machines+=StateMachine |
+		connections+=Connection
+	)*
+	'}'
+;
+
+ControllerRef:
+	{ControllerRef} 'cref' name=ID '=' ref=[ControllerDef|QualifiedName]
+;
+
+Controller: ControllerDef | ControllerRef;
+
+StateMachine: StateMachineDef | StateMachineRef;
+
+StateMachineDef:
+	{StateMachineDef}'stm' name=ID
+	'{'
+		(
+			'uses' interfaces+=[Interface|QualifiedName] |
+			'provides' pInterfaces+=[Interface|QualifiedName] |
+			'requires' rInterfaces+=[Interface|QualifiedName] |
+			variableList+=VariableList |
+			events+=Event |
+			nodes+=Node |
+			transitions+=Transition |
+			clocks+=Clock
+		)*
+	'}'
+;
+
+OperationRef:
+	{OperationRef} 'opref' name=ID '=' ref=[OperationDef|QualifiedName]
+;
+
+OperationSig:
+	{OperationSig} name=ID '('
+		(
+			parameters+=Parameter
+			(',' parameters+=Parameter)*
+		)?
+	')' ('[' terminates?='terminates' ']')?
+;
+
+Function:
+	{Function} 'function' name=ID '('
+		(
+			parameters+=Parameter
+			(',' parameters+=Parameter)*
+		)?
+	')' ':' type=Type
+	'{'
+	(
+		'precondition' preconditions+=Expression |
+		'postcondition' postconditions+=Expression
+	)*
+	'}'
+;
+
+OperationDef:
+	'operation' name=ID '('
+		(
+			parameters+=Parameter
+			(',' parameters+=Parameter)*
+		)?
+	')'
+	'{'
+		(
+			terminates?='terminates' |
+			'precondition' preconditions+=Expression |
+			'postcondition' postconditions+=Expression |
+			'uses' interfaces+=[Interface|QualifiedName] |
+			'provides' pInterfaces+=[Interface|QualifiedName] |
+			'requires' rInterfaces+=[Interface|QualifiedName] |
+			variableList+=VariableList |
+			events+=Event |
+			nodes+=Node |
+			transitions+=Transition |
+			clocks+=Clock
+		)*
+	'}'
+;
+
+Node: State | Initial | Junction | Final | ProbabilisticJunction;
+
+StateMachineRef:
+	{StateMachineRef} 'sref' name=ID '=' ref=[StateMachineDef|QualifiedName]
+;
+
+State:
+	'state' name=ID '{'
+		(
+			nodes+=Node |
+			transitions+=Transition |
+			actions+=Action
+		)*
+	'}'
+;
+
+ProbabilisticJunction:
+	'probabilistic' name=ID
+;
+
+Initial:
+	'initial' name=ID
+;
+
+Final:
+	'final' name=ID
+;
+
+Junction:
+	'junction' name=ID
+;
+
+Transition:
+	'transition' name=ID '{'
+		'from' source=[Node]
+		'to' target=[Node]
+		(
+			'trigger' trigger=Communication |
+			'probability' probability=Expression
+		)?
+		(reset+=ClockReset)* ('<{' deadline=Expression '}')?
+		('condition' condition=(Expression|Else))?
+		('action' action=Statement)?
+	'}'
+;
+
+ClockReset:
+	'#' clock=[Clock]
+;
+
+Clock:
+	'clock' name=ID
+;
+
+Communication returns Communication:
+	event=[Event]
+	(
+		'[|'
+		(
+			_from=[Variable] '=' 'from'
+			(
+				'|]' |
+				'|' _predicate=Expression '|]'
+			) |
+			_predicate=Expression? '|]'
+		)
+	)?
+	(
+		_type=InputType parameter=[Variable|QualifiedName] |
+		_type=OutputType value=CallExp |
+		_type=SyncType value=CallExp
+	)?
+;
+
+enum InputType returns CommunicationType:
+	INPUT = '?'
+;
+
+enum OutputType returns CommunicationType:
+	OUTPUT = '!'
+;
+
+enum SyncType returns CommunicationType:
+	SYNC = '.'
+;
+
+Action:
+	EntryAction | DuringAction | ExitAction// | TriggeredAction
+;
+
+EntryAction: 'entry' action=Statement;
+DuringAction: 'during' action=Statement;
+ExitAction: 'exit' action=Statement;
+//TriggeredAction: trigger=[Event] '/' action=Statement;
+
+VariableList:
+	modifier=VariableModifier vars+=Variable (',' vars+=Variable)*
+;
+
+enum VariableModifier returns VariableModifier:
+	VAR = 'var' | CONST = 'const'
+;
+
+Variable:
+	{Variable}name=ID  ':' type=Type ('=' initial=Expression)?
+;
+
+VariableNoInit returns Variable:
+	name=ID  ':' type=Type
+;
+
+Parameter returns Parameter:
+	name=ID ':' type=Type
+;
+
+Expression:
+	{Forall} 'forall' variables+=VariableNoInit (',' variables+=VariableNoInit)* ('|' suchthat=Expression)? '@' predicate=Expression |
+	{Exists} ('exists' | unique?='exists1') variables+=VariableNoInit (',' variables+=VariableNoInit)* ('|' suchthat=Expression)? '@' predicate=Expression |
+	LambdaExp |
+	Iff
+;
+
+LambdaExp returns Expression:
+	{LambdaExp} 'lambda' variables+=VariableNoInit (',' variables+=VariableNoInit)* ('|' suchthat=Expression)? '@' expression=Expression
+;
+
+Iff returns Expression:
+	Implies ({Iff.left=current} 'iff' right=Implies)*
+;
+
+Implies returns Expression:
+	Or ({Implies.left=current} '=>' right=Or)*
+	;
+
+Or returns Expression:
+	And ({Or.left=current} '\\/' right=And)*
+;
+
+And returns Expression:
+	Not ({And.left=current} '/\\' right=Not)*
+;
+
+Not returns Expression:
+	{Not} 'not' exp=Not |
+	Comp
+;
+
+Comp returns Expression:
+	DefiniteDescription (
+		(
+			{Equals.left=current} '==' |
+			{Different.left=current} '!=' |
+			{GreaterThan.left=current} '>' |
+			{GreaterOrEqual.left=current} '>=' |
+			{LessThan.left=current} '<' |
+			{LessOrEqual.left=current} '<='
+		)
+		right=DefiniteDescription |
+		{InExp.member=current} 'in' set=DefiniteDescription
+	)*
+;
+
+DefiniteDescription returns Expression:
+	{DefiniteDescription} 'the' variables+=VariableNoInit (',' variables+=VariableNoInit)* ('|' suchthat=Expression)? '@' expression=DefiniteDescription |
+	LetExpression
+;
+
+Declaration:
+	name=ID '==' value=Expression
+;
+
+LetExpression returns Expression:
+	{LetExpression} 'let' declarations+=Declaration (',' declarations+=Declaration)* '@' expression=LetExpression |
+	IfExpression
+;
+
+IfExpression returns Expression:
+	{IfExpression} 'if' condition=Expression 'then' ifexp=Expression 'else' elseexp=Expression 'end' |
+	TypedExpression
+;
+
+TypedExpression returns Expression:
+	PlusMinus (
+		{AsExp.exp=current} 'as' type=Type |
+		{IsExp.exp=current} 'is' type=Type
+	)?
+;
+
+PlusMinus returns Expression:
+	MultDivMod (
+		({Plus.left=current} '+' | {Minus.left=current} '-')
+		right=MultDivMod
+	)*
+;
+
+MultDivMod returns Expression:
+	CatExp (
+		({Mult.left=current} '*' |
+		 {Div.left=current} '/' |
+		 {Modulus.left=current} '%'
+		)
+		right=CatExp
+	)*
+;
+
+CatExp returns Expression:
+	Neg (
+		({Cat.left=current} 'cat' | {Cat.left=current} '^')
+		right=Neg
+	)*
+;
+
+Neg returns Expression:
+	{Neg} '-' exp=Neg |
+	Selection
+;
+
+Selection returns Expression:
+	ArrayExp (
+		{Selection.receiver=current} '.' member=[Member]
+	)*
+;
+
+ArrayExp returns Expression:
+	CallExp (
+		{ArrayExp.value=current}'[' parameters+=Expression (',' parameters+=Expression)* ']'
+	)?
+;
+
+terminal BOOLEAN:
+	'true' | 'false'
+;
+
+CallExp returns Expression:
+	Atomic (
+		{CallExp.function=current} '(' (args+=Expression (',' args+=Expression)*)? ')'
+	)?
+;
+
+RecordExp returns Expression:
+	{RecordExp} record=[RecordType] '(|'
+		definitions+=FieldDefinition (',' definitions+=FieldDefinition)*
+	'|)'
+;
+
+FieldDefinition returns FieldDefinition:
+	field=[Field] '=' value=Expression
+;
+
+Atomic returns Expression:
+	{ResultExp} 'result' |
+	{ToExp} 'to' |
+	{FromExp} 'from' |
+	{IntegerExp} value=INT |
+	{FloatExp} value=FLOAT |
+	{StringExp} value=STRING |
+	{BooleanExp} value=BOOLEAN |
+	RefExp |
+	RecordExp |
+	{EnumExp} type=[Enumeration] '::' literal=[Literal] |
+	RangeAndParExp | // Range expression
+	ClockExp |
+	StateClockExp |
+	{SeqExp} '<' (values+=PlusMinus (',' values+=PlusMinus)*)? '>' | // need this to avoid conflict between greater than and closing sequences
+	'{'(
+		Expression (
+			{SetExp.values+=current} (',' values+=Expression)* '}' |
+			{SetRange.start=current} 'to' end=Expression '}'
+		) |
+		{SetExp}'}'
+	) |
+	VectorOrMatrixExp |
+	{SetComp}'{' variables+=VariableNoInit (',' variables+=VariableNoInit)* ('|' predicate=Expression)? ('@' expression=Expression)? '}' |
+	{TupleExp} '(|' (values+=Expression (',' values+=Expression)*)? '|)'
+;
+
+Row returns VectorExp:
+	{VectorExp} values += Expression (',' values += Expression)*
+;
+
+VectorOrMatrixExp returns Expression:
+	'[|' Row ({MatrixExp.values+=current} (';' values+=Row)+)? '|]' |
+	{InverseExp} 'inverse' '(' value=Expression ')' |
+	{TransposeExp} 'transpose' '(' value=Expression ')'
+;
+
+
+RefExp:
+	{RefExp} ref=[NamedExpression]
+;
+
+StateClockExp:
+	{StateClockExp}'sinceEntry' '(' state=[State|QualifiedName] ')'
+;
+ClockExp:
+	{ClockExp}'since' '(' clock=[Clock] ')'
+;
+
+/* Range eg. [1,2] for easily specifying timed intervals, but not only.
+ * Ideally should introduce an interval type. */
+RangeAndParExp returns Expression:
+	{RangeExp} linterval='[' lrange=Expression ',' rrange=Expression rinterval=(']'|')') |
+	'(' Expression (
+		',' {RangeExp.lrange=current} rrange=Expression rinterval=(']'|')') |
+		')' {ParExp.exp=current}
+	)
+;
+
+// Definition of statements and actions
+
+Statement:
+	EndStatement (
+		{SeqStatement.statements+=current} ';' statements+=EndStatement
+		(';' statements+=EndStatement)*
+	)?
+;
+
+//StartStatement returns Statement:
+//	{TimedStatement} stmt=BasicStatement ('<{' end=Expression '}')? |
+//	EndStatement
+//;
+
+EndStatement returns Statement:
+	BasicStatement ({TimedStatement.stmt=current} '<{' deadline=Expression '}')?
+;
+
+BasicStatement returns Statement:
+	IfStmt |
+	CommunicationStmt |
+	Skip |
+	Call |
+	Assignment |
+    {ParStmt} '(' stmt=Statement ')' |
+    Wait |
+    ClockReset
+;
+
+Wait:
+	'wait' '(' duration=Expression ')'
+;
+
+Call:
+	{Call} operation=[OperationSig|QualifiedName] '(' (args+=Expression (',' args+=Expression)*)? ')'
+;
+
+Skip:
+	{Skip} 'skip'
+;
+
+IfStmt:
+	'if' expression=Expression 'then' then=Statement (=> 'else' else=Statement)? 'end'
+;
+
+Assignment:
+	{Assignment} left=VariableSelection '=' right=Expression
+;
+
+VariableSelection returns Assignable:
+	VariableReference (
+		{VarSelection.receiver=current} '.' member=[Member] |
+		{ArrayAssignable.value=current} '[' parameters+=Expression (',' parameters+=Expression)* ']'
+	)*
+;
+
+VariableReference returns Assignable:
+	{VarRef} name=[Variable|QualifiedName]
+;
+
+CommunicationStmt:
+	('send')? communication=Communication
+;
+
+RCModule:
+	'module' name=ID '{'
+	(
+		connections+=Connection |
+		nodes+=ConnectionNode
+	)*
+	'}'
+;
+
+ConnectionNode: Controller | StateMachine | RoboticPlatform;
+
+Connection:
+	'connection' from=[ConnectionNode] 'on' efrom=[Event] 'to' to=[ConnectionNode] 'on' eto=[Event]
+		('(' async?='_async' ')')? ('[' bidirec?='mult' ']')?
+;
+
+Else returns Expression:
+	{ElseExp} 'else'
+;

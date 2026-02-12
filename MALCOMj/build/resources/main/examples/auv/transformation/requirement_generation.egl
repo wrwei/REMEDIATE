@@ -1,0 +1,250 @@
+[%for (p in getRequirementPackages()) {%]
+Requirement Package [%=getName(p)%] 
+{
+[%=getDescription(p)%] 
+[%for (c in getCategories(p)) {%]
+[%=assembleCategory(c)%]
+[%}%]
+[%for (s in getStakeholders(p)) {%]
+[%=assembleStakeholder(s)%]
+[%}%]
+[%for (g in getGlossary(p)) {%]
+[%=assembleGlossary(g)%]
+[%}%]
+[%for (r in getUserRequirements(p)) {%]
+[%=assembleUserRequirement(r)%]
+[%}%]
+[[%for (r in getNonFunctionalRequirements(p)) {%]
+[%=assembleNonFunctionalRequirement(r)%]
+[%}%]]
+[[%for (r in getFunctionalRequirements(p)) {%]
+[%=assembleFunctionalRequirement(r)%]
+[%}%]]
+}
+[%}%]
+
+
+[%
+operation assembleCategory(c) {
+	var seq = new Sequence;
+	var begin = "Category{\n";
+	seq.add("name: " + getName(c));
+	seq.add("id: " + c.gid);
+	seq.add("description: " + getDescription(c));
+	var result = begin + seq.concat(", ") + "\n}.";
+	return result;
+}
+
+operation assembleGlossary(g) {
+	var seq = new Sequence;
+	var begin = "Glossary{\n";
+	for(entry in g.entries) {
+		seq.add(entry.term + ": " + entry.pitch); 
+	}
+	var result = begin + seq.concat("\n") + "\n}.";
+	return result;
+}
+
+operation assembleStakeholder(s) {
+	var seq = new Sequence;
+	var begin = "Stakeholder{\n";
+	seq.add("name: " + getName(s));
+	seq.add("id: " + s.gid);
+	seq.add("description: " + getDescription(s));
+	var result = begin + seq.concat(", ") + "\n}";
+	return result;
+}
+
+operation assembleUserRequirement(r) {
+	var seq = new Sequence;
+	var begin = "User Requirement{";
+	seq.add("name: " + getName(r));
+	seq.add("id: " + r.gid);
+	seq.add("description: " + getDescription(r));
+	seq.add("priority: " + r.priority);
+	if(not r.category.isEmpty()) {
+		seq.add("categories: " + flattenCategory(r.category));
+	}
+	if(not r.stakeholders.isEmpty()) {
+		seq.add("stakeholders: " + flattenStakeholder(r.stakeholders));
+	}
+	if(not r.dependent_requirement.isEmpty()) {
+		seq.add("dependancies: " + getDependentRequirements(r));
+	}
+	if(not r.sub_requirement.isEmpty()) {
+		seq.add("sub requirements: " + getSubRequirements(r));
+	}
+	var result = begin + seq.concat(", ") + "}.";
+	return result;
+}
+
+operation assembleFunctionalRequirement(r) {
+	var seq = new Sequence;
+	var begin = "{\"kind\": \"Functional Requirement\", ";
+	seq.add("\"name\":" + "\""+getName(r)+"\"");
+	seq.add("\"id\": " + "\""+r.gid+"\"");
+	seq.add("\"description\": " + "\""+getDescription(r)+"\"");
+	seq.add("\"priority\": " + "\""+r.priority+"\"");
+	if(not r.category.isEmpty()) {
+		seq.add("categories: " + flattenCategory(r.category));
+	}
+	if(not r.stakeholders.isEmpty()) {
+		seq.add("stakeholders: " + flattenStakeholder(r.stakeholders));
+	}
+	if(not r.dependent_requirement.isEmpty()) {
+		seq.add("dependancies: " + getDependentRequirements(r));
+	}
+	if(not r.sub_requirement.isEmpty()) {
+		seq.add("sub requirements: " + getSubRequirements(r));
+	}
+	if(r.`function`.isDefined())
+		seq.add("function: " + r.`function`);
+	if(r.inputs.isDefined())	
+		seq.add("inputs: " + r.inputs);
+	if(r.outputs.isDefined())
+		seq.add("outputs: " + r.outputs);
+	if(r.source.isDefined())
+		seq.add("source: " + r.source);
+	if(r.destination.isDefined())
+		seq.add("destination: " + r.destination);
+	if(r.action.isDefined())	
+		seq.add("action: " + r.action);
+	if(r.requires.isDefined())
+		seq.add("requires: " + r.requires);
+	if(r.pre_condition.isDefined())
+		seq.add("pre condition: " + r.pre_condition);
+	if(r.post_condition.isDefined())
+		seq.add("post condition: " + r.post_condition);
+	if(r.side_effects.isDefined())
+		seq.add("side effects: " + r.side_effects);
+	var result = begin + seq.concat(", ") + "}, ";
+	return result;
+}
+
+operation assembleNonFunctionalRequirement(r) {
+	var seq = new Sequence;
+	var begin = "{\"kind\": \"Non-Functional Requirement\", ";
+	seq.add("\"name\":" + "\""+getName(r)+"\"");
+	seq.add("\"id\": " + "\""+r.gid+"\"");
+	seq.add("\"description\": " + "\""+getDescription(r)+"\"");
+	seq.add("\"priority\": " + "\""+r.priority+"\"");
+	if(not r.category.isEmpty()) {
+		seq.add("\"categories\": " + flattenCategory(r.category));
+	}
+	if(not r.stakeholders.isEmpty()) {
+		seq.add("\"stakeholders\": " + flattenStakeholder(r.stakeholders));
+	}
+	if(not r.dependent_requirement.isEmpty()) {
+		seq.add("\"dependancies\": " + getDependentRequirements(r));
+	}
+	if(not r.sub_requirement.isEmpty()) {
+		seq.add("\"sub requirements\": " + getSubRequirements(r));
+	}
+	seq.add("\"types\": [" + getTypes(r).concat(", ") + "]");
+	var result = begin + seq.concat(", ") + "}, ";
+	return result;
+}
+
+@cached
+operation getRequirementPackages() {
+    return RequirementPackage.all;
+}
+
+@cached
+operation getUserRequirements(p) {
+    return p.closure(x | x.eContents()).select(ur|ur.isTypeOf(UserRequirement));
+}
+
+@cached
+operation getFunctionalRequirements(p) {
+	return p.requirementAsset.select(r|r.isTypeOf(FunctionalRequirement));
+//    return p.closure(x | x.eContents()).select(r|r.isTypeOf(FunctionalRequirement));
+}
+
+@cached
+operation getNonFunctionalRequirements(p) {
+	return p.requirementAsset.select(r|r.isTypeOf(NonFunctionalRequirement));
+    //return p.closure(x | x.eContents()).select(r|r.isTypeOf(NonFunctionalRequirement));
+}
+
+@cached
+operation getCategories(p) {
+	var ret = p.closure(x | x.eContents()).select(r|r.isTypeOf(Category));
+	return ret;
+}
+
+@cached
+operation getStakeholders(p) {
+	var ret = p.closure(x | x.eContents()).select(r|r.isTypeOf(Stakeholder));
+	return ret;
+}
+
+@cached
+operation getGlossary(p) {
+	var ret = p.closure(x | x.eContents()).select(r|r.isTypeOf(Glossary));
+	return ret;
+}
+
+operation flattenCategory(cat) {
+	if(cat.isEmpty)
+		return "";
+	else {
+		return cat.name.content.flatten().concat(",");
+	}
+}
+
+operation flattenStakeholder(sta) {
+	if(sta.isEmpty)
+		return "";
+	else {
+		return sta.name.content.flatten().concat(",");
+	}
+}
+
+operation getDependentRequirements(req) {
+	return req.dependent_requirement.gid.flatten().concat(",");
+}
+
+operation getSubRequirements(req) {
+	return req.sub_requirement.gid.flatten().concat(",");
+}
+
+operation getName(element) {
+	return element.name.content;
+}
+
+operation getDescription(element) {
+	return element.description.content.value.at(0).content.replace("\"", "\\\\\"");
+}
+
+operation getTypes(r) {
+	var ret = new Sequence;
+	if(r.type.architecture)
+		ret.add("\"architecture\"");
+	if(r.type.usability)
+		ret.add("\"usability\"");
+	if(r.type.performance)
+		ret.add("\"performance\"");
+	if(r.type.space)
+		ret.add("\"space\"");
+	if(r.type.dependability)
+		ret.add("\"dependability\"");
+	if(r.type.security)
+		ret.add("\"security\"");
+	if(r.type.environmental)
+		ret.add("\"environmental\"");
+	if(r.type.operational)
+		ret.add("\"operational\"");
+	if(r.type.development)
+		ret.add("\"development\"");
+	if(r.type.regulatory)
+		ret.add("\"regulatory\"");
+	if(r.type.ethical)
+		ret.add("\"ethical\"");
+	if(r.type.safety)
+		ret.add("\"safety\"");
+	if(r.type.accounting)
+		ret.add("\"accounting\"");
+	return ret;
+}
+%]

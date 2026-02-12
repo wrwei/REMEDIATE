@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="ASCII"?>
+<terminology_:TerminologyPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:terminology_="http://www.sawg.org/terminology">
+  <name content="Req"/>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="Module"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.0">
+    <name content="AUV_Module"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="RoboticPlatform"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.2">
+    <name content="AUV_Platform"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="Interface"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.4">
+    <name content="Sensors"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.4">
+    <name content="Actuators"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="Controller"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.7">
+    <name content="AUV_Operator"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.4">
+    <name content="Inputs"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.7">
+    <name content="LRE_Ctrl"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.4">
+    <name content="Outputs"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.7">
+    <name content="AUV_Autopilot"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="PrimitiveType"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.13">
+    <name content="nat"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.13">
+    <name content="int"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.13">
+    <name content="string"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.13">
+    <name content="boolean"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.13">
+    <name content="real"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="CompositeType"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.19">
+    <name content="SVec"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.19">
+    <name content="Obstacle"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.4">
+    <name content="Intpus"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="Event"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="endTask"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="reqOCM"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="reqMOM"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="reqHCM"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="reqVel"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="reqHdng"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="advVel"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.23">
+    <name content="advHdng"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.19">
+    <name content="Close"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Concept">
+    <name content="Function"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.33">
+    <name content="odist"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.33">
+    <name content="hdist"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+  <terminologyElement xsi:type="terminology_:Instance" concept="//@terminologyElement.33">
+    <name content="vdist"/>
+    <description>
+      <content>
+        <value lang="English"/>
+      </content>
+    </description>
+  </terminologyElement>
+</terminology_:TerminologyPackage>

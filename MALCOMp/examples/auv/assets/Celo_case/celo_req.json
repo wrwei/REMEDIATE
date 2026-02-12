@@ -1,0 +1,14 @@
+{
+  "requirements": [
+    {"kind": "Non-Functional Requirement", "name":"UserAccountSecurity", "id": "1", "description": "Passwords for organizer and attendee accounts shall be stored securely and not transmitted in plain text.", "priority": "6", "types": ["security"]},
+    {"kind": "Non-Functional Requirement", "name":"EmailDeliveryReliability", "id": "2", "description": " Invitations shall be reliably delivered via email to all attendees.", "priority": "2", "types": ["performance", "dependability"]},
+    {"kind": "Non-Functional Requirement", "name":"InvitationResponseTracking", "id": "3", "description": "The system shall clearly indicate the RSVP status of all invitees to the organizer.", "priority": "6", "types": ["usability", "operational"]},
+    {"kind": "Non-Functional Requirement", "name":"Task List Reusability", "id": "4", "description": "Tasks added to a checklist shall be reusable in future events of the same type.", "priority": "3", "types": ["operational", "development"]},
+    {"kind": "Non-Functional Requirement", "name":"TaskListVisibility", "id": "5", "description": "Attendee-assigned tasks shall only be visible to attendees who have confirmed participation", "priority": "6", "types": ["usability", "security"]},
+    {"kind": "Functional Requirement", "name":"CreateEvent", "id": "1 ", "description": "The system shall allow organizers to create a new event by specifying event type, occasion, date/time, and location.", "priority": "5"},
+    {"kind": "Functional Requirement", "name":"InviteAttendees", "id": "2", "description": "The system shall allow organizers to invite attendees by providing their names and email addresses.", "priority": "2"},
+    {"kind": "Functional Requirement", "name":"RespondToInvitation", "id": "3", "description": "Attendees shall be able to confirm, tentatively confirm, or decline an event invitation.", "priority": "5"},
+    {"kind": "Functional Requirement", "name":"ManageEventTasks", "id": "4", "description": "Organizers shall be able to manage tasks: mark as done, add new tasks, or assign tasks to attendees.", "priority": "5"},
+    {"kind": "Functional Requirement", "name":"ClaimAttendeeTasks", "id": "5", "description": "Attendees shall be able to select tasks assigned for attendees once they confirm attendance.", "priority": "5"}
+    ]
+}

@@ -1,0 +1,56 @@
+This is the RoboChart model for a simple random walk:
+
+stm SRWSTM {
+	uses EventIntf requires SRWIntf initial i0
+	state Move {
+		entry steps = Update ( steps , MaxSteps , x == 0 )
+	}
+probabilistic p0
+	transition t0 {
+		from i0
+		to Move
+	}
+	transition t1 {
+		from Move
+		to p0
+	condition x < MaxDist /\ x > - MaxDist /\ steps < MaxSteps
+	}
+	transition t2 {
+		from p0
+		to Move
+	probability 1 - Pl
+		action
+	x = Plus ( x , MaxDist ) ; right
+	}
+	transition t3 {
+		from p0
+		to Move
+	probability Pl
+		action
+	x = Minus ( x , - MaxDist ) ; left
+	}
+	transition t4 {
+		from Move
+		to Move
+		condition x >= MaxDist /\ steps < MaxSteps
+		action
+
+	x = Minus ( x , - MaxDist ) ; left
+	}
+	transition t5 {
+		from Move
+		to Move
+		condition x <= - MaxDist /\ steps < MaxSteps
+		action
+
+	x = Plus ( x , MaxDist ) ; right
+	}
+state Stuck {
+	}
+transition t6 {
+		from Move
+		to Stuck
+		condition steps == MaxSteps
+	}
+}
+

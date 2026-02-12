@@ -1,0 +1,120 @@
+package labRequisitionManagement;
+
+class System {
+    val Requisition[*] requisitions;
+    op createRequisition(Doctor doctor, Patient patient, TestType testType) : Requisition;
+    op viewTestResults(Doctor doctor, Patient patient) : TestResult[*];
+    op bookAppointment(Patient patient, Lab lab, TestType testType) : Appointment;
+    op updateAppointment(Appointment appointment, boolean isCancellation) : boolean;
+    op processWalkInTest(Patient patient, Test test) : boolean;
+}
+
+class Requisition {
+    ref Doctor doctor;
+    val DigitalSignature signature;
+    ref DomainRule[*] rules;
+    val TestType[*] testTypes;
+    ref Frequency frequency;
+    ref RepetitionCount repetitionCount;
+    ref TestGroup testGroup;
+    op configureRepeatPattern(Frequency frequency, RepetitionCount repetitionCount);
+}
+
+class Doctor {
+    attr int practitionerNumber;
+    attr String fullName;
+    attr String address;
+    attr String phoneNumber;
+    ref TestResult[*] testResults;
+}
+
+class Patient {
+    attr String healthNumber;
+    attr String firstName;
+    attr String lastName;
+    attr String dateOfBirth;
+    attr String address;
+    attr String phoneNumber;
+    ref TestResult[*] testResults;
+}
+
+class DigitalSignature {
+    attr String image;
+}
+
+class DomainRule {
+    attr String description;
+}
+
+class TestType {
+    attr String name;
+}
+
+class LabNetwork {
+    val Lab[*] labs;
+}
+
+class Lab {
+    attr String name;
+    attr String address;
+    attr String registrationNumber;
+    ref Test[*] tests;
+    ref YearRoundAvailability availability;
+    ref LabHours hours;
+}
+
+class Test {
+    attr String name;
+    attr int duration;
+    ref AppointmentMode appointmentMode;
+}
+
+class TestGroup {
+    attr String groupName;
+    val Test[*] tests;
+}
+
+class Frequency {
+    attr String interval;
+}
+
+class RepetitionCount {
+    attr int count;
+}
+
+class AppointmentMode {
+    attr String mode;
+}
+
+class TestResult {
+    attr boolean isPositive;
+    val Report report;
+}
+
+class Report {
+    attr String content;
+}
+
+class AppointmentConfirmation {
+    attr String confirmationNumber;
+    attr String scheduledDateTime;
+    ref Lab labDetails;
+}
+
+class CancellationFee {
+    attr float feeAmount;
+}
+
+class Appointment {
+    attr String scheduledDateTime;
+    ref CancellationFee cancellationFee;
+}
+
+class YearRoundAvailability {
+    attr boolean isOperational;
+}
+
+class LabHours {
+    attr String startTime;
+    attr String endTime;
+}

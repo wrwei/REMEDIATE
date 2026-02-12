@@ -1,0 +1,129 @@
+{
+    "term_trace": [
+        {
+            "role": "user",
+            "content": "Functional Requirement {\"name\": \"Organizer Information\", \"gid\": 1, \"description\": \"An organizer provides their first and last name, their email address (which is also used as their username), their postal address, their phone number, and their password.\"}"
+        },
+        {
+            "Requirement": "An organizer provides their first and last name, their email address (which is also used as their username), their postal address, their phone number, and their password.",
+            "GID": 1,
+            "Concept": "Organizer",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Passwords for organizer and attendee accounts shall be stored securely and not transmitted in plain text.",
+            "GID": "1",
+            "Concept": "Password",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "security"
+        },
+        {
+            "Requirement": "Invitations shall be reliably delivered via email to all attendees.",
+            "GID": "2",
+            "Concept": "Invitation",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "performance, dependability"
+        },
+        {
+            "Requirement": "The system shall clearly indicate the RSVP status of all invitees to the organizer.",
+            "GID": "3",
+            "Concept": "RSVPStatus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, operational"
+        },
+        {
+            "Requirement": "Tasks added to a checklist shall be reusable in future events of the same type.",
+            "GID": "4",
+            "Concept": "Task",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational, development"
+        },
+        {
+            "Requirement": "Attendee-assigned tasks shall only be visible to attendees who have confirmed participation",
+            "GID": "5",
+            "Concept": "Attendee",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, security"
+        },
+        {
+            "Requirement": "The system shall allow organizers to create a new event by specifying event type, occasion, date/time, and location.",
+            "GID": "1",
+            "Concept": "Event",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow organizers to invite attendees by providing their names and email addresses.",
+            "GID": "2",
+            "Concept": "Attendee",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Attendees shall be able to confirm, tentatively confirm, or decline an event invitation.",
+            "GID": "3",
+            "Concept": "Invitation",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Organizers shall be able to manage tasks: mark as done, add new tasks, or assign tasks to attendees.",
+            "GID": "4",
+            "Concept": "Task",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "Attendees shall be able to select tasks assigned for attendees once they confirm attendance.",
+            "GID": "5",
+            "Concept": "Task",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        }
+    ]
+}

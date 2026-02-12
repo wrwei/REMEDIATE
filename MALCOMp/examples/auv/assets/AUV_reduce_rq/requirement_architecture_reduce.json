@@ -1,0 +1,148 @@
+{
+    "requirements": [
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD1",
+            "id": "SD1",
+            "description": "The AUV system is developed as a Module named \"AUV_Module\".",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD2",
+            "id": "SD2",
+            "description": "\"AUV_Module\" should contain a Robotic Platform named \"AUV_Platform\", it should use the Interfaces \"Sensors\" and \"Actuators\" (defined by \"AUV_Module\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD3",
+            "id": "SD3",
+            "description": "\"AUV_Module\" should contain a Controller named \"AUV_Operator\", it should use the Interface \"Inputs\" (defined by \"AUV_Module\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "SD4",
+            "id": "SD4",
+            "description": "\"AUV_Module\" should contain a Controller named \"LRE_Ctrl\" (for Last Response Engine), it should use the Interfaces \"Inputs\" and \"Outputs\" (defined by \"AUV_Module\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "PT1",
+            "id": "PT1",
+            "description": "The \"AUV_Module\" should define a Primitive Type named \"nat\" (for natural numbers).",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "PT2",
+            "id": "PT2",
+            "description": "The \"AUV_Module\" should define a Primitive Type named \"int\" (for integers).",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "PT3",
+            "id": "PT3",
+            "description": "The \"AUV_Module\" should define a Primitive Type named \"string\" (for string values).",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "CT1",
+            "id": "CT1",
+            "description": "The \"AUV_Module\" should define a Composite Type named \"SVec\" (Spherical Vector), to record values such as \"radial\" (of type \"real\"), \"polar\" (of type \"real\"), and \"azimuth\" (of type \"real\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "CT2",
+            "id": "CT2",
+            "description": "The \"AUV_Module\" should define a Composite Type named \"Obstacle\", to record the following values: \"ns_rel_dist\" (of type \"real\"), \"ew_rel_dist\" (of type real), \"depth\" (of type \"real\"), \"id\" (of type \"real\"), \"obs_hdng\" (of type \"SVec\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "Interface1",
+            "id": "Interface1",
+            "description": "The \"AUV_Module\" should define an Interface named \"Sensors\", which contains the following Values: \"depth\" (of type \"real\"), \"hdng\" (of type \"SVec\") and \"obs\" (of type \"Obstacle\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "Interface2",
+            "id": "Interface2",
+            "description": "The \"AUV_Module\" should define an Interface named \"Intpus\", which defines the following Events: \"endTask\" (with no Parameters and no Return Value), \"reqOCM\" (with no Parameters and no Return Value), \"reqMOM\" (with no Parameters and no Return Value), \"reqHCM\" (with no Parameters and no Return Value), \"reqVel\" (with no Parameters, but with a Return Value of type \"real\"), and \"reqHdng\" (with no Parameters, but with a Return Value of type \"real\").",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "Interface3",
+            "id": "Interface3",
+            "description": "The \"AUV_Module\" should define an Interface named \"Outputs\", which defines the following Events: \"advVel\" (which takes one Parameters of type \"real\", and no Return Value) and \"advHdng\" (which takes one Parameters of type \"real\", and no Return Value).",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Non-Functional Requirement",
+            "name": "Interface4",
+            "id": "Interface4",
+            "description": "The \"AUV_Module\" should define an Interface named \"Actuators\", which should remain empty at this point.",
+            "priority": "6",
+            "types": [
+                "architecture"
+            ]
+        },
+        {
+            "kind": "Functional Requirement",
+            "name": "Function1",
+            "id": "Platform-F1",
+            "description": "The \"AUV_Module\" shall define a Function named \"odist\", which takes an \"Obstacle\" as input, that returns the distance from the AUV to the Obstacle (as \"real\").",
+            "priority": "5"
+        },
+        {
+            "kind": "Functional Requirement",
+            "name": "Function2",
+            "id": "Platform-F2",
+            "description": "The \"AUV_Module\" shall define a Function named \"hdist\", which takes an \"Obstacle\" as input, that returns the horizontal distance from the AUV to the Obstacle (as \"real\").",
+            "priority": "5"
+        }
+    ]
+}

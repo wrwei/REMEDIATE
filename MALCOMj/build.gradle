@@ -1,0 +1,116 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+def epsilonVersion = '2.8.0'
+
+dependencies {
+    implementation "org.eclipse.epsilon:org.eclipse.epsilon.eol.engine:${epsilonVersion}"
+    implementation "org.eclipse.epsilon:org.eclipse.epsilon.evl.engine:${epsilonVersion}"
+    implementation "org.eclipse.epsilon:org.eclipse.epsilon.egl.engine:${epsilonVersion}"
+    implementation "org.eclipse.epsilon:org.eclipse.epsilon.emc.emf:${epsilonVersion}"
+    implementation "org.eclipse.epsilon:org.eclipse.epsilon.emc.json:${epsilonVersion}"
+}
+
+application {
+    mainClass = 'org.sawg.malcomj.TransformationRunner'
+}
+
+// ---------------------------------------------------------------------------
+// AUV example transformation tasks
+// ---------------------------------------------------------------------------
+
+def auvDir = "${projectDir}/src/main/resources/examples/auv"
+def coreMetamodel = "${projectDir}/src/main/resources/metamodel"
+
+// Helper: create a JavaExec task that runs TransformationRunner with arguments
+def runTransformation(String taskName, String description, List<String> runArgs) {
+    tasks.register(taskName, JavaExec) {
+        it.description = description
+        it.group = 'transformations'
+        it.classpath = sourceSets.main.runtimeClasspath
+        it.mainClass = 'org.sawg.malcomj.TransformationRunner'
+        it.args = runArgs
+    }
+}
+
+// --- Simple EMF-only transformations ---
+
+runTransformation('runAuvEmfCreation',
+    'Create AUV EMF model instance',
+    ['--script', "${auvDir}/transformation/auv_emf_creation.eol",
+     '--emf', "M=${auvDir}/model/AUV.model;${auvDir}/metamodel/auv.ecore;readOnLoad=false,storeOnDisposal=true"])
+
+runTransformation('runAuvValidation',
+    'Validate AUV model constraints',
+    ['--script', "${auvDir}/transformation/auv_validation.evl",
+     '--emf', "M=${auvDir}/model/AUV.model;${auvDir}/metamodel/auv.ecore"])
+
+runTransformation('runEmf2Robochart',
+    'Generate RoboChart DSL from AUV model',
+    ['--script', "${auvDir}/transformation/emf2robochart.egl",
+     '--emf', "M=${auvDir}/model/AUV.model;${auvDir}/metamodel/auv.ecore"])
+
+runTransformation('runTestEcore',
+    'Run testEcore.eol against AUV metamodel',
+    ['--script', "${auvDir}/transformation/testEcore.eol",
+     '--emf', "M=${auvDir}/metamodel/auv.ecore;meta:http://www.eclipse.org/emf/2002/Ecore"])
+
+runTransformation('runRequirementGen',
+    'Generate requirement documents',
+    ['--script', "${auvDir}/transformation/requirement_generation.egl",
+     '--emf', "M=${auvDir}/model/project.requirement;${coreMetamodel}/base.ecore,${coreMetamodel}/requirement.ecore"])
+
+// --- Traceability transformations (EMF + JSON) ---
+
+runTransformation('runReq2Concept',
+    'Create requirement-to-concept traceability bridges',
+    ['--script', "${auvDir}/transformation/req2concept_traceability.eol",
+     '--emf', "S=${auvDir}/model/AUV.requirement;${coreMetamodel}/base.ecore,${coreMetamodel}/requirement.ecore",
+     '--emf', "T=${auvDir}/model/example.terminology;${coreMetamodel}/base.ecore,${coreMetamodel}/terminology.ecore;readOnLoad=false,storeOnDisposal=true",
+     '--emf', "B=${auvDir}/model/req2concept.bifrost;${coreMetamodel}/bifrost.ecore;readOnLoad=false,storeOnDisposal=true",
+     '--json', "J=${auvDir}/model/result_term_extraction.json"])
+
+runTransformation('runReq2Ecore',
+    'Create requirement-to-ecore traceability bridges',
+    ['--script', "${auvDir}/transformation/req2ecore_traceability.eol",
+     '--emf', "S=${auvDir}/model/AUV.requirement;${coreMetamodel}/base.ecore,${coreMetamodel}/requirement.ecore",
+     '--emf', "T=${auvDir}/metamodel/auv.ecore;meta:http://www.eclipse.org/emf/2002/Ecore",
+     '--emf', "B=${auvDir}/model/req2DSL.bifrost;${coreMetamodel}/bifrost.ecore;readOnLoad=false,storeOnDisposal=true",
+     '--json', "J=${auvDir}/model/result_dsl_extraction.json"])
+
+runTransformation('runReq2EmfModel',
+    'Create requirement-to-model traceability bridges',
+    ['--script', "${auvDir}/transformation/req2emf_model_traceability.eol",
+     '--emf', "S=${auvDir}/model/AUV.requirement;${coreMetamodel}/base.ecore,${coreMetamodel}/requirement.ecore",
+     '--emf', "T=${auvDir}/model/AUV.model;${coreMetamodel}/base.ecore,${auvDir}/metamodel/auv.ecore",
+     '--emf', "B=${auvDir}/model/req2model.bifrost;${coreMetamodel}/bifrost.ecore;readOnLoad=false,storeOnDisposal=true",
+     '--json', "J=${auvDir}/model/result_model_creation.json"])
+
+runTransformation('runReq2StateMachine',
+    'Create requirement-to-state-machine traceability bridges',
+    ['--script', "${auvDir}/transformation/req2state_machine_traceability.eol",
+     '--emf', "S=${auvDir}/model/AUV.requirement;${coreMetamodel}/base.ecore,${coreMetamodel}/requirement.ecore",
+     '--emf', "T=${auvDir}/model/example.terminology;${coreMetamodel}/base.ecore,${coreMetamodel}/terminology.ecore;readOnLoad=false,storeOnDisposal=true",
+     '--emf', "B=${auvDir}/model/term.bridge;${coreMetamodel}/bifrost.ecore;readOnLoad=false,storeOnDisposal=true",
+     '--json', "J=${auvDir}/model/result_term_extraction.json"])
+
+// --- Aggregate task ---
+
+tasks.register('runAll') {
+    description = 'Run all AUV transformations'
+    group = 'transformations'
+    dependsOn 'runAuvEmfCreation', 'runAuvValidation', 'runEmf2Robochart',
+              'runReq2Concept', 'runReq2Ecore', 'runReq2EmfModel', 'runReq2StateMachine'
+}

@@ -1,0 +1,161 @@
+{
+  "requirements": [
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Digital Signature Verification",
+      "id": "1",
+      "description": "The system shall support uploading and validating a doctor's digital signature image for every requisition.",
+      "priority": "6",
+      "types": [
+        "security"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Requisition Validation Rules",
+      "id": "2",
+      "description": "The system shall enforce all domain rules, such as not allowing multiple test types in a single requisition or preventing a doctor from prescribing to themselves.",
+      "priority": "6",
+      "types": [
+        "dependability",
+        "regulatory"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Unified Test Duration",
+      "id": "3",
+      "description": "The duration of each test shall be consistent across all labs and managed by a centralized lab network configuration.",
+      "priority": "6",
+      "types": [
+        "architecture",
+        "performance"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Repeat Pattern Enforcement",
+      "id": "4",
+      "description": "All tests on a repeated requisition must follow the same frequency and repetition count.",
+      "priority": "6",
+      "types": [
+        "dependability",
+        "regulatory"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Test Mode Restriction",
+      "id": "5",
+      "description": "The system shall restrict tests to specific appointment modes, e.g., blood tests are walk-in only and cannot be scheduled.",
+      "priority": "6",
+      "types": [
+        "usability",
+        "operational"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Test Result Accessibility",
+      "id": "6",
+      "description": " Both doctors and patients shall have access to the test results and associated reports through the system.",
+      "priority": "6",
+      "types": [
+        "usability",
+        "security"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Appointment Confirmation Integrity",
+      "id": "7",
+      "description": "Appointment confirmations must include a unique confirmation number, lab registration number, scheduled date and time, and lab details.",
+      "priority": "6",
+      "types": [
+        "usability",
+        "regulatory"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Cancellation Policy Enforcement",
+      "id": "8",
+      "description": "Appointments canceled or changed within 24 hours of the scheduled time shall trigger a fee, configurable by each lab.",
+      "priority": "6",
+      "types": [
+        "operational",
+        "regulatory"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Year-Round Lab Availability",
+      "id": "9",
+      "description": "All labs shall be operational 365 days a year without exceptions.",
+      "priority": "6",
+      "types": [
+        "dependability",
+        "operational"
+      ]
+    },
+    {
+      "kind": "Non-Functional Requirement",
+      "name": "Consistent Lab Hours",
+      "id": "10",
+      "description": "A lab’s daily start and end time shall remain unchanged week-to-week with no mid-day breaks.",
+      "priority": "6",
+      "types": [
+        "operational"
+      ]
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Create Requisition",
+      "id": "1",
+      "description": "The system shall allow doctors to create a new test requisition including required doctor and patient information.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Assign Tests to Requisition",
+      "id": "2",
+      "description": "The system shall allow adding one or more tests to a requisition, provided they belong to the same test group.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Configure Repeat Pattern",
+      "id": "3",
+      "description": "The system shall allow the doctor to specify repeat frequency and number of repetitions for all tests in a requisition.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "View Test Results",
+      "id": "4",
+      "description": "The system shall allow doctors and patients to view the result and report of completed tests.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "Book Appointment",
+      "id": "5",
+      "description": "The system shall allow patients to book an appointment based on lab availability, business hours, and test type.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "UpdateAppointment",
+      "id": "6",
+      "description": "The system shall allow patients to cancel or reschedule an appointment, applying a fee if within 24 hours.",
+      "priority": "5"
+    },
+    {
+      "kind": "Functional Requirement",
+      "name": "WalkInProcessing",
+      "id": "7",
+      "description": "The system shall support walk-in testing for tests not requiring appointments (e.g., blood tests).",
+      "priority": "5"
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+    "term_trace": [
+        {
+            "role": "Term_Extractor"
+        },
+        {
+            "Requirement": "If a driver is marked as sick or a bus is marked as under repair, the system shall prevent their assignment to shifts or routes.",
+            "GID": "006",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "dependability, safety"
+        },
+        {
+            "Requirement": "If a driver is marked as sick or a bus is marked as under repair, the system shall prevent their assignment to shifts or routes.",
+            "GID": "006",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "dependability, safety"
+        },
+        {
+            "Requirement": "If a driver is marked as sick or a bus is marked as under repair, the system shall prevent their assignment to shifts or routes.",
+            "GID": "006",
+            "Concept": "Shift",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "dependability, safety"
+        },
+        {
+            "Requirement": "If a driver is marked as sick or a bus is marked as under repair, the system shall prevent their assignment to shifts or routes.",
+            "GID": "006",
+            "Concept": "Route",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "dependability, safety"
+        },
+        {
+            "Requirement": "The license plate number of a bus shall not exceed 10 characters in length.",
+            "GID": "002",
+            "Concept": "LicensePlate",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability"
+        },
+        {
+            "Requirement": "The license plate number of a bus shall not exceed 10 characters in length.",
+            "GID": "002",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability"
+        },
+        {
+            "Requirement": "The system shall clearly highlight sick drivers and buses under repair in the daily overview.",
+            "GID": "007",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, performance"
+        },
+        {
+            "Requirement": "The system shall clearly highlight sick drivers and buses under repair in the daily overview.",
+            "GID": "007",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, performance"
+        },
+        {
+            "Requirement": "The system shall clearly highlight sick drivers and buses under repair in the daily overview.",
+            "GID": "007",
+            "Concept": "Overview",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, performance"
+        },
+        {
+            "Requirement": "A bus route number shall not exceed 9999.",
+            "GID": "003",
+            "Concept": "Route",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability"
+        },
+        {
+            "Requirement": "The system shall support bus and driver schedule planning up to one year in advance.",
+            "GID": "001",
+            "Concept": "Schedule",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational"
+        },
+        {
+            "Requirement": "The system shall support bus and driver schedule planning up to one year in advance.",
+            "GID": "001",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational"
+        },
+        {
+            "Requirement": "The system shall support bus and driver schedule planning up to one year in advance.",
+            "GID": "001",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational"
+        },
+        {
+            "Requirement": "The system shall allow unrestricted and potentially overlapping driver shift assignments within a day.",
+            "GID": "004",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, operational"
+        },
+        {
+            "Requirement": "The system shall allow unrestricted and potentially overlapping driver shift assignments within a day.",
+            "GID": "004",
+            "Concept": "Shift",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "usability, operational"
+        },
+        {
+            "Requirement": "Each bus shall serve at most one route per day.",
+            "GID": "008",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational, safety"
+        },
+        {
+            "Requirement": "Each bus shall serve at most one route per day.",
+            "GID": "008",
+            "Concept": "Route",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "operational, safety"
+        },
+        {
+            "Requirement": "The system shall not allow updates to driver or bus records\u2014only addition and deletion operations are permitted.",
+            "GID": "005",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "security, regulatory"
+        },
+        {
+            "Requirement": "The system shall not allow updates to driver or bus records\u2014only addition and deletion operations are permitted.",
+            "GID": "005",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Non-Functional",
+            "Non-Requirement_type": "security, regulatory"
+        },
+        {
+            "Requirement": "The system shall allow marking a driver as on sick leave, disabling scheduling.",
+            "GID": "004",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow marking a driver as on sick leave, disabling scheduling.",
+            "GID": "004",
+            "Concept": "SickLeave",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow city staff to add a new driver by entering the driver\u2019s name.",
+            "GID": "001",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow city staff to add a new driver by entering the driver\u2019s name.",
+            "GID": "001",
+            "Concept": "Name",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall prevent buses marked as in repair from being assigned to routes.",
+            "GID": "005",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall prevent buses marked as in repair from being assigned to routes.",
+            "GID": "005",
+            "Concept": "Repair",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall prevent buses marked as in repair from being assigned to routes.",
+            "GID": "005",
+            "Concept": "Route",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow buses to be assigned to specific routes up to one year in advance.",
+            "GID": "002",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall allow buses to be assigned to specific routes up to one year in advance.",
+            "GID": "002",
+            "Concept": "Route",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall provide a daily overview of route assignments, buses, shifts, and drivers.",
+            "GID": "003",
+            "Concept": "Overview",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall provide a daily overview of route assignments, buses, shifts, and drivers.",
+            "GID": "003",
+            "Concept": "Route",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall provide a daily overview of route assignments, buses, shifts, and drivers.",
+            "GID": "003",
+            "Concept": "Bus",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall provide a daily overview of route assignments, buses, shifts, and drivers.",
+            "GID": "003",
+            "Concept": "Shift",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        },
+        {
+            "Requirement": "The system shall provide a daily overview of route assignments, buses, shifts, and drivers.",
+            "GID": "003",
+            "Concept": "Driver",
+            "Concept_description": null,
+            "Instance": null,
+            "Instance_of": null,
+            "Instance_description": null,
+            "Requirement_kind": "Functional",
+            "Non-Requirement_type": null
+        }
+    ]
+}

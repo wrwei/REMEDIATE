@@ -1,0 +1,5 @@
+var class = EClass.all.name;
+
+var attr = EAttribute.all.select(a|a.name = "name" and a.eContainingClass.name = "NamedElement");
+class.println();
+attr.println();

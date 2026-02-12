@@ -65,10 +65,8 @@ stages:
     asset_files:
       robochart_ecore: "RoboChart_ecore.txt"
       xtext: "Xtext.txt"
-      lre: "LRE.txt"
       code_snippet_1: "code_snippet_1.txt"
       code_snippet_2: "code_snippet_2.txt"
-      code_snippet_3: "code_snippet_3.txt"
       semantic: "semantic.txt"
     output:
       json_file: "result_statemachine_extraction.json"

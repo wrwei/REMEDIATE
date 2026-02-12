@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="terminology" nsURI="http://www.sawg.org/terminology" nsPrefix="terminology_">
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyElement" abstract="true"
+      eSuperTypes="base.ecore#//ArtifactElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyPackage" eSuperTypes="#//TerminologyElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terminologyElement" upperBound="-1"
+        eType="#//TerminologyElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyPackageInterface" eSuperTypes="#//TerminologyPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implements" lowerBound="1"
+        eType="#//TerminologyPackage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TerminologyAsset" abstract="true" eSuperTypes="#//TerminologyElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Concept" eSuperTypes="#//TerminologyAsset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="concept" upperBound="-1"
+        eType="#//Concept" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instance" eSuperTypes="#//TerminologyAsset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="concept" eType="#//Concept"/>
+  </eClassifiers>
+</ecore:EPackage>

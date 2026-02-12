@@ -1,0 +1,79 @@
+For the following functional requirements:
+{"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The system A is developed as a Module named \"A_Module\".", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"SD2", "id": "SD2", "description": "\"A_Module\" should contain a Platform named \"A_Platform\", it should use the Interfaces \"S\" and \"Actors\" (defined by \"A_Module\").", "priority": "6", "types": ["architecture"]},
+a segment of a metamodel in Emfatic would be:
+"
+    abstract class NamedElement {
+        attr String name;
+    }
+
+    class Module extends NamedElement{
+        val Platform[*] A_Platform;
+    }
+
+    class Platform extends NamedElement{
+        val Interface[*] interfaces;
+    }
+
+    class Interface extends NamedElement{
+    }
+".
+For the following functional requirements:
+{"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The system A is developed as a Module named \"A_Module\".", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"SD2", "id": "SD2", "description": "\"A_Module\" should contain a Platform named \"A_Platform\", it should use the Interfaces \"S\" and \"Actors\" (defined by \"A_Module\").", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"PT2", "id": "PT2", "description": "The \"A_Module\" should define a Primitive Type named \"int\" (for integers).", "priority": "6", "types": ["architecture"]},
+a segment of a metamodel in Emfatic would be:
+"
+    abstract class NamedElement {
+        attr String name;
+    }
+
+    class Module extends NamedElement{
+        val Platform[*] A_Platform;
+    }
+
+    class Platform extends NamedElement{
+        val Interface[*] interfaces;
+    }
+
+    class Interface extends NamedElement{
+    }
+
+    class PrimitiveType extends NamedElement {
+
+    }
+".
+For the following functional requirements:
+{"kind": "Non-Functional Requirement", "name":"SD1", "id": "SD1", "description": "The system A is developed as a Module named \"A_Module\".", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"SD2", "id": "SD2", "description": "\"A_Module\" should contain a Platform named \"A_Platform\", it should use the Interfaces \"S\" and \"Actors\" (defined by \"A_Module\").", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"PT2", "id": "PT2", "description": "The \"A_Module\" should define a Primitive Type named \"int\" (for integers).", "priority": "6", "types": ["architecture"]},
+{"kind": "Non-Functional Requirement", "name":"CT1", "id": "CT1", "description": "The \"A_Module\" should define a Composite Type named \"SVec\" (Spherical Vector), to record values such as \"radial\" (of type \"real\"), \"polar\" (of type \"real\"), and \"azimuth\" (of type \"real\").", "priority": "6", "types": ["architecture"]},
+a segment of a metamodel in Emfatic would be:
+"
+    abstract class NamedElement {
+        attr String name;
+    }
+
+    class Module extends NamedElement{
+        val Platform[*] A_Platform;
+    }
+
+    class Platform extends NamedElement{
+        val Interface[*] interfaces;
+    }
+
+    class Interface extends NamedElement{
+    }
+
+    class PrimitiveType extends NamedElement {
+
+    }
+
+    class CompositeType extends NamedElement {
+        val Value[*] values;
+    }
+
+    class Value extends NamedElement {
+        attr PrimitiveType type;
+    }
+".

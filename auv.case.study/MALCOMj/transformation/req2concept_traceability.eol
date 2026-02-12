@@ -3,15 +3,15 @@
 var source_metamodel = "\\metamodel\\base.ecore, \\metamodel\\requirement.ecore".split(",");
 var target_metamodel = "\\metamodel\\base.ecore, \\metamodel\\terminology.ecore".split(",");
 
-//create bridge package
-var bridgePackage = new B!BridgePackage;
-bridgePackage.name = "Req2Concept";
-bridgePackage.gid = "RBP1";
+//create trace package
+var tracePackage = new B!TracePackage;
+tracePackage.name = "Req2Concept";
+tracePackage.gid = "RBP1";
 
 var source_model = S.getModelFileUri()+"";
 var target_model = T.getModelFileUri()+"";
 
-//create new terminololgy package
+//create new terminology package
 var tp = new T!TerminologyPackage;
 createName(tp, "Req");
 
@@ -28,15 +28,15 @@ for (entry in J.root.req) {
 		}
 	}
 }
-bridgePackage.bridgeElement.select(s|s.isTypeOf(B!Bridge)).size().println();
+tracePackage.traceElement.select(s|s.isTypeOf(B!Trace)).size().println();
 "Transformation finished!".println();
 
 
 operation getInstance(tp, r) {
 	//get the Instance
 	var ret = tp.terminologyElement.select(c|c.isTypeOf(T!Instance) and c.name.content = r.Instance).first();
-	
-	//create instance if non
+
+	//create instance if none exists
 	if(ret.isUndefined()) {
 		ret = new T!Instance;
     	createName(ret, r.Instance);
@@ -76,6 +76,10 @@ operation createDescription(element, description) {
 }
 
 operation getDescription() {
+	if (self.description.isUndefined() or self.description.content.isUndefined()
+		or self.description.content.value.isEmpty()) {
+		return "";
+	}
 	return self.description.content.value.at(0).content;
 }
 
@@ -92,54 +96,56 @@ operation getHash() {
 }
 
 operation createReqConceptBridge(source, target) {
-	var bridge = new B!Bridge;
-	bridge.name=source+"_TO_"+target.name.content;
+	var trace = new B!Trace;
+	trace.name=source+"_TO_"+target.name.content;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
-	
+
 	var s = S!Requirement.all.select(r|r.gid = source).first();
 	var concept_name = target.name.content;
-	
+
 	er1.location = source_model;
 	er1.type = "EMF";
 	er1.metadata.addAll(source_metamodel);
 	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
-	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
-	
+	er1.constraints.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+
 	er2.location = target_model;
 	er2.type = "EMF";
 	er2.metadata.addAll(target_metamodel);
-	er2.constraint.add("T!Concept.all.select(r|r.name = \"" + concept_name + "\").first();");
-	
-	bridge.source = er1;
-	bridge.target = er2;
-	bridgePackage.bridgeElement.add(bridge);
+	er2.version = target.getHash();
+	er2.constraints.add("T!Concept.all.select(r|r.name.content = \"" + concept_name + "\").first();");
+
+	trace.source = er1;
+	trace.target = er2;
+	tracePackage.traceElement.add(trace);
 }
 
 operation createReqInstanceBridge(source, target) {
-	var bridge = new B!Bridge;
-	bridge.name=source+"_TO_"+target.name.content;
+	var trace = new B!Trace;
+	trace.name=source+"_TO_"+target.name.content;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
-	
+
 	var s = S!Requirement.all.select(r|r.gid = source).first();
 	var instance_name = target.name.content;
-	
-	
+
+
 	er1.location = source_model;
 	er1.type = "EMF";
 	er1.metadata.addAll(source_metamodel);
 	er1.version = (s.getName() + "-" + s.getGid() + "-" + s.getDescription()).hashCode().toString();
-	er1.constraint.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
-	
+	er1.constraints.add("S!Requirement.all.select(r|r.gid = \"" + source + "\").first();");
+
 	er2.location = target_model;
 	er2.type = "EMF";
 	er2.metadata.addAll(target_metamodel);
-	er2.constraint.add("T!Instance.all.select(r|r.name = \"" + instance_name + "\").first();");
-	
-	bridge.source = er1;
-	bridge.target = er2;
-	bridgePackage.bridgeElement.add(bridge);
+	er2.version = target.getHash();
+	er2.constraints.add("T!Instance.all.select(r|r.name.content = \"" + instance_name + "\").first();");
+
+	trace.source = er1;
+	trace.target = er2;
+	tracePackage.traceElement.add(trace);
 }
 
 operation printModels() {

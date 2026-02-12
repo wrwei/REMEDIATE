@@ -1,0 +1,12 @@
+Here are some steps to help you create JSON trace, from the EOL code and the requirements provided to you.
+1. The name of the model to be created is "M".
+2. Identify class objects created by the EOL code (in EOL, the creation normally starts with keyword "new"), record the name of their class.
+3. Identify relevant objects' attributes set by the EOL code, record the name of the attributes.
+4. Identify relevant objects' references set by the EOL code, record the name of the attributes.
+5. For multiple occurrences of the above, please create a JSON list with multiple JSON entries, like so:
+[
+    $JSON entry,
+    $JSON entry,
+    ...
+    $JSON entry
+]
