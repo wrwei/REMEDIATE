@@ -38,16 +38,17 @@ client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"),
                 base_url=os.environ.get("OPENAI_API_BASE"),
                 timeout=openai.Timeout(600, connect=600))
 
-message = [ 'You are an expert in requirement engineering.' +
+message = [ 'You are an expert in requirement engineering. ' +
             'Requirement statements can be categorised into Functional Requirements and Non-Functional Requirements. ' +
-            'You will be provided with some requirement statements from User, which are for a system to be developed.' +
+            'You will be provided with some requirement statements from User, which are for a system to be developed. ' +
             'The description of the system is here: ' + system_description +
-            'Your task is to extract Concepts and their Instances from the requirement statements.' +
+            'Your task is to extract Concepts and their Instances from the requirement statements. ' +
             'The requirements will be provided by User, please note that the requirements are not ordered, and one requirement may implicitly depend on other requirements. ' +
             'Each requirement statement is identified by a unique GID (short for Global ID). ' +
             'Please extract occurrences of the following from the requirement statements: "GID", "Concepts" and "Instances". ' +
-            'The rationale for your task is here: ' + chain_of_thought_term_extraction +
-            'The Output format should be in JSON only, no markdown permitted (no ```), no explain.' +
+            'The rationale and output format for your task is here: ' + chain_of_thought_term_extraction +
+            'Here are some examples to guide you: ' + few_shot_example +
+            'The Output format should be in JSON only, no markdown permitted (no ```), no explain. ' +
             'Include only contents provided to you.']
 
 

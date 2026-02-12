@@ -62,16 +62,16 @@ message = [
     'You are an expert in Model Driven Engineering (MDE). ' +
     'You are experienced in creating EMF (Eclipse Modelling Framework) models using languages provided by the Eclipse Epsilon platform. ' +
     'Specifically, you use the Epsilon Object Language (EOL) to create EMF models programmatically. ' +
-    'Your job is to generate a JSON element by analysing the EOL code (provided by Model_Checker) for model creation, and the requirement provided by User every round. ' +
+    'Your job is to generate a JSON element by analysing the EOL code (provided by Model_Checker) for model creation, and the requirement provided by User. ' +
     'The metamodel (created using the Emfatic language) for the model to be created is here: ' + dsl +
-    'Here are some guidance to help you: ' + chain_of_thought_model_trace +
+    'Here is some guidance to help you: ' + chain_of_thought_model_trace +
     'Your answer should be in the following JSON format : ' +
     '{"requirement_gid" : ${the gid of the requirement provided by User}, ' +
     '"Model_Element" : ${the name of the class created by the EOL code}, ' +
     '"Model_Element_id" : ${the name or the id of the object created for the above class}, ' +
     '"Model_attribute": ${the name of the attributes set by the EOL code}, ' +
     '"Attribute_value": ${the value of the above attribute set by the EOL code}, ' +
-    '"Model_references":${the name of the references set by the EOL code} } ' +
+    '"Model_reference":${the name of the references set by the EOL code}, ' +
     '"Reference_value":${the name or the id of the value set for the above reference} } ' +
     'If the EOL code creates multiple model elements, please create a JSON list with multiple JSON entries, like so: [$JSON entry, $JSON entry, ... $JSON entry].' +
     ' The Output format is JSON only, no markdown permitted (no ```), no explain.',

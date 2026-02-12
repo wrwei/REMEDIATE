@@ -53,15 +53,15 @@ class Model_Creator(Base):
             'You are experienced in creating EMF (Eclipse Modelling Framework) models using the Epsilon Object Language (EOL). ' +
             'Your job is to write an EOL program to create an EMF model that conforms to the EMF metamodel (written in the Emfatic language) in here: ' + dsl +
             'You should base your answer on the requirements provided to you by User. ' +
-            #'The description of the system to be developed is here: ' + system_description +
+            'The description of the system to be developed is here: ' + system_description +
             'The Concepts extracted (in JSON) from the requirements are here: ' + term_extraction +
             'Consult the thinking process here: ' + chain_of_thought_model_creation +
             'Here are some examples based on input requirements:' + few_shot_example_model_creation +
-            'You should also consult the code produced by Model_Refactor. ' +
+            'IMPORTANT: You should consult and build upon the code produced by Model_Refactorer in previous rounds. ' +
             'You must only include EOL code in your responses. ' +
             'Do not include any other contents that are not provided to you. ' +
             'Please do not include explanations in your answers. Do not include markdowns (no ```). ',
-            description='A EMF model creator using EOL, based on the inputs and responses from the User.'
+            description='An EMF model creator using EOL, based on the inputs and responses from the User.'
         )
 
         #Model_Checker to check the syntax of Emfatic code
@@ -101,12 +101,12 @@ class Model_Creator(Base):
             'Model_Creator has created the source code in Epsilon Object Language (EOL) based on the inputs from User. ' +
             'Model_Checker has checked the syntax of the EOL code. ' +
             'Your job is to organise and refactor the EOL code (when necessary) provided by them. ' +
-            'In every round, you provide your answer, you need to combine with your previous answer and update them. ' +
+            'When you provide your answer, you need to combine it with your previous answer and update them. ' +
             'Your answer needs to be correctly written in EOL. ' +
             'Do not include any other contents that are not provided to you. ' +
-            'If no further answer can be provided, repeat your last answer. ' +
+            'If the code is already correct and complete, output it unchanged. ' +
             'Please only provide EOL code in your answers. Do not explain (no ```). ',
-            description='A Model_Summariser to summerise the code from Model_Checker.'
+            description='A Model_Refactorer to summarise the code from Model_Checker.'
         )
 
         #Json_Generator to generate a json for traceability.
@@ -120,20 +120,20 @@ class Model_Creator(Base):
             'You are an expert in Model Driven Engineering (MDE). ' +
             'You are experienced in creating EMF (Eclipse Modelling Framework) models using languages provided by the Eclipse Epsilon platform. ' +
             'Specifically, you use the Epsilon Object Language (EOL) to create EMF models programmatically. ' +
-            'Your job is to generate a JSON element by analysing the EOL code (provided by Model_Checker) for model creation, and the requirement provided by User every round. ' +
+            'Your job is to generate a JSON element by analysing the EOL code (provided by Model_Checker) for model creation, and the requirement provided by User. ' +
             'The metamodel (created using the Emfatic language) for the model to be created is here: ' + dsl +
-            'Here are some guidance to help you: ' + chain_of_thought_model_trace +
+            'Here is some guidance to help you: ' + chain_of_thought_model_trace +
             'Your answer should be in the following JSON format : ' +
             '{"requirement_gid" : ${the gid of the requirement provided by User}, ' +
             '"Model_Element" : ${the name of the class created by the EOL code}, ' +
             '"Model_Element_id" : ${the name or the id of the object created for the above class}, ' +
             '"Model_attribute": ${the name of the attributes set by the EOL code}, ' +
             '"Attribute_value": ${the value of the above attribute set by the EOL code}, ' +
-            '"Model_reference":${the name of the references set by the EOL code} } ' +
+            '"Model_reference":${the name of the references set by the EOL code}, ' +
             '"Reference_value":${the name or the id of the value set for the above reference} } ' +
             'If the EOL code creates multiple model elements, please create a JSON list with multiple JSON entries, like so: [$JSON entry, $JSON entry, ... $JSON entry].' +
             ' The Output format is JSON only, no markdown permitted (no ```), no explain.',
-            description='A Json_Generator to generate a JSON element based on the EOL code provided by Model_Checker and the requirement provided by User every round.'
+            description='A Json_Generator to generate a JSON element based on the EOL code provided by Model_Checker and the requirement provided by User.'
         )
 
         #Create a groupchat to organise the agents

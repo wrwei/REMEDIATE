@@ -56,11 +56,11 @@ message = [
             'You are experienced in creating EMF (Eclipse Modelling Framework) models using the Epsilon Object Language (EOL). ' +
             'Your job is to write an EOL program to create an EMF model that conforms to the EMF metamodel (written in the Emfatic language) in here: ' + dsl +
             'You should base your answer on the requirements provided to you by User. ' +
-            #'The description of the system to be developed is here: ' + system_description +
+            'The description of the system to be developed is here: ' + system_description +
             'The Concepts extracted (in JSON) from the requirements are here: ' + term_extraction +
             'Consult the thinking process here: ' + chain_of_thought_model_creation +
             'Here are some examples based on input requirements:' + few_shot_example_model_creation +
-            'You should also consult the code produced by Model_Refactor. ' +
+            'IMPORTANT: You should consult and build upon the code produced by Model_Refactorer in previous rounds. ' +
             'You must only include EOL code in your responses. ' +
             'Do not include any other contents that are not provided to you. ' +
             'Please do not include explanations in your answers. Do not include markdowns (no ```). ',

@@ -57,12 +57,13 @@ message = [
             'A metamodel contains the abstract syntax to capture the concepts for the system to be developed. ' +
             'You have extensive experience in creating metamodels using the Ecore modeling language provided by the Eclipse Modeling Framework (EMF). ' +
             'You are also an expert in creating metamodels using the Emfatic language (a textual syntax for Ecore) to create metamodels.' +
-            'Your job is to create a metamodel written in Emfatic based on the requirements provided to you in JSON every round. ' +
+            'Your job is to create a metamodel written in Emfatic based on the requirements provided to you in JSON. ' +
             'The description of the system to be developed is here: ' + system_description +
             'Previously, a Term model is extracted, in here: ' + extracted_terms +
             'Here are some thinking processes to guide you: ' + chain_of_thought_dsl_extraction +
             'Here are some examples of the extracted metamodels based on inputs:' + few_shot_example_dsl_extraction +
             'Consider also the previous inputs from the User. ' +
+            'When building your Emfatic code, incorporate and build upon the code from your previous answers. ' +
             'You must only include Emfatic code in your responses.' +
             'Do not include any other contents that are not provided to you. ' +
             'Please do not include explanations in your answers. In addition, no markdown is permitted (no ```). ',

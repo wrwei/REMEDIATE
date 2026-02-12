@@ -56,11 +56,11 @@ with open("2024-10-30single_DSL_extraction_result2.emf", 'r', encoding='utf-8') 
 
 message = [
     'You are an expert in Model Driven Engineering (MDE). ' +
-    'Your job is to generate a traceability JSON element based on the Emfatic code and the requirement in JSON provided by User  ' +
-    'In the Emfatic code provided to you by DSL_Summariser, you shall identify which class, attributes, references and operations are created, based on the requirement JSON provided by User' +
+    'Your job is to generate a traceability JSON element based on the Emfatic code provided by DSL_Refactor and the requirement in JSON provided by User. ' +
+    'In the Emfatic code provided to you by DSL_Refactor, you shall identify which class, attributes, references and operations are created, based on the requirement JSON provided by User' +
     'Your answer should be in the following JSON format : ' +
     '{"requirement_gid" : ${the gid of the requirement provided by User}, ' +
-    '"Emfatic_class" : ${the class name provided by Model_Checker}, ' +
+    '"Emfatic_class" : ${the class name provided by DSL_Refactor}, ' +
     '"Emfatic_attributes": ${the "attr"s that the class contains (if not null)}, ' +
     '"Emfatic_references":${the "ref"s or "val"s that the class contains (if not null)}, ' +
     '"Emfatic_operations": ${the "op"s that class contains (if not null)} }' +

@@ -39,18 +39,19 @@ class Term_Extractor(Base):
                 "cache_seed": None,
             },
             system_message =
-            'You are an expert in requirement engineering.' +
+            'You are an expert in requirement engineering. ' +
             'Requirement statements can be categorised into Functional Requirements and Non-Functional Requirements. ' +
-            'You will be provided with some requirement statements from User, which are for a system to be developed.' +
+            'You will be provided with some requirement statements from User, which are for a system to be developed. ' +
             'The description of the system is here: ' + self.system_description +
-            'Your task is to extract Concepts and their Instances from the requirement statements.' +
+            'Your task is to extract Concepts and their Instances from the requirement statements. ' +
             'The requirements will be provided by User, please note that the requirements are not ordered, and one requirement may implicitly depend on other requirements. ' +
             'Each requirement statement is identified by a unique GID (short for Global ID). ' +
             'Please extract occurrences of the following from the requirement statements: "GID", "Concepts" and "Instances". ' +
-            'The rationale for your task is here: ' + self.chain_of_thought_term_extraction +
-            'The Output format should be in JSON only, no markdown permitted (no ```), no explain.' +
+            'The rationale and output format for your task is here: ' + self.chain_of_thought_term_extraction +
+            'Here are some examples to guide you: ' + self.few_shot_example +
+            'The Output format should be in JSON only, no markdown permitted (no ```), no explain. ' +
             'Include only contents provided to you.',
-            description="An Term_Extractor to extract instances of a sentence."
+            description="A Term_Extractor to extract Concepts and Instances from requirement statements."
         )
         #Term JSON checker
         self.term_checker = ConversableAgent(
@@ -64,20 +65,15 @@ class Term_Extractor(Base):
            # llm_config=llm_default_config,
             system_message=
             'You are an expert in requirement engineering and Model Driven Engineering (MDE). ' +
-            'In MDE, engineers produce "Domain Specific Models (DSLs)" or "metamodels". ' +
-            'A metamodel defines the abstract syntax of a modelling language, which may contain: 1) Classes to describe the concepts in the target system (to be developed); ' +
-            '2) Attributes with primitive types inside the Classes; and 3) References (either association or containment) among Classes. ' +
-            'Each concept defined in a metamodel is also referred to as a "meta-element". ' +
-            'Once a metamodel is in place, engineers can use it to create "instance models" to model their systems, which conform to the abstract syntax defined in the metamodel. ' +
-            'Each instance of a "meta-element" in the instance model may also be referred to as an "instance object" of that "meta-element". ' +
-            'In order to extract DSLs, one need to make sure the Concepts and their Instances are correctly extracted. ' +
-            'Your task is to check whether the Concepts and Instances extracted by Term_Extractor are correct. ' +
-            'To provide you with context, the description of the system to be developed is here: ' + self.system_description +
-            'The rationale for your task is here: ' + self.chain_of_thought_term_checker +
-            'Here are some examples of the extracted models, which may help you.' + self.few_shot_example +
-            'The Output format should be in JSON only, no markdown permitted (no ```), no explain.' +
+            'Your task is to check whether the Concepts and Instances extracted by Term_Extractor are correct, ' +
+            'and output the corrected JSON if any issues are found. ' +
+            'The description of the system to be developed is here: ' + self.system_description +
+            'The rationale and correctness criteria for your task is here: ' + self.chain_of_thought_term_checker +
+            'Here are some examples of the extracted models, which may help you: ' + self.few_shot_example +
+            'If the extraction is correct, output it unchanged. If it contains errors, output the corrected version. ' +
+            'The Output format should be in JSON only, no markdown permitted (no ```), no explain. ' +
             'Include only contents provided to you and Term_Extractor.',
-            description="A Term_checker to check the Output format from Term_Extractor."
+            description="A Term_checker to verify and correct the output from Term_Extractor."
         )
 
         self.groupchat = autogen.GroupChat(
