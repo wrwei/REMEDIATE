@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMEDIATE — MDE Pipeline</title>
+    <link rel="stylesheet" href="/static/style.css?v=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>REMEDIATE &mdash; MDE Pipeline</h1>
+        <select id="case-study-select" title="Select case study"></select>
+        <span id="connection-status" class="disconnected">Connecting&hellip;</span>
+    </header>
+
+    <!-- Main layout: pipeline tree + chat + file sidebar -->
+    <div class="main">
+        <!-- Pipeline tree sidebar -->
+        <div class="pipeline-sidebar" id="pipeline-sidebar">
+            <div class="tree-root" id="pipeline-tree">
+                <!-- Tree nodes injected by app.js -->
+            </div>
+        </div>
+
+        <!-- Resize handle: sidebar | chat -->
+        <div class="resize-handle" id="resize-left"></div>
+
+        <!-- Chat panel -->
+        <div class="chat-panel" id="chat-panel">
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages injected by app.js -->
+            </div>
+
+            <!-- Working indicator -->
+            <div class="working-indicator" id="working-indicator">
+                <div class="spinner"></div>
+                <span id="working-text">Agents working&hellip;</span>
+            </div>
+
+            <!-- Input prompt -->
+            <div id="input-prompt"></div>
+
+            <!-- User input -->
+            <div class="input-area">
+                <textarea id="user-input" rows="3"
+                          placeholder="Type a message to refine generated artifacts&hellip;"
+                ></textarea>
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+
+        <!-- Resize handle: chat | file panel -->
+        <div class="resize-handle" id="resize-right"></div>
+
+        <!-- File sidebar -->
+        <div class="file-panel" id="file-panel">
+            <div class="file-panel-header">
+                <h2 id="file-panel-title">Output Files</h2>
+                <span class="file-panel-actions">
+                    <button id="clear-btn" class="clear-btn" title="Clear output files">Clear</button>
+                </span>
+            </div>
+            <div class="file-list" id="file-list">
+                <!-- File items injected by app.js -->
+            </div>
+            <div class="file-preview" id="file-preview">
+                <div class="preview-header" id="preview-header"></div>
+                <pre><code id="preview-code"></code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js?v=1"></script>
+</body>
+</html>
