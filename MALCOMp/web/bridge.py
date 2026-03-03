@@ -258,13 +258,34 @@ class PipelineBridge:
                                         phase=phase_name)
 
     def _make_override_config(self, requirements_file: str) -> str:
-        """Write a temp config.yaml with the requirements override applied."""
+        """Write a temp config.yaml with the requirements override applied.
+
+        When the temp config is loaded from Temp, Base resolves all paths
+        relative to Temp and would break. So we resolve assets_dir, output_dir
+        and requirement_file against the original config directory and write
+        absolute paths into the temp config; Base then uses them as-is.
+        """
         with open(self.config_path, "r", encoding="utf-8") as f:
             config = yaml.safe_load(f)
 
+        config_dir = Path(self.config_path).resolve().parent
+
+        def to_absolute(key: str, default: str) -> None:
+            val = config.get(key, default)
+            if val and not Path(val).is_absolute():
+                config[key] = str((config_dir / val).resolve())
+
+        to_absolute("assets_dir", "assets")
+        to_absolute("output_dir", "output")
+
+        req_path = Path(requirements_file)
+        if not req_path.is_absolute():
+            req_path = (config_dir / req_path).resolve()
+        requirement_file_resolved = str(req_path)
+
         for stage_cfg in config.get("stages", {}).values():
             if "requirement_file" in stage_cfg:
-                stage_cfg["requirement_file"] = requirements_file
+                stage_cfg["requirement_file"] = requirement_file_resolved
 
         tmp = tempfile.NamedTemporaryFile(
             mode="w", suffix=".yaml", delete=False, encoding="utf-8",

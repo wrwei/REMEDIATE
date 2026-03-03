@@ -63,7 +63,7 @@ class StateMachineExtraction(Base):
                 "- Please check whether Variables, Events, Constants, Functions, and States are all defined correctly."
             ),
             description="A Modeller to give the code based on the response from User.",
-            max_consecutive_auto_reply=1,
+            #max_consecutive_auto_reply=1,
         )
 
         # JSON Generator agent for traceability
@@ -79,7 +79,7 @@ class StateMachineExtraction(Base):
                 "The Output format is JSON only, no markdown permitted (no ```), no explain."
             ),
             description="A Json_Generator to generate JSON elements based on the requirement statements provided by User and the code provided by Modeller.",
-            max_consecutive_auto_reply=1,
+            # max_consecutive_auto_reply=1,
         )
 
         self.init_group_chat()

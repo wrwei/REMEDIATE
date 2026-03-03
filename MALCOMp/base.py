@@ -146,13 +146,17 @@ class Base:
         )
         output_cfg = self.stage_config["output"]
 
-        # Store JSON traceability
-        self.store_json(
-            chat_results,
-            agent_name=output_cfg["json_agent"],
-            file_name=str(self.output_dir / output_cfg["json_file"]),
-            tag_name=output_cfg["json_tag"],
-        )
+        # Store JSON traceability (if configured)
+        json_agent = output_cfg.get("json_agent")
+        json_file = output_cfg.get("json_file")
+        json_tag = output_cfg.get("json_tag")
+        if json_agent and json_file and json_tag:
+            self.store_json(
+                chat_results,
+                agent_name=json_agent,
+                file_name=str(self.output_dir / json_file),
+                tag_name=json_tag,
+            )
 
         # Store code artifact if configured
         if "code_agent" in output_cfg and "code_file" in output_cfg:
@@ -212,7 +216,27 @@ class RequirementFeederAgent(ConversableAgent):
         self.file_path = file_path
         self.current_index = 0
         with open(self.file_path, "r", encoding="utf-8") as f:
-            self.data = json.load(f)["requirements"]
+            raw = json.load(f)
+            # Support multiple input shapes:
+            # 1) {"requirements": [...]}  (default MALCOMp format)
+            # 2) {"req": [...]}           (some term_extraction outputs)
+            # 3) [..., ...]               (plain list of requirement objects)
+            if isinstance(raw, dict):
+                if "requirements" in raw:
+                    self.data = raw["requirements"]
+                elif "req" in raw:
+                    self.data = raw["req"]
+                else:
+                    raise TypeError(
+                        f"Unsupported requirement JSON format in {self.file_path}"
+                    )
+            elif isinstance(raw, list):
+                self.data = raw
+            else:
+                raise TypeError(
+                    f"Unsupported requirement JSON root type {type(raw)} "
+                    f"in {self.file_path}"
+                )
 
     def get_human_input(self, prompt):
         if self.current_index < len(self.data):
