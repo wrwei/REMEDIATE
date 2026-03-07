@@ -272,6 +272,8 @@ async def websocket_endpoint(ws: WebSocket):
                 config_path = data.get("config_path", "")
                 _state.set_selected_case_study(config_path)
                 _state.save()
+                # Stop any running phase before switching
+                bridge.stop_phase()
                 # Reinitialize bridge with new config
                 bridge = PipelineBridge(config_path, _state)
                 # Send updated requirements list

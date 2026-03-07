@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:auv_="http://www.sawg.org/auv">
+  <auv_:Module name="AUV_Module">
+    <robotic_platforms name="AUV_Platform"/>
+    <interfaces name="Sensors">
+      <values name="depth" type="/5"/>
+      <values name="hdng" compositeType="/6"/>
+      <values name="obs" compositeType="/7"/>
+    </interfaces>
+    <interfaces name="Actuators"/>
+    <interfaces name="Inputs">
+      <events name="endTask"/>
+      <events name="reqOCM"/>
+      <events name="reqMOM"/>
+      <events name="reqHCM"/>
+      <events name="reqVel" returnType="/5"/>
+      <events name="reqHdng" returnType="/5"/>
+    </interfaces>
+    <interfaces name="Outputs">
+      <events name="advVel">
+        <parameters xsi:type="auv_:Value" name="parameter" type="/5"/>
+      </events>
+      <events name="advHdng">
+        <parameters xsi:type="auv_:Value" name="parameter" type="/5"/>
+      </events>
+    </interfaces>
+    <controllers name="AUV_Operator" interfaces="/0/@interfaces.2"/>
+    <controllers name="LRE_Ctrl" interfaces="/0/@interfaces.2 /0/@interfaces.3"/>
+    <controllers name="AUV_Autopilot" interfaces="/0/@interfaces.3"/>
+  </auv_:Module>
+  <auv_:PrimitiveType name="nat"/>
+  <auv_:PrimitiveType name="int"/>
+  <auv_:PrimitiveType name="string"/>
+  <auv_:PrimitiveType name="boolean"/>
+  <auv_:PrimitiveType name="real"/>
+  <auv_:CompositeType name="SVec">
+    <values name="radial" type="/5"/>
+    <values name="polar" type="/5"/>
+    <values name="azimuth" type="/5"/>
+  </auv_:CompositeType>
+  <auv_:CompositeType name="Obstacle">
+    <values name="ns_rel_dist" type="/5"/>
+    <values name="ew_rel_dist" type="/5"/>
+    <values name="depth" type="/5"/>
+    <values name="id" type="/5"/>
+    <values name="obs_hdng" compositeType="/6"/>
+  </auv_:CompositeType>
+  <auv_:CompositeType name="Close">
+    <values name="horiz_cda" type="/5"/>
+    <values name="vert_cda" type="/5"/>
+    <values name="id" type="/1"/>
+  </auv_:CompositeType>
+  <auv_:Function name="odist" returnType="/5">
+    <parameters xsi:type="auv_:Value" name="parameter" compositeType="/7"/>
+  </auv_:Function>
+  <auv_:Function name="hdist" returnType="/5">
+    <parameters xsi:type="auv_:Value" name="parameter" compositeType="/7"/>
+  </auv_:Function>
+  <auv_:Function name="vdist" returnType="/5">
+    <parameters xsi:type="auv_:Value" name="parameter" compositeType="/7"/>
+  </auv_:Function>
+</xmi:XMI>

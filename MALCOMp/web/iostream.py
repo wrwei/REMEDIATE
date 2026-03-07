@@ -191,7 +191,8 @@ class WebSocketIOStream:
             logger.debug("WebSocket send failed (client may have disconnected)")
 
     def close(self) -> None:
-        """Mark the stream as closed so pending sends are skipped."""
+        """Flush pending buffer, then mark the stream as closed."""
+        self._flush_buffer()
         self._closed = True
         # Unblock any waiting input() call
         self._input_value = "exit"

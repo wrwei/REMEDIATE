@@ -111,6 +111,6 @@ runTransformation('runReq2StateMachine',
 tasks.register('runAll') {
     description = 'Run all AUV transformations'
     group = 'transformations'
-    dependsOn 'runAuvEmfCreation', 'runAuvValidation', 'runEmf2Robochart',
+    dependsOn 'runRequirementGen', 'runAuvEmfCreation', 'runAuvValidation', 'runEmf2Robochart',
               'runReq2Concept', 'runReq2Ecore', 'runReq2EmfModel', 'runReq2StateMachine'
 }

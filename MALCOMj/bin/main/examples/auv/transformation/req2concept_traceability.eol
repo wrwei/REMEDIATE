@@ -5,7 +5,7 @@ var target_metamodel = "\\metamodel\\base.ecore,\\metamodel\\terminology.ecore".
 
 //create trace package
 var tracePackage = new B!TracePackage;
-tracePackage.name = "requirement_bridge_Package";
+tracePackage.name = "Req2Concept";
 tracePackage.gid = "RBP1";
 
 var source_model = S.getModelFileUri()+"";
