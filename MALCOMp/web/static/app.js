@@ -2,6 +2,17 @@
 "use strict";
 
 // ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+function wsSend(obj) {
+    if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify(obj));
+        return true;
+    }
+    return false;
+}
+
+// ---------------------------------------------------------------------------
 // State
 // ---------------------------------------------------------------------------
 var ws = null;
@@ -154,10 +165,10 @@ function populateCaseStudies() {
         select.appendChild(opt);
     }
     select.onchange = function () {
-        ws.send(JSON.stringify({
+        wsSend({
             type: "select_case_study",
             config_path: select.value,
-        }));
+        });
         selectedCaseStudy = select.value;
     };
 }
@@ -268,7 +279,7 @@ function createRequirementItem(req) {
 
     div.onclick = function () {
         selectedRequirement = req.path;
-        ws.send(JSON.stringify({ type: "select_requirement", path: req.path }));
+        wsSend({ type: "select_requirement", path: req.path });
         // Update UI
         var items = document.querySelectorAll(".req-item");
         for (var j = 0; j < items.length; j++) items[j].classList.remove("selected");
@@ -312,7 +323,7 @@ function createTaskNode(taskName) {
     stopBtn.textContent = "Stop";
     stopBtn.onclick = function (e) {
         e.stopPropagation();
-        ws.send(JSON.stringify({ type: "stop_phase" }));
+        wsSend({ type: "stop_phase" });
     };
 
     header.appendChild(taskLabel);
@@ -331,27 +342,29 @@ function createTaskNode(taskName) {
     // Agent toggles
     var agents = stageAgents[taskName] || [];
     for (var a = 0; a < agents.length; a++) {
-        div.appendChild(createAgentToggle(agents[a], a === 0));
+        div.appendChild(createAgentToggle(taskName, agents[a], a === 0));
     }
 
     return div;
 }
 
-function createAgentToggle(agentName, isFirst) {
+function createAgentToggle(taskName, agentName, isFirst) {
     var div = document.createElement("div");
     div.className = "agent-toggle";
 
+    // Use task-scoped ID to avoid duplicates (e.g. Json_Generator in dsl vs model)
+    var cbId = "agent-" + taskName + "-" + agentName;
     var cb = document.createElement("input");
     cb.type = "checkbox";
     cb.checked = true;
-    cb.id = "agent-" + agentName;
+    cb.id = cbId;
     if (isFirst) {
         cb.disabled = true;
         div.classList.add("disabled");
     }
 
     var lbl = document.createElement("label");
-    lbl.htmlFor = cb.id;
+    lbl.htmlFor = cbId;
     lbl.textContent = agentName;
 
     div.appendChild(cb);
@@ -392,7 +405,7 @@ function createGradleCommandNode(cmdId) {
     startBtn.disabled = hasDep;
     startBtn.onclick = function (e) {
         e.stopPropagation();
-        ws.send(JSON.stringify({ type: "start_command", command: cmdId }));
+        wsSend({ type: "start_command", command: cmdId });
     };
 
     div.appendChild(label);
@@ -426,19 +439,19 @@ function selectTask(taskName) {
 }
 
 function startTask(taskName) {
-    // Collect disabled agents
+    // Collect disabled agents (using task-scoped checkbox IDs)
     var agents = stageAgents[taskName] || [];
     var disabled = [];
     for (var i = 0; i < agents.length; i++) {
-        var cb = document.getElementById("agent-" + agents[i]);
+        var cb = document.getElementById("agent-" + taskName + "-" + agents[i]);
         if (cb && !cb.checked) disabled.push(agents[i]);
     }
-    ws.send(JSON.stringify({
+    wsSend({
         type: "start_phase",
         phase: taskName,
         requirements: selectedRequirement,
         disabled_agents: disabled,
-    }));
+    });
     taskStatuses[taskName] = "running";
     updateStatusDots();
 }
@@ -646,15 +659,15 @@ function sendUserInput() {
     // If input was requested, provide it
     var promptEl = document.getElementById("input-prompt");
     if (promptEl.classList.contains("active")) {
-        ws.send(JSON.stringify({ type: "user_input", content: text }));
+        wsSend({ type: "user_input", content: text });
         hideInputPrompt();
     } else if (selectedTask) {
         // Refine mode: send refinement message for selected task
-        ws.send(JSON.stringify({
+        wsSend({
             type: "refine",
             phase: selectedTask,
             message: text,
-        }));
+        });
     }
 
     textarea.value = "";
@@ -664,7 +677,7 @@ function sendUserInput() {
 // File panel
 // ---------------------------------------------------------------------------
 function requestFileList(task) {
-    ws.send(JSON.stringify({ type: "list_files", task: task || "" }));
+    wsSend({ type: "list_files", task: task || "" });
 }
 
 function renderFileList(files, task) {
@@ -766,10 +779,10 @@ document.getElementById("clear-btn").onclick = function () {
         clearTimeout(clearConfirmTimer);
         btn.textContent = "Clear";
         delete btn.dataset.confirming;
-        ws.send(JSON.stringify({
+        wsSend({
             type: "clear_output",
             task: selectedTask || "",
-        }));
+        });
     } else {
         // First click — ask confirmation
         btn.textContent = "Confirm?";
@@ -793,10 +806,43 @@ function refreshExistingOutputs() {
             existingOutputs = (data.files || []).map(function (f) {
                 return typeof f === "string" ? f : f.path;
             });
-            // Re-render gradle commands to update dependency states
-            renderPipelineTree();
+            // Update Gradle command dependency states without rebuilding the tree
+            updateGradleDependencies();
         })
         .catch(function () { /* ignore */ });
+}
+
+function updateGradleDependencies() {
+    var cmds = document.querySelectorAll(".gradle-cmd");
+    for (var i = 0; i < cmds.length; i++) {
+        var btn = cmds[i].querySelector(".action-btn");
+        var depTag = cmds[i].querySelector(".dep-tag");
+        var label = cmds[i].querySelector(".cmd-label");
+        if (!btn) continue;
+
+        // Find which command this is by matching the label text
+        var cmdId = null;
+        for (var key in gradleCommands) {
+            var cmdLabel = gradleCommands[key].label || key;
+            if (label && label.textContent === cmdLabel) {
+                cmdId = key;
+                break;
+            }
+        }
+        if (!cmdId) continue;
+
+        var needs = gradleCommands[cmdId].needs || null;
+        var hasDep = needs ? existingOutputs.indexOf(needs) === -1 : false;
+
+        btn.disabled = hasDep;
+        if (label) {
+            if (hasDep) label.classList.add("has-dep-missing");
+            else label.classList.remove("has-dep-missing");
+        }
+        if (depTag) {
+            depTag.style.display = hasDep ? "" : "none";
+        }
+    }
 }
 
 // ---------------------------------------------------------------------------

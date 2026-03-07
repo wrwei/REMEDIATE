@@ -205,7 +205,7 @@ async def list_task_files(task: str):
 async def websocket_endpoint(ws: WebSocket):
     """Handle real-time communication with the browser."""
     await ws.accept()
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     config_path = _active_config()
     bridge = PipelineBridge(config_path, _state)
     iostream = WebSocketIOStream(ws, loop, state=_state)

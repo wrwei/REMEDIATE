@@ -435,9 +435,11 @@ class PipelineBridge:
             self._current_phase = None
             self._iostream = None
 
-        self.state.set_phase_status(command_id, status)
-        iostream.notify_phase_event("phase_complete", status=status,
-                                    phase=command_id)
+        # Only notify if stop_phase() hasn't already done so
+        if not self._stop_event.is_set():
+            self.state.set_phase_status(command_id, status)
+            iostream.notify_phase_event("phase_complete", status=status,
+                                        phase=command_id)
 
     def _copy_outputs_to_malcomj(self) -> None:
         """Copy MALCOMp output JSON files to MALCOMj's expected model directory."""
@@ -445,8 +447,13 @@ class PipelineBridge:
         if not output_dir:
             return
 
-        # MALCOMj expects JSON files at src/main/resources/examples/auv/model/
-        target_dir = _MALCOMJ_DIR / "src" / "main" / "resources" / "examples" / "auv" / "model"
+        # Determine the case study name from the active config path
+        # e.g. .../examples/auv/config.yaml -> "auv"
+        config_dir = Path(self.config_path).resolve().parent
+        case_study_name = config_dir.name
+
+        # MALCOMj expects JSON files at src/main/resources/examples/<study>/model/
+        target_dir = _MALCOMJ_DIR / "src" / "main" / "resources" / "examples" / case_study_name / "model"
         if not target_dir.exists():
             return
 
