@@ -1,7 +1,7 @@
 "Transformation starting...".println();
 
-var source_metamodel = "\\metamodel\\base.ecore, \\metamodel\\requirement.ecore".split(",");
-var target_metamodel = "\\metamodel\\base.ecore, \\metamodel\\terminology.ecore".split(",");
+var source_metamodel = "\\metamodel\\base.ecore,\\metamodel\\requirement.ecore".split(",");
+var target_metamodel = "\\metamodel\\base.ecore,\\metamodel\\terminology.ecore".split(",");
 
 //create trace package
 var tracePackage = new B!TracePackage;
@@ -12,30 +12,28 @@ var source_model = S.getModelFileUri()+"";
 var target_model = T.getModelFileUri()+"";
 
 
-for (entry in J.root.dsl_trace) {
-	for(r in entry) {
-		var gid = r.requirement_gid;
-		if(r.Emfatic_class <> null) {
-			var class = getEClass(r);
-	    	createReqEClassBridge(gid, class);
+for (r in J.root.dsl_trace) {
+	var gid = r.requirement_gid;
+	if(r.Emfatic_class <> null) {
+		var class = getEClass(r);
+    	createReqEClassBridge(gid, class);
+	}
+	if(r.Emfatic_attributes <> null) {
+		for(a in r.Emfatic_attributes) {
+			var attr = getEAttribute(a, r.Emfatic_class);
+			createReqEAttributeBridge(gid, attr);
 		}
-		if(r.Emfatic_attributes <> null) {
-			for(a in r.Emfatic_attributes) {
-				var attr = getEAttribute(a, r.Emfatic_class);
-				createReqEAttributeBridge(gid, attr);
-			}
+	}
+	if(r.Emfatic_references <> null) {
+		for(a in r.Emfatic_references) {
+			var ref = getEReference(a, r.Emfatic_class);
+			createReqEReferenceBridge(gid, ref);
 		}
-		if(r.Emfatic_references <> null) {
-			for(a in r.Emfatic_references) {
-				var ref = getEReference(a, r.Emfatic_class);
-				createReqEReferenceBridge(gid, ref);
-			}
-		}
-		if(r.Emfatic_operations <> null) {
-			for(a in r.Emfatic_operations) {
-				var op = getEOperation(a, r.Emfatic_class);
-				createReqEOperationBridge(gid, op);
-			}
+	}
+	if(r.Emfatic_operations <> null) {
+		for(a in r.Emfatic_operations) {
+			var op = getEOperation(a, r.Emfatic_class);
+			createReqEOperationBridge(gid, op);
 		}
 	}
 }
@@ -81,7 +79,7 @@ operation createDescription(element, description) {
     element.description = desc;
 }
 
-operation getDescription() {
+operation Any getDescription() {
 	if (self.description.isUndefined() or self.description.content.isUndefined()
 		or self.description.content.value.isEmpty()) {
 		return "";
@@ -89,25 +87,30 @@ operation getDescription() {
 	return self.description.content.value.at(0).content;
 }
 
-operation getName() {
+operation Any getName() {
 	return self.name.content;
 }
 
-operation getGid() {
+operation Any getGid() {
 	return self.gid;
 }
 
-operation getHash() {
+operation Any getHash() {
 	return (self.getName() + "-" + self.getGid() + "-" + self.getDescription()).hashCode().toString();
 }
 
 operation createReqEClassBridge(source, target) {
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	if (s.isUndefined()) {
+		("WARNING: No requirement found with GID " + source + ", skipping EClass bridge.").println();
+		return;
+	}
+
 	var trace = new B!Trace;
 	trace.name=source+"_TO_"+target.name;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
-	
-	var s = S!Requirement.all.select(r|r.gid = source).first();
+
 	var class_name = target.name;
 	
 	er1.location = source_model;
@@ -128,14 +131,19 @@ operation createReqEClassBridge(source, target) {
 }
 
 operation createReqEAttributeBridge(source, target) {
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	if (s.isUndefined()) {
+		("WARNING: No requirement found with GID " + source + ", skipping EAttribute bridge.").println();
+		return;
+	}
+
 	var trace = new B!Trace;
 	trace.name=source+"_TO_"+target.name;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
-	
-	var s = S!Requirement.all.select(r|r.gid = source).first();
+
 	var attr_name = target.name;
-	
+
 	
 	er1.location = source_model;
 	er1.type = "EMF";
@@ -155,14 +163,19 @@ operation createReqEAttributeBridge(source, target) {
 }
 
 operation createReqEReferenceBridge(source, target) {
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	if (s.isUndefined()) {
+		("WARNING: No requirement found with GID " + source + ", skipping EReference bridge.").println();
+		return;
+	}
+
 	var trace = new B!Trace;
 	trace.name=source+"_TO_"+target.name;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
-	
-	var s = S!Requirement.all.select(r|r.gid = source).first();
+
 	var ref_name = target.name;
-	
+
 	
 	er1.location = source_model;
 	er1.type = "EMF";
@@ -182,14 +195,19 @@ operation createReqEReferenceBridge(source, target) {
 }
 
 operation createReqEOperationBridge(source, target) {
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	if (s.isUndefined()) {
+		("WARNING: No requirement found with GID " + source + ", skipping EOperation bridge.").println();
+		return;
+	}
+
 	var trace = new B!Trace;
 	trace.name=source+"_TO_"+target.name;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
-	
-	var s = S!Requirement.all.select(r|r.gid = source).first();
+
 	var op_name = target.name;
-	
+
 	
 	er1.location = source_model;
 	er1.type = "EMF";

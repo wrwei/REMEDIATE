@@ -1,7 +1,7 @@
 "Transformation starting...".println();
 
-var source_metamodel = "\\metamodel\\base.ecore, \\metamodel\\requirement.ecore".split(",");
-var target_metamodel = "\\metamodel\\base.ecore, \\metamodel\\terminology.ecore".split(",");
+var source_metamodel = "\\metamodel\\base.ecore,\\metamodel\\requirement.ecore".split(",");
+var target_metamodel = "\\metamodel\\base.ecore,\\metamodel\\terminology.ecore".split(",");
 
 //create trace package
 var tracePackage = new B!TracePackage;
@@ -15,17 +15,15 @@ var target_model = T.getModelFileUri()+"";
 var tp = new T!TerminologyPackage;
 createName(tp, "Req");
 
-for (entry in J.root.req) {
-	for(r in entry) {
-		var gid = r.GID;
-		if(r.Concept <> null) {
-			var concept = getConcept(tp, r);
-	    	createReqConceptBridge(gid, concept);
-		}
-		if(r.Instance <> null) {
-			var instance = getInstance(tp, r);
-			createReqInstanceBridge(gid, instance);
-		}
+for (r in J.root.req) {
+	var gid = r.GID;
+	if(r.Concept <> null) {
+		var concept = getConcept(tp, r);
+    	createReqConceptBridge(gid, concept);
+	}
+	if(r.Instance <> null) {
+		var instance = getInstance(tp, r);
+		createReqInstanceBridge(gid, instance);
 	}
 }
 tracePackage.traceElement.select(s|s.isTypeOf(B!Trace)).size().println();
@@ -35,13 +33,15 @@ tracePackage.traceElement.select(s|s.isTypeOf(B!Trace)).size().println();
 operation getInstance(tp, r) {
 	//get the Instance
 	var ret = tp.terminologyElement.select(c|c.isTypeOf(T!Instance) and c.name.content = r.Instance).first();
-	
+
 	//create instance if none exists
 	if(ret.isUndefined()) {
 		ret = new T!Instance;
     	createName(ret, r.Instance);
     	createDescription(ret, r.Instance_description);
-    	ret.concept = getConcept(tp, r);
+    	if (r.Concept <> null) {
+    		ret.concept = getConcept(tp, r);
+    	}
     	tp.terminologyElement.add(ret);
 	}
 	return ret;
@@ -75,7 +75,7 @@ operation createDescription(element, description) {
     element.description = desc;
 }
 
-operation getDescription() {
+operation Any getDescription() {
 	if (self.description.isUndefined() or self.description.content.isUndefined()
 		or self.description.content.value.isEmpty()) {
 		return "";
@@ -83,25 +83,30 @@ operation getDescription() {
 	return self.description.content.value.at(0).content;
 }
 
-operation getName() {
+operation Any getName() {
 	return self.name.content;
 }
 
-operation getGid() {
+operation Any getGid() {
 	return self.gid;
 }
 
-operation getHash() {
+operation Any getHash() {
 	return (self.getName() + "-" + self.getGid() + "-" + self.getDescription()).hashCode().toString();
 }
 
 operation createReqConceptBridge(source, target) {
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	if (s.isUndefined()) {
+		("WARNING: No requirement found with GID " + source + ", skipping concept bridge.").println();
+		return;
+	}
+
 	var trace = new B!Trace;
 	trace.name=source+"_TO_"+target.name.content;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
 
-	var s = S!Requirement.all.select(r|r.gid = source).first();
 	var concept_name = target.name.content;
 
 	er1.location = source_model;
@@ -122,14 +127,18 @@ operation createReqConceptBridge(source, target) {
 }
 
 operation createReqInstanceBridge(source, target) {
+	var s = S!Requirement.all.select(r|r.gid = source).first();
+	if (s.isUndefined()) {
+		("WARNING: No requirement found with GID " + source + ", skipping instance bridge.").println();
+		return;
+	}
+
 	var trace = new B!Trace;
 	trace.name=source+"_TO_"+target.name.content;
 	var er1 = new B!ExternalReference;
 	var er2 = new B!ExternalReference;
 
-	var s = S!Requirement.all.select(r|r.gid = source).first();
 	var instance_name = target.name.content;
-
 
 	er1.location = source_model;
 	er1.type = "EMF";
